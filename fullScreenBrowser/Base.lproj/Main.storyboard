@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-TQ-bhJ">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <barButtonItem image="goBack.png" style="plain" id="fWe-Q4-DIs">
+                                        <connections>
+                                            <action selector="goBack" destination="nz0-mR-jJP" id="KXG-pr-Ptj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="tkK-Xu-x3E"/>
+                                    <barButtonItem image="goForward.png" style="done" id="D0F-BJ-euy">
+                                        <connections>
+                                            <action selector="goForward" destination="nz0-mR-jJP" id="Saw-a6-qc6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8ST-iM-tps"/>
+                                    <barButtonItem image="reloading.png" style="done" id="HNe-MJ-LLq">
+                                        <connections>
+                                            <action selector="reload" destination="nz0-mR-jJP" id="VzZ-14-PAm"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="w3v-G3-Cxd"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7Jp-a7-ng2"/>
+                                    <barButtonItem image="search.png" style="plain" id="DVw-ny-tHK">
+                                        <connections>
+                                            <action selector="srarchButtonHiden:" destination="vXZ-lx-hvc" id="QFx-xW-vG0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="TBe-UE-nTr"/>
+                                    <barButtonItem image="home.png" style="done" id="cxC-DA-YI7">
+                                        <connections>
+                                            <action selector="goHome:" destination="vXZ-lx-hvc" id="tN5-Ih-gfJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GxH-Cc-8ya"/>
+                                    <barButtonItem image="fullBtn.png" style="done" id="Foa-ae-qmI">
+                                        <connections>
+                                            <action selector="toFullScreen:" destination="vXZ-lx-hvc" id="H7r-vO-03M"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nz0-mR-jJP">
+                                <rect key="frame" x="0.0" y="20" width="600" height="536"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <searchBar contentMode="redraw" misplaced="YES" searchBarStyle="minimal" placeholder="搜索或输入网站地址" translatesAutoresizingMaskIntoConstraints="NO" id="c4g-kq-Lkg">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="moG-7p-9YG"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nz0-mR-jJP" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="17C-z5-WPb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KBW-TQ-bhJ" secondAttribute="bottom" id="7Zb-52-4NN"/>
+                            <constraint firstItem="KBW-TQ-bhJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="8LO-U4-6O7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KBW-TQ-bhJ" secondAttribute="trailing" constant="-16" id="9ji-3T-FcS"/>
+                            <constraint firstItem="KBW-TQ-bhJ" firstAttribute="top" secondItem="nz0-mR-jJP" secondAttribute="bottom" id="Buy-mW-bH6"/>
+                            <constraint firstItem="c4g-kq-Lkg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Ike-V4-10t"/>
+                            <constraint firstItem="c4g-kq-Lkg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="TOu-xJ-YuE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="c4g-kq-Lkg" secondAttribute="trailing" constant="-16" id="iRQ-Nz-8U7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nz0-mR-jJP" secondAttribute="trailing" constant="-16" id="moZ-kn-OxL"/>
+                            <constraint firstItem="KBW-TQ-bhJ" firstAttribute="top" secondItem="nz0-mR-jJP" secondAttribute="bottom" id="oyH-s1-j3K"/>
+                            <constraint firstItem="nz0-mR-jJP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="p2m-Wy-iah"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="fWe-Q4-DIs" id="y87-Ey-XJK"/>
+                        <outlet property="forwarButton" destination="D0F-BJ-euy" id="4ix-oh-FsT"/>
+                        <outlet property="fullscreenButton" destination="Foa-ae-qmI" id="WbO-sO-FKh"/>
+                        <outlet property="homeButton" destination="cxC-DA-YI7" id="fKH-JC-YqB"/>
+                        <outlet property="reloadingButton" destination="HNe-MJ-LLq" id="QQy-b2-x52"/>
+                        <outlet property="searchBar" destination="c4g-kq-Lkg" id="6e1-zo-HyK"/>
+                        <outlet property="searchButton" destination="DVw-ny-tHK" id="5fx-h8-ySw"/>
+                        <outlet property="toolbars" destination="KBW-TQ-bhJ" id="2Ph-ku-QAv"/>
+                        <outlet property="uiWebView" destination="nz0-mR-jJP" id="MdD-8U-e3V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="284" y="149"/>
+        </scene>
+        <!--System Seting View Controller-->
+        <scene sceneID="R6j-jK-uNa">
+            <objects>
+                <viewController id="Kdu-EE-SQc" customClass="systemSetingViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2HN-A5-ZPl"/>
+                        <viewControllerLayoutGuide type="bottom" id="WQg-Qe-5Sd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Vx-G8-5VI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1uZ-vY-QKS">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="设置" id="1Wz-w2-kdg">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="zop-Hk-eYs">
+                                            <color key="tintColor" red="0.12110314000732447" green="0.87301541002509675" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mfz-zG-dxp">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="全屏浏览器" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4O-Vo-ER0">
+                                        <rect key="frame" x="183" y="271" width="234" height="35"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="BIcom406.png" translatesAutoresizingMaskIntoConstraints="NO" id="OBT-AU-NWj">
+                                        <rect key="frame" x="225" y="100" width="150" height="163"/>
+                                        <animations/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="© 2014 he tiancong All rights reserved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3h-yV-QAG">
+                                        <rect key="frame" x="153" y="500" width="294" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TJe-WT-Zem">
+                                        <rect key="frame" x="-206" y="-134" width="600" height="536"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" image="BIcom406.png" translatesAutoresizingMaskIntoConstraints="NO" id="H8i-5G-oEo">
+                                                <rect key="frame" x="225" y="80" width="150" height="150"/>
+                                                <animations/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="程序员 何天从" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Yq-VA-0v5">
+                                                <rect key="frame" x="247" y="487" width="107" height="20.5"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="© 2014 he tiancong All rights reserved" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppn-iQ-zC1">
+                                                <rect key="frame" x="153" y="507" width="294" height="20.5"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="全屏浏览器" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kIX-b8-Bxk">
+                                                <rect key="frame" x="183" y="251" width="234" height="35"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="29"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="程序员 何天从" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ej-hz-eOJ">
+                                        <rect key="frame" x="247" y="480" width="107" height="20.5"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1uZ-vY-QKS" firstAttribute="leading" secondItem="8Vx-G8-5VI" secondAttribute="leadingMargin" constant="-16" id="JK4-Ok-cVi"/>
+                            <constraint firstItem="1uZ-vY-QKS" firstAttribute="top" secondItem="2HN-A5-ZPl" secondAttribute="bottom" id="ZOB-0X-CNK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1uZ-vY-QKS" secondAttribute="trailing" constant="-16" id="m81-T3-9Pa"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="GaY-KI-fsw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oni-pf-F2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="932" y="176"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="BIcom406.png" width="406" height="406"/>
+        <image name="fullBtn.png" width="15" height="15"/>
+        <image name="goBack.png" width="15" height="15"/>
+        <image name="goForward.png" width="15" height="15"/>
+        <image name="home.png" width="15" height="15"/>
+        <image name="reloading.png" width="15" height="15"/>
+        <image name="search.png" width="15" height="15"/>
+    </resources>
+</document>
