@@ -1,4 +1,4 @@
-# FullScreenBrowser-
+# FullScreenBrowser
 
 ### 介绍
 一个简单的全屏浏览器例子
