@@ -36,7 +36,6 @@
 //    self.uiWebView.scrollView.showsVerticalScrollIndicator = NO;
     
     
-    
 //    self.toolbars.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.90];
     self.toolbars.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
    // self.toolbars.barTintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
@@ -70,18 +69,13 @@
     
     if ([str hasPrefix:@"http://"])
     {
-
         url = [NSURL URLWithString:urlStr];
 
-    }
-    else if([str hasPrefix:@"www"] || [str hasPrefix:@"wap"])
-    {
+    }else if([str hasPrefix:@"www."] || [str hasPrefix:@"wap."] || [str hasPrefix:@"m."]){
      
         urlStr = [NSString stringWithFormat:@"http://%@", str];
         url = [NSURL URLWithString:urlStr];
-    }
-    else
-    {
+    }else{
         urlStr = [NSString stringWithFormat:@"http://www.baidu.com/s?wd=%@", str];
         urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         url = [NSURL URLWithString:urlStr];
@@ -120,20 +114,16 @@
 
 - (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
 {
-
     self.searchBar.showsCancelButton = NO;
     [self.view endEditing:YES];
     
     return YES;
-
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
 {
     self.searchBar.showsCancelButton = NO;
     [self.view endEditing:YES];
-
-
 }
 
 #pragma mark - WebView代理方法
@@ -147,11 +137,8 @@
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    
-    
     //NSLog(@"request-----%@",request);
     self.searchBar.text = [NSString stringWithFormat:@"%@",request.URL];
-    
     
     return YES;
 }
@@ -171,7 +158,6 @@
 
 - (IBAction)toFullScreen:(id)sender {
     
-    
 //    CGRect frames = self.toolbars.frame;
 //    
 //    frames.origin.y = self.view.frame.size.height;
@@ -186,28 +172,21 @@
     CGRect webFrame = self.uiWebView.frame;
     webFrame.size.height = self.view.frame.size.height;
     
-    
     CGRect toolbarsFrame = self.toolbars.frame;
     toolbarsFrame.origin.y = self.view.frame.size.height + 44;
     
     [UIView animateWithDuration:0.3f animations:^{
-        
         self.uiWebView.frame = webFrame;
         self.toolbars.frame = toolbarsFrame;
-        
-        
     }];
-
-
+    
 }
 
 
 //隐藏搜索框
 - (IBAction)srarchButtonHiden:(id)sender {
     
-    
     self.searchBar.hidden = !self.searchBar.hidden;
-
 }
 
 
@@ -228,12 +207,9 @@
 
 - (void) scrollViewDidScroll:(UIScrollView *)scrollView
 {
-
     static float newY = 0;
-    
     newY = scrollView.contentOffset.y;
-    
-    
+
     if (newY != _oldY)
     {
         //向下滚动
@@ -242,31 +218,24 @@
 
             // 隐藏状态栏
 //            [UIApplication sharedApplication].statusBarHidden = YES;
-            
             CGRect searchFrame = self.searchBar.frame;
             searchFrame.origin.y = -44;
             
             CGRect webFrame = self.uiWebView.frame;
             webFrame.size.height = self.view.frame.size.height;
     
-            
             CGRect toolbarsFrame = self.toolbars.frame;
             toolbarsFrame.origin.y = self.view.frame.size.height + 44;
             
             [UIView animateWithDuration:0.3f animations:^{
-                
                 self.searchBar.frame = searchFrame;
                 self.uiWebView.frame = webFrame;
                 self.toolbars.frame = toolbarsFrame;
-
-                
             }];
             
             _oldY = newY;
             
-        }
-        else if (newY < _oldY && (_oldY - newY) > 100)
-        {
+        }else if (newY < _oldY && (_oldY - newY) > 100){
             [self.view endEditing:YES];
             
             // 显示状态栏
@@ -283,12 +252,9 @@
             toolbarsFrame.origin.y = self.view.frame.size.height - 44;
             
             [UIView animateWithDuration:0.3f animations:^{
-                
                 self.searchBar.frame = searchFrame;
                 self.uiWebView.frame = webFrame;
                 self.toolbars.frame = toolbarsFrame;
-                
-                
             }];
             
             _oldY = newY;
@@ -311,17 +277,13 @@
     toolbarsFrame.origin.y = self.view.frame.size.height - 44;
     
     [UIView animateWithDuration:0.3f animations:^{
-        
         self.searchBar.frame = searchFrame;
         self.uiWebView.frame = webFrame;
         self.toolbars.frame = toolbarsFrame;
-        
-        
+
     }];
-    
-    
+
     return YES;
-    
 }
 
 
