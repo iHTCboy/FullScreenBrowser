@@ -68,7 +68,6 @@
 		6D2FFBB41DCE13BF007D1BF5 /* FSBGirlDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBGirlDetailVC.m; sourceTree = "<group>"; };
 		6D2FFBB61DCE13BF007D1BF5 /* FSBSetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBSetingViewController.h; sourceTree = "<group>"; };
 		6D2FFBB71DCE13BF007D1BF5 /* FSBSetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBSetingViewController.m; sourceTree = "<group>"; };
-		6D2FFBB81DCE13BF007D1BF5 /* FullScreenBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FullScreenBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
 		6D2FFBB91DCE13BF007D1BF5 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		6D2FFBBA1DCE13BF007D1BF5 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		6D2FFBCF1DCE1534007D1BF5 /* FullScreenBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FullScreenBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -158,7 +157,6 @@
 				6D2FFBB21DCE13BF007D1BF5 /* FSBGirlCollectionVC.m */,
 				6D2FFBB31DCE13BF007D1BF5 /* FSBGirlDetailVC.h */,
 				6D2FFBB41DCE13BF007D1BF5 /* FSBGirlDetailVC.m */,
-				6D2FFBB81DCE13BF007D1BF5 /* FullScreenBrowser-Bridging-Header.h */,
 				6D2FFBBD1DCE13BF007D1BF5 /* Vendors */,
 				6D2FFBC31DCE13BF007D1BF5 /* Views */,
 				6D2FFBCF1DCE1534007D1BF5 /* FullScreenBrowser-Bridging-Header.h */,

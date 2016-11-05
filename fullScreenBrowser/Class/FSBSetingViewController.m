@@ -10,7 +10,7 @@
 
 #import <MessageUI/MessageUI.h>
 
-#import "FBSGirlCollectionVC.h"
+#import "FSBGirlCollectionVC.h"
 
 @interface FSBSetingViewController ()<MFMailComposeViewControllerDelegate>
 
@@ -59,7 +59,7 @@
         break;
         case 1:
         {
-            FBSGirlCollectionVC * vc = [[FBSGirlCollectionVC alloc]init];
+            FSBGirlCollectionVC * vc = [[FSBGirlCollectionVC alloc]init];
             [self.navigationController pushViewController:vc animated:YES];
             
         }

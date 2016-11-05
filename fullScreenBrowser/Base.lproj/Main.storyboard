@@ -46,14 +46,14 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w3v-G3-Cxd"/>
-                                    <barButtonItem image="setting.png" style="plain" id="hTj-GT-Fm8" userLabel="SettingButton">
+                                    <barButtonItem image="setting.png" style="done" id="hTj-GT-Fm8" userLabel="SettingButton">
                                         <connections>
                                             <action selector="setingButton:" destination="vXZ-lx-hvc" id="jLZ-6T-JhR"/>
                                             <segue destination="hkY-Np-G1g" kind="modal" id="JzY-ZJ-b81"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="7Jp-a7-ng2"/>
-                                    <barButtonItem image="search.png" style="plain" id="DVw-ny-tHK" userLabel="SearchButton">
+                                    <barButtonItem image="search.png" style="done" id="DVw-ny-tHK" userLabel="SearchButton">
                                         <connections>
                                             <action selector="srarchButtonHiden:" destination="vXZ-lx-hvc" id="QFx-xW-vG0"/>
                                         </connections>
@@ -224,7 +224,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="设置" id="C3p-TA-LIr">
-                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="stop" id="pqZ-ab-nmd">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="pqZ-ab-nmd">
                             <connections>
                                 <action selector="clickedCloseBtn:" destination="YId-uL-a2m" id="Xai-Yk-4mJ"/>
                             </connections>
@@ -238,7 +238,7 @@
         <!--关于应用-->
         <scene sceneID="R6j-jK-uNa">
             <objects>
-                <viewController id="Kdu-EE-SQc" customClass="FSBAboutViewController" customModule="全屏浏览器" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Kdu-EE-SQc" customClass="FSBAboutViewController" customModule="FSB" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2HN-A5-ZPl"/>
                         <viewControllerLayoutGuide type="bottom" id="WQg-Qe-5Sd"/>
