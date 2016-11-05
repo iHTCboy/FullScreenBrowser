@@ -1,5 +1,5 @@
 //
-//  FBSGirlCollectionVC.h
+//  FBSGirlDetailVC.h
 //  FullScreenBrowser
 //
 //  Created by HTC on 2016/11/2.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FBSGirlCollectionVC : UIViewController
+@interface FSBGirlDetailVC : UIViewController
 
 @end

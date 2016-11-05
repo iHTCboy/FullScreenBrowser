@@ -1,26 +1,22 @@
 //
-//  FBSGirlCollectionVC.m
+//  FBSGirlDetailVC.m
 //  FullScreenBrowser
 //
 //  Created by HTC on 2016/11/2.
 //  Copyright © 2016年 HTC. All rights reserved.
 //
 
-#import "FBSGirlCollectionVC.h"
+#import "FSBGirlDetailVC.h"
 
-@interface FBSGirlCollectionVC ()
+@interface FSBGirlDetailVC ()
 
 @end
 
-@implementation FBSGirlCollectionVC
+@implementation FSBGirlDetailVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"街拍美女";
-    
-    
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
