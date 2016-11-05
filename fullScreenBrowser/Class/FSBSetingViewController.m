@@ -12,7 +12,7 @@
 
 #import "FBSGirlCollectionVC.h"
 
-@interface FSBSetingViewController ()
+@interface FSBSetingViewController ()<MFMailComposeViewControllerDelegate>
 
 @end
 
@@ -44,7 +44,7 @@
             switch (indexPath.row) {
                 case 0:{
                     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-                    [self sendEmailWithSubject:@"给全屏浏览器的建议反馈" MessageBody:[NSString stringWithFormat:@"我现在使用全屏浏览器v%@,使用设备：%@,iOSv%@\n我的反馈和建议：\n1、\n2、\n3、",[infoDictionary objectForKey:@"CFBundleShortVersionString"],[[UIDevice currentDevice] model],[[UIDevice currentDevice] systemVersion]] isHTML:NO toRecipients:@[@"ihetiancong@qq.com"] ccRecipients:nil bccRecipients:nil  Image:nil imageQuality:0];
+                    [self sendEmailWithSubject:@"@全屏浏览器的反馈" MessageBody:[NSString stringWithFormat:@"我现在使用全屏浏览器v%@,使用设备：%@,iOSv%@\n我的反馈和建议：\n1、\n2、\n3、",[infoDictionary objectForKey:@"CFBundleShortVersionString"],[[UIDevice currentDevice] model],[[UIDevice currentDevice] systemVersion]] isHTML:NO toRecipients:@[@"ihetiancong@qq.com"] ccRecipients:nil bccRecipients:nil  Image:nil imageQuality:0];
                     break;
                 }
                 case 2:
@@ -98,7 +98,7 @@
     if (image)
     {
         NSData *data = UIImageJPEGRepresentation(image, quality);
-        [email addAttachmentData:data mimeType:@"image/jepg" fileName:@"lufy.jpeg"];
+        [email addAttachmentData:data mimeType:@"image/jepg" fileName:@"image.jpeg"];
     }
     
     // 设置代理
@@ -115,8 +115,6 @@
 {
     // 关闭邮件界面
     [controller dismissViewControllerAnimated:YES completion:nil];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -315,7 +315,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = HTC;
+				ORGANIZATIONNAME = iHTCboy;
 				TargetAttributes = {
 					6DE000371A3474F200F9D2A5 = {
 						CreatedOnToolsVersion = 6.1.1;
