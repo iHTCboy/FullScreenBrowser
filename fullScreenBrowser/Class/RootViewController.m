@@ -9,7 +9,7 @@
 #import "RootViewController.h"
 #import "FSBSetingViewController.h"
 
-//#import "BaiduMobStat.h"
+#import "BaiduMobStat.h"
 
 @interface RootViewController ()<UISearchBarDelegate,UIWebViewDelegate,UIScrollViewDelegate>
 
@@ -129,15 +129,12 @@
 }
 
 #pragma mark - WebView代理方法
-
 -(void)webViewDidStartLoad:(UIWebView *)webView{
     self.activityView.hidden = NO;
-    [self.activityView startAnimating];
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     self.activityView.hidden = YES;
-    [self.activityView stopAnimating];
 }
 
 #pragma mark 完成加载,页面链表数据会更新
@@ -156,6 +153,8 @@
     //NSLog(@"request-----%@",request);
     self.searchBar.text = [NSString stringWithFormat:@"%@",request.URL];
     
+    // 实现WebView的代理方法，并在此函数中调用SDK的webviewStartLoadWithRequest:传入request参数，进行统计
+    [[BaiduMobStat defaultStat] webviewStartLoadWithRequest:request];
     return YES;
 }
 
@@ -173,14 +172,6 @@
 }
 
 - (IBAction)toFullScreen:(id)sender {
-    
-//    CGRect frames = self.toolbars.frame;
-//    
-//    frames.origin.y = self.view.frame.size.height;
-//    
-//    self.toolbars.frame = frames;
-    
-    //self.uiWebView.frame;
     
     // 隐藏状态栏
 //    [UIApplication sharedApplication].statusBarHidden = YES;

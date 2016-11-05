@@ -12,7 +12,6 @@
 		6D2FFBC61DCE13BF007D1BF5 /* FBSGirlDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBB41DCE13BF007D1BF5 /* FBSGirlDetailVC.m */; };
 		6D2FFBC81DCE13BF007D1BF5 /* FSBSetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBB71DCE13BF007D1BF5 /* FSBSetingViewController.m */; };
 		6D2FFBC91DCE13BF007D1BF5 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBBA1DCE13BF007D1BF5 /* RootViewController.m */; };
-		6D2FFBCA1DCE13BF007D1BF5 /* SystemSetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBBC1DCE13BF007D1BF5 /* SystemSetingViewController.m */; };
 		6D2FFBD51DCE15CB007D1BF5 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2FFBD41DCE15CB007D1BF5 /* libBaiduMobStat.a */; };
 		6D2FFBD81DCE1601007D1BF5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2FFBD71DCE1601007D1BF5 /* JavaScriptCore.framework */; };
 		6D2FFBDA1DCE1610007D1BF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2FFBD91DCE1610007D1BF5 /* Foundation.framework */; };
@@ -70,8 +69,6 @@
 		6D2FFBB81DCE13BF007D1BF5 /* FullScreenBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FullScreenBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
 		6D2FFBB91DCE13BF007D1BF5 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		6D2FFBBA1DCE13BF007D1BF5 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		6D2FFBBB1DCE13BF007D1BF5 /* SystemSetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemSetingViewController.h; sourceTree = "<group>"; };
-		6D2FFBBC1DCE13BF007D1BF5 /* SystemSetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemSetingViewController.m; sourceTree = "<group>"; };
 		6D2FFBCF1DCE1534007D1BF5 /* FullScreenBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FullScreenBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
 		6D2FFBD31DCE15CB007D1BF5 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
 		6D2FFBD41DCE15CB007D1BF5 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
@@ -150,16 +147,14 @@
 				6D2FFBB01DCE13BF007D1BF5 /* AppDelegate.m */,
 				6D2FFBB91DCE13BF007D1BF5 /* RootViewController.h */,
 				6D2FFBBA1DCE13BF007D1BF5 /* RootViewController.m */,
+				6D2FFBB61DCE13BF007D1BF5 /* FSBSetingViewController.h */,
+				6D2FFBB71DCE13BF007D1BF5 /* FSBSetingViewController.m */,
+				6D2FFBEB1DCE1681007D1BF5 /* FSBAboutViewController.swift */,
 				6D2FFBB11DCE13BF007D1BF5 /* FBSGirlCollectionVC.h */,
 				6D2FFBB21DCE13BF007D1BF5 /* FBSGirlCollectionVC.m */,
 				6D2FFBB31DCE13BF007D1BF5 /* FBSGirlDetailVC.h */,
 				6D2FFBB41DCE13BF007D1BF5 /* FBSGirlDetailVC.m */,
-				6D2FFBEB1DCE1681007D1BF5 /* FSBAboutViewController.swift */,
-				6D2FFBB61DCE13BF007D1BF5 /* FSBSetingViewController.h */,
-				6D2FFBB71DCE13BF007D1BF5 /* FSBSetingViewController.m */,
 				6D2FFBB81DCE13BF007D1BF5 /* FullScreenBrowser-Bridging-Header.h */,
-				6D2FFBBB1DCE13BF007D1BF5 /* SystemSetingViewController.h */,
-				6D2FFBBC1DCE13BF007D1BF5 /* SystemSetingViewController.m */,
 				6D2FFBBD1DCE13BF007D1BF5 /* Vendors */,
 				6D2FFBC31DCE13BF007D1BF5 /* Views */,
 				6D2FFBCF1DCE1534007D1BF5 /* FullScreenBrowser-Bridging-Header.h */,
@@ -401,7 +396,6 @@
 				6D2FFBC81DCE13BF007D1BF5 /* FSBSetingViewController.m in Sources */,
 				6D2FFBEC1DCE1681007D1BF5 /* FSBAboutViewController.swift in Sources */,
 				6D2FFBC41DCE13BF007D1BF5 /* AppDelegate.m in Sources */,
-				6D2FFBCA1DCE13BF007D1BF5 /* SystemSetingViewController.m in Sources */,
 				6DE0003E1A3474F200F9D2A5 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

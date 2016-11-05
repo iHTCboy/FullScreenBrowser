@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "BaiduMobStat.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -16,9 +19,24 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [self startBaiduMobStat];
+    
     return YES;
 }
+
+
+/**
+ *  初始化百度统计SDK
+ */
+- (void)startBaiduMobStat {
+    BaiduMobStat* statTracker = [BaiduMobStat defaultStat];
+    // 此处(startWithAppId之前)可以设置初始化的可选参数，具体有哪些参数，可详见BaiduMobStat.h文件，例如：
+    statTracker.shortAppVersion  = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    //    statTracker.enableDebugOn = YES;
+    [statTracker startWithAppId:@"71ccc049f5"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
