@@ -46,23 +46,23 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w3v-G3-Cxd"/>
-                                    <barButtonItem image="setting.png" style="done" id="hTj-GT-Fm8" userLabel="SettingButton">
-                                        <connections>
-                                            <action selector="setingButton:" destination="vXZ-lx-hvc" id="jLZ-6T-JhR"/>
-                                            <segue destination="hkY-Np-G1g" kind="modal" id="JzY-ZJ-b81"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7Jp-a7-ng2"/>
                                     <barButtonItem image="search.png" style="done" id="DVw-ny-tHK" userLabel="SearchButton">
                                         <connections>
                                             <action selector="srarchButtonHiden:" destination="vXZ-lx-hvc" id="QFx-xW-vG0"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TBe-UE-nTr"/>
-                                    <barButtonItem image="home.png" style="done" id="cxC-DA-YI7" userLabel="HomeButton">
-                                        <connections>
-                                            <action selector="goHome:" destination="vXZ-lx-hvc" id="tN5-Ih-gfJ"/>
-                                        </connections>
+                                    <barButtonItem image="home.png" style="plain" id="6MC-Dg-F92">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dlJ-rg-s7R">
+                                            <rect key="frame" x="278" y="7" width="15" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                            <state key="normal" image="home.png"/>
+                                            <connections>
+                                                <action selector="clickedHome:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="nkh-eT-JtS"/>
+                                                <action selector="clickedHomeRepeat:" destination="vXZ-lx-hvc" eventType="touchDownRepeat" id="btb-5W-9Ta"/>
+                                            </connections>
+                                        </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="GxH-Cc-8ya"/>
                                     <barButtonItem image="fullBtn.png" style="done" id="Foa-ae-qmI" userLabel="FullButton">
@@ -110,7 +110,6 @@
                         <outlet property="backButton" destination="fWe-Q4-DIs" id="y87-Ey-XJK"/>
                         <outlet property="forwarButton" destination="D0F-BJ-euy" id="4ix-oh-FsT"/>
                         <outlet property="fullscreenButton" destination="Foa-ae-qmI" id="WbO-sO-FKh"/>
-                        <outlet property="homeButton" destination="cxC-DA-YI7" id="fKH-JC-YqB"/>
                         <outlet property="reloadingButton" destination="HNe-MJ-LLq" id="QQy-b2-x52"/>
                         <outlet property="searchBar" destination="c4g-kq-Lkg" id="6e1-zo-HyK"/>
                         <outlet property="searchButton" destination="DVw-ny-tHK" id="5fx-h8-ySw"/>
@@ -120,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-612" y="112"/>
+            <point key="canvasLocation" x="-612" y="111.99400299850076"/>
         </scene>
         <!--设置-->
         <scene sceneID="S35-Bh-S21">
@@ -137,11 +136,11 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Fi-l8-nlj" id="Bgn-6H-92P">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="应用反馈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fSB-1e-Gv6">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -154,11 +153,11 @@
                                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XSR-f2-JTF" id="nIL-ET-Wqj">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="关于应用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JZB-aq-aup">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -174,11 +173,11 @@
                                         <rect key="frame" x="0.0" y="88" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ezE-dV-9od" id="lZD-2Q-yqh">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="评论应用" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="E9P-q1-CRQ">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -195,18 +194,18 @@
                                         <rect key="frame" x="0.0" y="160" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Ed-8w-9yI" id="daH-zi-HJk">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="街拍美女" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DXp-tt-BC6">
-                                                    <rect key="frame" x="15" y="11" width="70" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="69.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="福利社" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UI7-Oz-SNo">
-                                                    <rect key="frame" x="288" y="11" width="52" height="21"/>
+                                                    <rect key="frame" x="288" y="12" width="52" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -307,8 +306,9 @@
         <!--Navigation Controller-->
         <scene sceneID="C5Y-wc-3K4">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hkY-Np-G1g" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FSBNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="hkY-Np-G1g" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="2mE-8e-T6e"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3gt-8r-qtt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -331,6 +331,5 @@
         <image name="home.png" width="15" height="15"/>
         <image name="reloading.png" width="15" height="15"/>
         <image name="search.png" width="15" height="15"/>
-        <image name="setting.png" width="15" height="15"/>
     </resources>
 </document>

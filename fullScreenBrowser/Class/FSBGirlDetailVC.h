@@ -10,4 +10,6 @@
 
 @interface FSBGirlDetailVC : UIViewController
 
+@property (nonatomic, copy) NSString * tid;
+
 @end

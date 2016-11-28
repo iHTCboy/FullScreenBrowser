@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52B2B7F237282B4C0A77C7B8 /* libPods-FullScreenBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4D2FE3C8AB5596249E254B /* libPods-FullScreenBrowser.a */; };
 		6D2FFBC41DCE13BF007D1BF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBB01DCE13BF007D1BF5 /* AppDelegate.m */; };
 		6D2FFBC51DCE13BF007D1BF5 /* FSBGirlCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBB21DCE13BF007D1BF5 /* FSBGirlCollectionVC.m */; };
 		6D2FFBC61DCE13BF007D1BF5 /* FSBGirlDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBB41DCE13BF007D1BF5 /* FSBGirlDetailVC.m */; };
@@ -41,12 +42,23 @@
 		6D2FFC301DCE18B8007D1BF5 /* setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC1F1DCE18B8007D1BF5 /* setting@3x.png */; };
 		6D2FFC311DCE18B8007D1BF5 /* stopLoading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC201DCE18B8007D1BF5 /* stopLoading@2x.png */; };
 		6D2FFC321DCE18B8007D1BF5 /* stopLoading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC211DCE18B8007D1BF5 /* stopLoading@3x.png */; };
-		6D661F661DCE2C87005F39D7 /* FSBCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D661F641DCE2C87005F39D7 /* FSBCollectionViewCell.swift */; };
-		6D661F671DCE2C87005F39D7 /* FSBCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D661F651DCE2C87005F39D7 /* FSBCollectionViewCell.xib */; };
+		6D4BA4CF1DCEF64600172C16 /* HTTPTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4BA4CE1DCEF64600172C16 /* HTTPTools.swift */; };
 		6DE0003E1A3474F200F9D2A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0003D1A3474F200F9D2A5 /* main.m */; };
 		6DE000471A3474F200F9D2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE000451A3474F200F9D2A5 /* Main.storyboard */; };
 		6DE000491A3474F200F9D2A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE000481A3474F200F9D2A5 /* Images.xcassets */; };
 		6DE0004C1A3474F200F9D2A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE0004A1A3474F200F9D2A5 /* LaunchScreen.xib */; };
+		6DF7F5641DCF0D00000F560A /* FSBCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5621DCF0D00000F560A /* FSBCollectionViewCell.swift */; };
+		6DF7F5651DCF0D00000F560A /* FSBCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF7F5631DCF0D00000F560A /* FSBCollectionViewCell.xib */; };
+		6DF7F5771DCF50A9000F560A /* MWCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5681DCF50A9000F560A /* MWCaptionView.m */; };
+		6DF7F5781DCF50A9000F560A /* MWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F56B1DCF50A9000F560A /* MWPhoto.m */; };
+		6DF7F5791DCF50A9000F560A /* MWPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DF7F56C1DCF50A9000F560A /* MWPhotoBrowser.bundle */; };
+		6DF7F57A1DCF50A9000F560A /* MWPhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F56E1DCF50A9000F560A /* MWPhotoBrowser.m */; };
+		6DF7F57B1DCF50A9000F560A /* MWTapDetectingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5721DCF50A9000F560A /* MWTapDetectingImageView.m */; };
+		6DF7F57C1DCF50A9000F560A /* MWTapDetectingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5741DCF50A9000F560A /* MWTapDetectingView.m */; };
+		6DF7F57D1DCF50A9000F560A /* MWZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5761DCF50A9000F560A /* MWZoomingScrollView.m */; };
+		6DF7F5811DCF51FE000F560A /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5801DCF51FE000F560A /* DACircularProgressView.m */; };
+		6DF7F5861DCF52AA000F560A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5841DCF52AA000F560A /* MBProgressHUD.m */; };
+		6DF7F5871DCF52AA000F560A /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5851DCF52AA000F560A /* README.mdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3782A34C51AA22A06A3ABBE8 /* Pods-FullScreenBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullScreenBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-FullScreenBrowser/Pods-FullScreenBrowser.release.xcconfig"; sourceTree = "<group>"; };
 		6D2FFBAF1DCE13BF007D1BF5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D2FFBB01DCE13BF007D1BF5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D2FFBB11DCE13BF007D1BF5 /* FSBGirlCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBGirlCollectionVC.h; sourceTree = "<group>"; };
@@ -101,8 +114,7 @@
 		6D2FFC1F1DCE18B8007D1BF5 /* setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@3x.png"; sourceTree = "<group>"; };
 		6D2FFC201DCE18B8007D1BF5 /* stopLoading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopLoading@2x.png"; sourceTree = "<group>"; };
 		6D2FFC211DCE18B8007D1BF5 /* stopLoading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopLoading@3x.png"; sourceTree = "<group>"; };
-		6D661F641DCE2C87005F39D7 /* FSBCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSBCollectionViewCell.swift; sourceTree = "<group>"; };
-		6D661F651DCE2C87005F39D7 /* FSBCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSBCollectionViewCell.xib; sourceTree = "<group>"; };
+		6D4BA4CE1DCEF64600172C16 /* HTTPTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTools.swift; sourceTree = "<group>"; };
 		6DE000381A3474F200F9D2A5 /* 全屏浏览器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "全屏浏览器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE0003C1A3474F200F9D2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DE0003D1A3474F200F9D2A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -112,6 +124,31 @@
 		6DE000511A3474F200F9D2A5 /* fullScreenBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fullScreenBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE000611A34756F00F9D2A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6DE000621A34756F00F9D2A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6DF7F5621DCF0D00000F560A /* FSBCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSBCollectionViewCell.swift; sourceTree = "<group>"; };
+		6DF7F5631DCF0D00000F560A /* FSBCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSBCollectionViewCell.xib; sourceTree = "<group>"; };
+		6DF7F5671DCF50A9000F560A /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
+		6DF7F5681DCF50A9000F560A /* MWCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCaptionView.m; sourceTree = "<group>"; };
+		6DF7F5691DCF50A9000F560A /* MWCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCommon.h; sourceTree = "<group>"; };
+		6DF7F56A1DCF50A9000F560A /* MWPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhoto.h; sourceTree = "<group>"; };
+		6DF7F56B1DCF50A9000F560A /* MWPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhoto.m; sourceTree = "<group>"; };
+		6DF7F56C1DCF50A9000F560A /* MWPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MWPhotoBrowser.bundle; sourceTree = "<group>"; };
+		6DF7F56D1DCF50A9000F560A /* MWPhotoBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoBrowser.h; sourceTree = "<group>"; };
+		6DF7F56E1DCF50A9000F560A /* MWPhotoBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWPhotoBrowser.m; sourceTree = "<group>"; };
+		6DF7F56F1DCF50A9000F560A /* MWPhotoBrowserPrivate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoBrowserPrivate.h; sourceTree = "<group>"; };
+		6DF7F5701DCF50A9000F560A /* MWPhotoProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWPhotoProtocol.h; sourceTree = "<group>"; };
+		6DF7F5711DCF50A9000F560A /* MWTapDetectingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTapDetectingImageView.h; sourceTree = "<group>"; };
+		6DF7F5721DCF50A9000F560A /* MWTapDetectingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTapDetectingImageView.m; sourceTree = "<group>"; };
+		6DF7F5731DCF50A9000F560A /* MWTapDetectingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWTapDetectingView.h; sourceTree = "<group>"; };
+		6DF7F5741DCF50A9000F560A /* MWTapDetectingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWTapDetectingView.m; sourceTree = "<group>"; };
+		6DF7F5751DCF50A9000F560A /* MWZoomingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWZoomingScrollView.h; sourceTree = "<group>"; };
+		6DF7F5761DCF50A9000F560A /* MWZoomingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWZoomingScrollView.m; sourceTree = "<group>"; };
+		6DF7F57F1DCF51FE000F560A /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
+		6DF7F5801DCF51FE000F560A /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
+		6DF7F5831DCF52AA000F560A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		6DF7F5841DCF52AA000F560A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		6DF7F5851DCF52AA000F560A /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
+		BB4D2FE3C8AB5596249E254B /* libPods-FullScreenBrowser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FullScreenBrowser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6FA5A19DE06A80A414498F7 /* Pods-FullScreenBrowser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullScreenBrowser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FullScreenBrowser/Pods-FullScreenBrowser.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +167,7 @@
 				6D2FFBDA1DCE1610007D1BF5 /* Foundation.framework in Frameworks */,
 				6D2FFBD81DCE1601007D1BF5 /* JavaScriptCore.framework in Frameworks */,
 				6D2FFBD51DCE15CB007D1BF5 /* libBaiduMobStat.a in Frameworks */,
+				52B2B7F237282B4C0A77C7B8 /* libPods-FullScreenBrowser.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +196,7 @@
 				6D2FFBB31DCE13BF007D1BF5 /* FSBGirlDetailVC.h */,
 				6D2FFBB41DCE13BF007D1BF5 /* FSBGirlDetailVC.m */,
 				6D2FFBBD1DCE13BF007D1BF5 /* Vendors */,
+				6D4BA4CD1DCEF62B00172C16 /* Tools */,
 				6D2FFBC31DCE13BF007D1BF5 /* Views */,
 				6D2FFBCF1DCE1534007D1BF5 /* FullScreenBrowser-Bridging-Header.h */,
 			);
@@ -168,6 +207,9 @@
 		6D2FFBBD1DCE13BF007D1BF5 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				6DF7F5821DCF52AA000F560A /* MBProgressHUD */,
+				6DF7F57E1DCF51FE000F560A /* DACircularProgress */,
+				6DF7F5661DCF50A9000F560A /* MWPhotoBrowser */,
 				6D2FFBD21DCE15CB007D1BF5 /* BaiduMTJ_iOS_App_V4.3.0 */,
 			);
 			path = Vendors;
@@ -176,8 +218,8 @@
 		6D2FFBC31DCE13BF007D1BF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6D661F641DCE2C87005F39D7 /* FSBCollectionViewCell.swift */,
-				6D661F651DCE2C87005F39D7 /* FSBCollectionViewCell.xib */,
+				6DF7F5621DCF0D00000F560A /* FSBCollectionViewCell.swift */,
+				6DF7F5631DCF0D00000F560A /* FSBCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +246,7 @@
 				6D2FFBDB1DCE1614007D1BF5 /* UIKit.framework */,
 				6D2FFBD91DCE1610007D1BF5 /* Foundation.framework */,
 				6D2FFBD71DCE1601007D1BF5 /* JavaScriptCore.framework */,
+				BB4D2FE3C8AB5596249E254B /* libPods-FullScreenBrowser.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -233,12 +276,21 @@
 			path = FullScreenBrowser/Images;
 			sourceTree = SOURCE_ROOT;
 		};
+		6D4BA4CD1DCEF62B00172C16 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				6D4BA4CE1DCEF64600172C16 /* HTTPTools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		6DE0002F1A3474F200F9D2A5 = {
 			isa = PBXGroup;
 			children = (
 				6DE0003A1A3474F200F9D2A5 /* FullScreenBrowser */,
 				6DE000391A3474F200F9D2A5 /* Products */,
 				6D2FFBD61DCE1601007D1BF5 /* Frameworks */,
+				C0E782D5D475338521B76341 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -274,6 +326,57 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		6DF7F5661DCF50A9000F560A /* MWPhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				6DF7F5671DCF50A9000F560A /* MWCaptionView.h */,
+				6DF7F5681DCF50A9000F560A /* MWCaptionView.m */,
+				6DF7F5691DCF50A9000F560A /* MWCommon.h */,
+				6DF7F56A1DCF50A9000F560A /* MWPhoto.h */,
+				6DF7F56B1DCF50A9000F560A /* MWPhoto.m */,
+				6DF7F56C1DCF50A9000F560A /* MWPhotoBrowser.bundle */,
+				6DF7F56D1DCF50A9000F560A /* MWPhotoBrowser.h */,
+				6DF7F56E1DCF50A9000F560A /* MWPhotoBrowser.m */,
+				6DF7F56F1DCF50A9000F560A /* MWPhotoBrowserPrivate.h */,
+				6DF7F5701DCF50A9000F560A /* MWPhotoProtocol.h */,
+				6DF7F5711DCF50A9000F560A /* MWTapDetectingImageView.h */,
+				6DF7F5721DCF50A9000F560A /* MWTapDetectingImageView.m */,
+				6DF7F5731DCF50A9000F560A /* MWTapDetectingView.h */,
+				6DF7F5741DCF50A9000F560A /* MWTapDetectingView.m */,
+				6DF7F5751DCF50A9000F560A /* MWZoomingScrollView.h */,
+				6DF7F5761DCF50A9000F560A /* MWZoomingScrollView.m */,
+			);
+			path = MWPhotoBrowser;
+			sourceTree = "<group>";
+		};
+		6DF7F57E1DCF51FE000F560A /* DACircularProgress */ = {
+			isa = PBXGroup;
+			children = (
+				6DF7F57F1DCF51FE000F560A /* DACircularProgressView.h */,
+				6DF7F5801DCF51FE000F560A /* DACircularProgressView.m */,
+			);
+			path = DACircularProgress;
+			sourceTree = "<group>";
+		};
+		6DF7F5821DCF52AA000F560A /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				6DF7F5831DCF52AA000F560A /* MBProgressHUD.h */,
+				6DF7F5841DCF52AA000F560A /* MBProgressHUD.m */,
+				6DF7F5851DCF52AA000F560A /* README.mdown */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		C0E782D5D475338521B76341 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6FA5A19DE06A80A414498F7 /* Pods-FullScreenBrowser.debug.xcconfig */,
+				3782A34C51AA22A06A3ABBE8 /* Pods-FullScreenBrowser.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -281,9 +384,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DE0005B1A3474F200F9D2A5 /* Build configuration list for PBXNativeTarget "FullScreenBrowser" */;
 			buildPhases = (
+				21C8D84497B5AE904BD729A6 /* [CP] Check Pods Manifest.lock */,
 				6DE000341A3474F200F9D2A5 /* Sources */,
 				6DE000351A3474F200F9D2A5 /* Frameworks */,
 				6DE000361A3474F200F9D2A5 /* Resources */,
+				41C67419A893D8C3D7641DF9 /* [CP] Embed Pods Frameworks */,
+				415A17DD3C71B3640E856DFA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -368,12 +474,13 @@
 				6D2FFC2B1DCE18B8007D1BF5 /* reloading@2x.png in Resources */,
 				6D2FFC261DCE18B8007D1BF5 /* goBack@3x.png in Resources */,
 				6D2FFC2C1DCE18B8007D1BF5 /* reloading@3x.png in Resources */,
-				6D661F671DCE2C87005F39D7 /* FSBCollectionViewCell.xib in Resources */,
+				6DF7F5651DCF0D00000F560A /* FSBCollectionViewCell.xib in Resources */,
 				6D2FFC231DCE18B8007D1BF5 /* fullBtn@2x.png in Resources */,
 				6D2FFC241DCE18B8007D1BF5 /* fullBtn@3x.png in Resources */,
 				6D2FFC311DCE18B8007D1BF5 /* stopLoading@2x.png in Resources */,
 				6D2FFC2F1DCE18B8007D1BF5 /* setting@2x.png in Resources */,
 				6D2FFC251DCE18B8007D1BF5 /* goBack@2x.png in Resources */,
+				6DF7F5791DCF50A9000F560A /* MWPhotoBrowser.bundle in Resources */,
 				6D2FFC321DCE18B8007D1BF5 /* stopLoading@3x.png in Resources */,
 				6DE000491A3474F200F9D2A5 /* Images.xcassets in Resources */,
 				6D2FFC221DCE18B8007D1BF5 /* BIcom406.png in Resources */,
@@ -390,19 +497,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		21C8D84497B5AE904BD729A6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		415A17DD3C71B3640E856DFA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FullScreenBrowser/Pods-FullScreenBrowser-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41C67419A893D8C3D7641DF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FullScreenBrowser/Pods-FullScreenBrowser-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6DE000341A3474F200F9D2A5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D661F661DCE2C87005F39D7 /* FSBCollectionViewCell.swift in Sources */,
+				6DF7F5641DCF0D00000F560A /* FSBCollectionViewCell.swift in Sources */,
 				6D2FFBC51DCE13BF007D1BF5 /* FSBGirlCollectionVC.m in Sources */,
+				6DF7F57B1DCF50A9000F560A /* MWTapDetectingImageView.m in Sources */,
+				6DF7F57D1DCF50A9000F560A /* MWZoomingScrollView.m in Sources */,
+				6D4BA4CF1DCEF64600172C16 /* HTTPTools.swift in Sources */,
 				6D2FFBC91DCE13BF007D1BF5 /* RootViewController.m in Sources */,
+				6DF7F5781DCF50A9000F560A /* MWPhoto.m in Sources */,
+				6DF7F5861DCF52AA000F560A /* MBProgressHUD.m in Sources */,
 				6D2FFBC61DCE13BF007D1BF5 /* FSBGirlDetailVC.m in Sources */,
+				6DF7F5871DCF52AA000F560A /* README.mdown in Sources */,
 				6D2FFBC81DCE13BF007D1BF5 /* FSBSetingViewController.m in Sources */,
 				6D2FFBEC1DCE1681007D1BF5 /* FSBAboutViewController.swift in Sources */,
 				6D2FFBC41DCE13BF007D1BF5 /* AppDelegate.m in Sources */,
+				6DF7F57C1DCF50A9000F560A /* MWTapDetectingView.m in Sources */,
+				6DF7F57A1DCF50A9000F560A /* MWPhotoBrowser.m in Sources */,
+				6DF7F5811DCF51FE000F560A /* DACircularProgressView.m in Sources */,
 				6DE0003E1A3474F200F9D2A5 /* main.m in Sources */,
+				6DF7F5771DCF50A9000F560A /* MWCaptionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +692,7 @@
 		};
 		6DE0005C1A3474F200F9D2A5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6FA5A19DE06A80A414498F7 /* Pods-FullScreenBrowser.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -539,7 +705,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"$(inherited)",
+				);
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_MODULE_NAME = FSB;
 				PRODUCT_NAME = "全屏浏览器";
@@ -553,6 +722,7 @@
 		};
 		6DE0005D1A3474F200F9D2A5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3782A34C51AA22A06A3ABBE8 /* Pods-FullScreenBrowser.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -565,7 +735,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 				);
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"$(inherited)",
+				);
 				OTHER_LIBTOOLFLAGS = "";
 				PRODUCT_MODULE_NAME = FSB;
 				PRODUCT_NAME = "全屏浏览器";

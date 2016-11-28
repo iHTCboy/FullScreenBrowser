@@ -12,6 +12,8 @@
 
 #import "FSBGirlCollectionVC.h"
 
+#import "AFNetworking.h"
+
 @interface FSBSetingViewController ()<MFMailComposeViewControllerDelegate>
 
 @end
@@ -23,13 +25,13 @@
     
     self.title = @"设置";
     
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
 
 
 - (IBAction)clickedCloseBtn:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:^{
-        
+        [[UIApplication sharedApplication] setStatusBarHidden:YES];
     }];
 }
 

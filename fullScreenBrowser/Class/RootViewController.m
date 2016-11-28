@@ -158,9 +158,17 @@
     return YES;
 }
 
+- (IBAction)clickedHomeRepeat:(id)sender {
+//    FSBSetingViewController * vc = [[FSBSetingViewController alloc]init];
+    //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    //由storyboard根据myView的storyBoardID来获取我们要切换的视图
+    UIViewController *vc = [story instantiateViewControllerWithIdentifier:@"FSBNavigationController"];
+    [self presentViewController:vc animated:YES completion:nil];
+    
+}
 
-
-- (IBAction)goHome:(id)sender {
+- (IBAction)clickedHome:(id)sender {
     
     NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
     

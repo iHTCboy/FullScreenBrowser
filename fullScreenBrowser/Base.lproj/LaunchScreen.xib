@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,27 +18,29 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BIcom406.png" translatesAutoresizingMaskIntoConstraints="NO" id="kkT-EN-seI">
-                    <rect key="frame" x="165" y="85" width="150" height="150"/>
+                    <rect key="frame" x="156" y="84" width="168" height="168"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="150" id="h5R-BX-vjq"/>
-                        <constraint firstAttribute="width" constant="150" id="tgu-rA-cWP"/>
+                        <constraint firstAttribute="width" secondItem="kkT-EN-seI" secondAttribute="height" multiplier="1:1" id="r6R-wk-K3h"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014年 HTC. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
-                    <rect key="frame" x="20" y="439" width="441" height="36"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Copyright (c) 2014-2017 iHTCboy. All rights reserved." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8ie-xW-0ye">
+                    <rect key="frame" x="0.0" y="424" width="480" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="36" id="5uE-M2-R6l" userLabel="height = 30"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
             <color key="backgroundColor" red="0.15632259933877946" green="0.72095483860138421" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="kkT-EN-seI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="85" id="7P6-Tg-HYF"/>
-                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="5" id="Kzo-t9-V3l"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
-                <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
-                <constraint firstAttribute="centerX" secondItem="kkT-EN-seI" secondAttribute="centerX" id="fn7-AZ-ziH"/>
-                <constraint firstItem="8ie-xW-0ye" firstAttribute="top" secondItem="kkT-EN-seI" secondAttribute="bottom" constant="204" id="gzG-u7-VzH"/>
+                <constraint firstItem="kkT-EN-seI" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.35" id="0N3-bv-MGf"/>
+                <constraint firstAttribute="trailing" secondItem="8ie-xW-0ye" secondAttribute="trailing" id="3MG-ec-W8e"/>
+                <constraint firstItem="kkT-EN-seI" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" multiplier="0.7" id="Kp7-ca-U16"/>
+                <constraint firstItem="kkT-EN-seI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NHl-Zq-hLk"/>
+                <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="lal-ye-C5e"/>
+                <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="uw2-kn-TFV"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -44,6 +48,6 @@
         </view>
     </objects>
     <resources>
-        <image name="BIcom406.png" width="406" height="406"/>
+        <image name="BIcom406.png" width="180" height="180"/>
     </resources>
 </document>
