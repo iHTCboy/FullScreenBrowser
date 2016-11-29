@@ -52,10 +52,8 @@
     //[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
     
     NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
-    
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
     // 3. 发送请求给服务器
     [self.uiWebView loadRequest:request];
     
@@ -69,8 +67,7 @@
     NSString *urlStr = str;
     NSURL *url = nil;
     
-    if ([str hasPrefix:@"http://"] || [str hasPrefix:@"https://"] )
-    {
+    if ([str hasPrefix:@"http://"] || [str hasPrefix:@"https://"] ){
         url = [NSURL URLWithString:urlStr];
 
     }else if([str hasPrefix:@"www."] || [str hasPrefix:@"wap."] || [str hasPrefix:@"m."]){
@@ -78,14 +75,13 @@
         urlStr = [NSString stringWithFormat:@"http://%@", str];
         url = [NSURL URLWithString:urlStr];
     }else{
-        urlStr = [NSString stringWithFormat:@"http://www.baidu.com/s?wd=%@", str];
+        urlStr = [NSString stringWithFormat:@"https://www.baidu.com/s?wd=%@", str];
         urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         url = [NSURL URLWithString:urlStr];
     }
     
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
     // 3. 发送请求给服务器
     [self.uiWebView loadRequest:request];
 }
@@ -137,7 +133,7 @@
     self.activityView.hidden = YES;
 }
 
-#pragma mark 完成加载,页面链表数据会更新
+#pragma mark 完成加载
 - (void)webViewDidFinishLoad:(UIWebView *)webView
 {
     // 根据webView当前的状态,来判断按钮的状态
@@ -145,19 +141,18 @@
     self.forwarButton.enabled = webView.canGoForward;
     
     self.activityView.hidden = YES;
-    [self.activityView stopAnimating];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     //NSLog(@"request-----%@",request);
     self.searchBar.text = [NSString stringWithFormat:@"%@",request.URL];
-    
     // 实现WebView的代理方法，并在此函数中调用SDK的webviewStartLoadWithRequest:传入request参数，进行统计
     [[BaiduMobStat defaultStat] webviewStartLoadWithRequest:request];
     return YES;
 }
 
+#pragma mark TabBar栏事件
 - (IBAction)clickedHomeRepeat:(id)sender {
 //    FSBSetingViewController * vc = [[FSBSetingViewController alloc]init];
     //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
@@ -170,11 +165,9 @@
 
 - (IBAction)clickedHome:(id)sender {
     
-    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
-    
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
     // 3. 发送请求给服务器
     [self.uiWebView loadRequest:request];
 }
@@ -209,12 +202,9 @@
 - (IBAction)setingButton:(id)sender {
     
     FSBSetingViewController * nav = [[FSBSetingViewController alloc]init];
-    
     UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:nav];
-    
     [self.navigationController pushViewController:navi animated:YES];
-    
-    
+
 }
 
 
@@ -224,6 +214,8 @@
 {
     static float newY = 0;
     newY = scrollView.contentOffset.y;
+    
+    self.activityView.hidden = YES;
 
     if (newY != _oldY)
     {

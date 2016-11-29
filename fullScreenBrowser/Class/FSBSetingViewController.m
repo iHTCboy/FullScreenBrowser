@@ -14,6 +14,8 @@
 
 #import "AFNetworking.h"
 
+#import "sys/utsname.h"
+
 @interface FSBSetingViewController ()<MFMailComposeViewControllerDelegate>
 
 @end
@@ -45,8 +47,11 @@
         {
             switch (indexPath.row) {
                 case 0:{
+                    struct utsname systemInfo;
+                    uname(&systemInfo);
+                    NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
                     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-                    [self sendEmailWithSubject:@"@全屏浏览器的反馈" MessageBody:[NSString stringWithFormat:@"我现在使用全屏浏览器v%@,使用设备：%@,iOSv%@\n我的反馈和建议：\n1、\n2、\n3、",[infoDictionary objectForKey:@"CFBundleShortVersionString"],[[UIDevice currentDevice] model],[[UIDevice currentDevice] systemVersion]] isHTML:NO toRecipients:@[@"ihetiancong@qq.com"] ccRecipients:nil bccRecipients:nil  Image:nil imageQuality:0];
+                    [self sendEmailWithSubject:@"@全屏浏览器的反馈" MessageBody:[NSString stringWithFormat:@"我现在使用全屏浏览器v%@,使用设备：%@,iOSv%@\n我的反馈和建议：\n1、\n2、\n3、",[infoDictionary objectForKey:@"CFBundleShortVersionString"],platform,[[UIDevice currentDevice] systemVersion]] isHTML:NO toRecipients:@[@"ihetiancong@qq.com"] ccRecipients:nil bccRecipients:nil  Image:nil imageQuality:0];
                     break;
                 }
                 case 2:
