@@ -24,12 +24,5 @@
 @property (weak, nonatomic) IBOutlet UIToolbar *fullscreenButton;
 
 
-- (IBAction)goHome:(id)sender;
-- (IBAction)toFullScreen:(id)sender;
-- (IBAction)srarchButtonHiden:(id)sender;
-
-- (IBAction)setingButton:(id)sender;
-
-
 @end
 
