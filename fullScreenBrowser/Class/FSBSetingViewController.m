@@ -66,8 +66,8 @@
         break;
         case 1:
         {
-            FSBGirlCollectionVC * vc = [[FSBGirlCollectionVC alloc]init];
-            [self.navigationController pushViewController:vc animated:YES];
+//            FSBGirlCollectionVC * vc = [[FSBGirlCollectionVC alloc]init];
+//            [self.navigationController pushViewController:vc animated:YES];
             
         }
             break;

@@ -11,6 +11,11 @@
 
 #import "BaiduMobStat.h"
 
+#define topHight (iPhone_X_S ? 44 : 0)
+#define indcatorHight (iPhone_X_S ? 34 : 0)
+#define navBarHight (iPhone_X_S ? 68 : 44)
+#define iPhone_X_S ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone && ([UIScreen mainScreen].bounds.size.height == 812.0 || [UIScreen mainScreen].bounds.size.height == 896.0))
+
 @interface RootViewController ()<UISearchBarDelegate,UIWebViewDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, assign) float oldY;
@@ -51,7 +56,7 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
     //[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
     
-    NSURL *url = [NSURL URLWithString:@"http://www.baidu.com"];
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // 3. 发送请求给服务器
@@ -181,7 +186,7 @@
     webFrame.size.height = self.view.frame.size.height;
     
     CGRect toolbarsFrame = self.toolbars.frame;
-    toolbarsFrame.origin.y = self.view.frame.size.height + 44;
+    toolbarsFrame.origin.y = self.view.frame.size.height + navBarHight;
     
     [UIView animateWithDuration:0.3f animations:^{
         self.uiWebView.frame = webFrame;
@@ -226,13 +231,13 @@
             // 隐藏状态栏
 //            [UIApplication sharedApplication].statusBarHidden = YES;
             CGRect searchFrame = self.searchBar.frame;
-            searchFrame.origin.y = -44;
+            searchFrame.origin.y = -navBarHight;
             
             CGRect webFrame = self.uiWebView.frame;
             webFrame.size.height = self.view.frame.size.height;
     
             CGRect toolbarsFrame = self.toolbars.frame;
-            toolbarsFrame.origin.y = self.view.frame.size.height + 44;
+            toolbarsFrame.origin.y = self.view.frame.size.height + navBarHight;
             
             [UIView animateWithDuration:0.3f animations:^{
                 self.searchBar.frame = searchFrame;
@@ -249,14 +254,14 @@
 //            [UIApplication sharedApplication].statusBarHidden = NO;
             
             CGRect searchFrame = self.searchBar.frame;
-            searchFrame.origin.y = 0;
+            searchFrame.origin.y = topHight;
             
             CGRect webFrame = self.uiWebView.frame;
             //webFrame.origin.y  = 0;
-            webFrame.size.height = self.view.frame.size.height -44;
+            webFrame.size.height = self.view.frame.size.height -navBarHight;
             
             CGRect toolbarsFrame = self.toolbars.frame;
-            toolbarsFrame.origin.y = self.view.frame.size.height - 44;
+            toolbarsFrame.origin.y = self.view.frame.size.height -navBarHight;
             
             [UIView animateWithDuration:0.3f animations:^{
                 self.searchBar.frame = searchFrame;
@@ -274,14 +279,14 @@
 {
     
     CGRect searchFrame = self.searchBar.frame;
-    searchFrame.origin.y = 0;
+    searchFrame.origin.y = topHight;
     
     CGRect webFrame = self.uiWebView.frame;
     //webFrame.origin.y  = 0;
-    webFrame.size.height = self.view.frame.size.height -44;
+    webFrame.size.height = self.view.frame.size.height -navBarHight;
     
     CGRect toolbarsFrame = self.toolbars.frame;
-    toolbarsFrame.origin.y = self.view.frame.size.height - 44;
+    toolbarsFrame.origin.y = self.view.frame.size.height -navBarHight;
     
     [UIView animateWithDuration:0.3f animations:^{
         self.searchBar.frame = searchFrame;

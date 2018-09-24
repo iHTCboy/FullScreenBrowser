@@ -10,7 +10,7 @@
 
 #import "UIImageView+WebCache.h"
 
-#import "FSB-swift.h"
+#import "FSB-Swift.h"
 
 #import "FSBGirlDetailVC.h"
 
