@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		52B2B7F237282B4C0A77C7B8 /* libPods-FullScreenBrowser.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB4D2FE3C8AB5596249E254B /* libPods-FullScreenBrowser.a */; };
+		6D20F945217ADC40004A4ED1 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D20F943217ADC3F004A4ED1 /* libBaiduMobStat.a */; };
+		6D20F948217ADE0C004A4ED1 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D20F946217ADE0C004A4ED1 /* Utility.m */; };
 		6D2FFBC41DCE13BF007D1BF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBB01DCE13BF007D1BF5 /* AppDelegate.m */; };
 		6D2FFBC51DCE13BF007D1BF5 /* FSBGirlCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBB21DCE13BF007D1BF5 /* FSBGirlCollectionVC.m */; };
 		6D2FFBC61DCE13BF007D1BF5 /* FSBGirlDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2FFBB41DCE13BF007D1BF5 /* FSBGirlDetailVC.m */; };
-		6D2FFBD51DCE15CB007D1BF5 /* libBaiduMobStat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2FFBD41DCE15CB007D1BF5 /* libBaiduMobStat.a */; };
 		6D2FFBD81DCE1601007D1BF5 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2FFBD71DCE1601007D1BF5 /* JavaScriptCore.framework */; };
 		6D2FFBDA1DCE1610007D1BF5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2FFBD91DCE1610007D1BF5 /* Foundation.framework */; };
 		6D2FFBDC1DCE1614007D1BF5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2FFBDB1DCE1614007D1BF5 /* UIKit.framework */; };
@@ -75,6 +76,10 @@
 
 /* Begin PBXFileReference section */
 		3782A34C51AA22A06A3ABBE8 /* Pods-FullScreenBrowser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FullScreenBrowser.release.xcconfig"; path = "Pods/Target Support Files/Pods-FullScreenBrowser/Pods-FullScreenBrowser.release.xcconfig"; sourceTree = "<group>"; };
+		6D20F943217ADC3F004A4ED1 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
+		6D20F944217ADC3F004A4ED1 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
+		6D20F946217ADE0C004A4ED1 /* Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		6D20F947217ADE0C004A4ED1 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		6D2FFBAF1DCE13BF007D1BF5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D2FFBB01DCE13BF007D1BF5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6D2FFBB11DCE13BF007D1BF5 /* FSBGirlCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBGirlCollectionVC.h; sourceTree = "<group>"; };
@@ -84,8 +89,6 @@
 		6D2FFBB61DCE13BF007D1BF5 /* FSBSetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBSetingViewController.h; sourceTree = "<group>"; };
 		6D2FFBB91DCE13BF007D1BF5 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		6D2FFBCF1DCE1534007D1BF5 /* FullScreenBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FullScreenBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
-		6D2FFBD31DCE15CB007D1BF5 /* BaiduMobStat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaiduMobStat.h; sourceTree = "<group>"; };
-		6D2FFBD41DCE15CB007D1BF5 /* libBaiduMobStat.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libBaiduMobStat.a; sourceTree = "<group>"; };
 		6D2FFBD71DCE1601007D1BF5 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		6D2FFBD91DCE1610007D1BF5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6D2FFBDB1DCE1614007D1BF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -170,7 +173,7 @@
 				6D2FFBDC1DCE1614007D1BF5 /* UIKit.framework in Frameworks */,
 				6D2FFBDA1DCE1610007D1BF5 /* Foundation.framework in Frameworks */,
 				6D2FFBD81DCE1601007D1BF5 /* JavaScriptCore.framework in Frameworks */,
-				6D2FFBD51DCE15CB007D1BF5 /* libBaiduMobStat.a in Frameworks */,
+				6D20F945217ADC40004A4ED1 /* libBaiduMobStat.a in Frameworks */,
 				52B2B7F237282B4C0A77C7B8 /* libPods-FullScreenBrowser.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +188,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D20F942217ADC3F004A4ED1 /* BaiduMTJ_iOS_App_V4.5.0 */ = {
+			isa = PBXGroup;
+			children = (
+				6D20F943217ADC3F004A4ED1 /* libBaiduMobStat.a */,
+				6D20F944217ADC3F004A4ED1 /* BaiduMobStat.h */,
+			);
+			path = BaiduMTJ_iOS_App_V4.5.0;
+			sourceTree = "<group>";
+		};
 		6D2FFBAE1DCE13BF007D1BF5 /* Class */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,10 +223,10 @@
 		6D2FFBBD1DCE13BF007D1BF5 /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				6D20F942217ADC3F004A4ED1 /* BaiduMTJ_iOS_App_V4.5.0 */,
 				6DF7F5821DCF52AA000F560A /* MBProgressHUD */,
 				6DF7F57E1DCF51FE000F560A /* DACircularProgress */,
 				6DF7F5661DCF50A9000F560A /* MWPhotoBrowser */,
-				6D2FFBD21DCE15CB007D1BF5 /* BaiduMTJ_iOS_App_V4.3.0 */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
@@ -226,15 +238,6 @@
 				6DF7F5631DCF0D00000F560A /* FSBCollectionViewCell.xib */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		6D2FFBD21DCE15CB007D1BF5 /* BaiduMTJ_iOS_App_V4.3.0 */ = {
-			isa = PBXGroup;
-			children = (
-				6D2FFBD31DCE15CB007D1BF5 /* BaiduMobStat.h */,
-				6D2FFBD41DCE15CB007D1BF5 /* libBaiduMobStat.a */,
-			);
-			path = BaiduMTJ_iOS_App_V4.3.0;
 			sourceTree = "<group>";
 		};
 		6D2FFBD61DCE1601007D1BF5 /* Frameworks */ = {
@@ -283,6 +286,8 @@
 		6D4BA4CD1DCEF62B00172C16 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				6D20F947217ADE0C004A4ED1 /* Utility.h */,
+				6D20F946217ADE0C004A4ED1 /* Utility.m */,
 				6D4BA4CE1DCEF64600172C16 /* HTTPTools.swift */,
 			);
 			path = Tools;
@@ -566,6 +571,7 @@
 				6DF7F5781DCF50A9000F560A /* MWPhoto.m in Sources */,
 				6DF7F5861DCF52AA000F560A /* MBProgressHUD.m in Sources */,
 				6DA951D21DEDD0EE00EC27BC /* FSBSetingViewController.m in Sources */,
+				6D20F948217ADE0C004A4ED1 /* Utility.m in Sources */,
 				6D2FFBC61DCE13BF007D1BF5 /* FSBGirlDetailVC.m in Sources */,
 				6DF7F5871DCF52AA000F560A /* README.mdown in Sources */,
 				6D2FFBEC1DCE1681007D1BF5 /* FSBAboutViewController.swift in Sources */,
@@ -712,6 +718,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
+					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -742,6 +749,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
+					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",

@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "BaiduMobStat.h"
+#import "Utility.h"
 
 
 @interface AppDelegate ()
@@ -35,6 +36,22 @@
     statTracker.shortAppVersion  = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     //    statTracker.enableDebugOn = YES;
     [statTracker startWithAppId:@"71ccc049f5"]; // 设置您在mtj网站上添加的app的appkey,此处AppId即为应用的appKey
+    
+#if DEBUG
+    NSLog(@"Debug Model");
+#else
+    NSDateFormatter * df = [[NSDateFormatter alloc] init];
+    df.locale = [NSLocale currentLocale];
+    df.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    NSString *currentDate = [df stringFromDate:[NSDate new]];
+    
+    // 自定义事件
+    [statTracker logEvent:@"usermodelName" eventLabel:[Utility getCurrentDeviceModel]];
+    [statTracker logEvent:@"systemVersion" eventLabel:[[UIDevice currentDevice] systemVersion]];
+    [statTracker logEvent:@"Devices" eventLabel:[[UIDevice currentDevice] name]];
+    [statTracker logEvent:@"DateAndDeviceName" eventLabel:[NSString stringWithFormat:@"%@ %@", currentDate, [[UIDevice currentDevice] name]]];
+    [statTracker logEvent:@"DateSystemVersion" eventLabel:[NSString stringWithFormat:@"%@ %@", currentDate, [[UIDevice currentDevice] systemVersion]]];
+#endif
 }
 
 
