@@ -7,14 +7,11 @@
 //
 
 #import "FSBSetingViewController.h"
-
 #import <MessageUI/MessageUI.h>
-
 #import "FSBGirlCollectionVC.h"
-
 #import "AFNetworking.h"
-
 #import "sys/utsname.h"
+#import <SafariServices/SafariServices.h>
 
 @interface FSBSetingViewController ()<MFMailComposeViewControllerDelegate>
 
@@ -66,6 +63,7 @@
         break;
         case 1:
         {
+            [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];
 //            FSBGirlCollectionVC * vc = [[FSBGirlCollectionVC alloc]init];
 //            [self.navigationController pushViewController:vc animated:YES];
             
@@ -77,6 +75,23 @@
     }
 }
 
+
+/**
+ *  从Safari打开
+ */
+- (void)inSafariOpenWithURL:(NSString *)url
+{
+    if (@available(iOS 9.0, *)) {
+        SFSafariViewController * sf = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+        if (@available(iOS 11.0, *)) {
+            sf.preferredBarTintColor = [UIColor colorWithRed:(66)/255.0 green:(156)/255.0 blue:(249)/255.0 alpha:1];
+            sf.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
+        }
+        [self presentViewController:sf animated:YES completion:nil];
+    }else{
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    }
+}
 
 
 /**

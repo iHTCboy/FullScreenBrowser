@@ -62,6 +62,25 @@
     // 3. 发送请求给服务器
     [self.uiWebView loadRequest:request];
     
+    
+    NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
+    
+    if (![df boolForKey:@"TheUserTermsAndConditions"]) {
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户条款" message:@"如果继续使用，则表示你同意本应用的协议。" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"同意协议" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [df setBool:YES forKey:@"TheUserTermsAndConditions"];
+        }];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"查看协议" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self loadString:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];
+        }];
+        
+        [alert addAction:okAction];
+        [alert addAction:cancelAction];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self presentViewController:alert animated:YES completion:nil];
+        });
+    }
 }
 
 

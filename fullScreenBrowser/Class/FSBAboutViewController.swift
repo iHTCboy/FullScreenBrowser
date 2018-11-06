@@ -23,7 +23,7 @@ class FSBAboutViewController: UIViewController {
 
     func setupUI(){
         
-        versionLbl.text = "v" +  (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String!)
+        versionLbl.text = "v" +  (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)
         
         logoImg.isUserInteractionEnabled = true
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:#selector(tapLogoImage))
