@@ -39,8 +39,6 @@
 		6D2FFC301DCE18B8007D1BF5 /* setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC1F1DCE18B8007D1BF5 /* setting@3x.png */; };
 		6D2FFC311DCE18B8007D1BF5 /* stopLoading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC201DCE18B8007D1BF5 /* stopLoading@2x.png */; };
 		6D2FFC321DCE18B8007D1BF5 /* stopLoading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC211DCE18B8007D1BF5 /* stopLoading@3x.png */; };
-		6D9BFF2D215961E800A0BABF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6D9BFF2B215961E800A0BABF /* README.md */; };
-		6D9BFF2E215961E800A0BABF /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 6D9BFF2C215961E800A0BABF /* LICENSE */; };
 		6DA951D21DEDD0EE00EC27BC /* FSBSetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA951D01DEDD0EE00EC27BC /* FSBSetingViewController.m */; };
 		6DA951D31DEDD0EE00EC27BC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA951D11DEDD0EE00EC27BC /* RootViewController.m */; };
 		6DE0003E1A3474F200F9D2A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0003D1A3474F200F9D2A5 /* main.m */; };
@@ -482,7 +480,6 @@
 				6D2FFC2D1DCE18B8007D1BF5 /* search@2x.png in Resources */,
 				6D2FFC271DCE18B8007D1BF5 /* goForward@2x.png in Resources */,
 				6DE0004C1A3474F200F9D2A5 /* LaunchScreen.xib in Resources */,
-				6D9BFF2D215961E800A0BABF /* README.md in Resources */,
 				6D2FFC2B1DCE18B8007D1BF5 /* reloading@2x.png in Resources */,
 				6D2FFC261DCE18B8007D1BF5 /* goBack@3x.png in Resources */,
 				6D2FFC2C1DCE18B8007D1BF5 /* reloading@3x.png in Resources */,
@@ -492,7 +489,6 @@
 				6D2FFC311DCE18B8007D1BF5 /* stopLoading@2x.png in Resources */,
 				6D2FFC2F1DCE18B8007D1BF5 /* setting@2x.png in Resources */,
 				6D2FFC251DCE18B8007D1BF5 /* goBack@2x.png in Resources */,
-				6D9BFF2E215961E800A0BABF /* LICENSE in Resources */,
 				6DF7F5791DCF50A9000F560A /* MWPhotoBrowser.bundle in Resources */,
 				6D2FFC321DCE18B8007D1BF5 /* stopLoading@3x.png in Resources */,
 				6DE000491A3474F200F9D2A5 /* Images.xcassets in Resources */,
@@ -657,7 +653,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -694,7 +690,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_VERSION = 3.0.1;
@@ -713,13 +709,14 @@
 				CURRENT_PROJECT_VERSION = 2020.06.01;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
-				MARKETING_VERSION = 6.0.0;
+				MARKETING_VERSION = 7.0.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",
@@ -746,13 +743,14 @@
 				CURRENT_PROJECT_VERSION = 2020.06.01;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
-				MARKETING_VERSION = 6.0.0;
+				MARKETING_VERSION = 7.0.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",

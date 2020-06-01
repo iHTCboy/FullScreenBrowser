@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @interface RootViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (weak, nonatomic) IBOutlet UIWebView *uiWebView;
+@property (weak, nonatomic) IBOutlet WKWebView *wkWebView;
+//@property (weak, nonatomic) IBOutlet UIWebView *uiWebView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbars;

@@ -16,7 +16,7 @@
 #define navBarHight (iPhone_X_S ? 68 : 44)
 #define iPhone_X_S ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone && ([UIScreen mainScreen].bounds.size.height == 812.0 || [UIScreen mainScreen].bounds.size.height == 896.0))
 
-@interface RootViewController ()<UISearchBarDelegate,UIWebViewDelegate,UIScrollViewDelegate>
+@interface RootViewController ()<UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate>
 
 @property (nonatomic, assign) float oldY;
 
@@ -28,17 +28,27 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.searchBar.delegate = self;
-    self.uiWebView.delegate = self;
-    self.uiWebView.scrollView.delegate = self;
+    self.wkWebView.UIDelegate = self;
+    self.wkWebView.navigationDelegate = self;
+    self.wkWebView.scrollView.delegate = self;
+    
     
     //self.searchBar.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.700];
     self.searchBar.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.850];
     self.searchBar.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
     self.searchBar.barTintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
+    if (@available(iOS 13.0, *)) {
+        self.searchBar.searchTextField.textColor = [UIColor blackColor];
+        self.searchBar.searchTextField.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
+    }
     //self.searchBar.showsCancelButton = YES;
     
-    self.uiWebView.backgroundColor = [UIColor whiteColor];
-    self.uiWebView.scalesPageToFit = YES;
+    if (@available(iOS 13.0, *)) {
+        self.wkWebView.backgroundColor = [UIColor systemBackgroundColor];
+    } else {
+        self.wkWebView.backgroundColor = [UIColor whiteColor];
+    }
+//    self.wkWebView.scalesPageToFit = YES;
 //    self.uiWebView.scrollView.showsHorizontalScrollIndicator = NO;
 //    self.uiWebView.scrollView.showsVerticalScrollIndicator = NO;
     
@@ -60,7 +70,7 @@
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // 3. 发送请求给服务器
-    [self.uiWebView loadRequest:request];
+    [self.wkWebView loadRequest:request];
     
     
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
@@ -107,7 +117,7 @@
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // 3. 发送请求给服务器
-    [self.uiWebView loadRequest:request];
+    [self.wkWebView loadRequest:request];
 }
 
 #pragma mark - 搜索栏代理
@@ -149,16 +159,29 @@
 }
 
 #pragma mark - WebView代理方法
--(void)webViewDidStartLoad:(UIWebView *)webView{
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation
+{
     self.activityView.hidden = NO;
 }
 
--(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error
+{
+    self.activityView.hidden = YES;
+}
+
+
+- (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error
+{
+    self.activityView.hidden = YES;
+}
+
+- (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView {
+    //NSLog(@"网页加载内容进程终止");
     self.activityView.hidden = YES;
 }
 
 #pragma mark 完成加载
-- (void)webViewDidFinishLoad:(UIWebView *)webView
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
     // 根据webView当前的状态,来判断按钮的状态
     self.backButton.enabled = webView.canGoBack;
@@ -167,16 +190,52 @@
     self.activityView.hidden = YES;
 }
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
 {
+    // 根据webView当前的状态,来判断按钮的状态
+    self.backButton.enabled = webView.canGoBack;
+    self.forwarButton.enabled = webView.canGoForward;
+    
     //NSLog(@"request-----%@",request);
+    NSURLRequest *request = navigationAction.request;
+    //如果是跳转一个新页面
+    if (navigationAction.targetFrame == nil) {
+        [webView loadRequest:request];
+    }
+    
     self.searchBar.text = [NSString stringWithFormat:@"%@",request.URL];
     // 实现WebView的代理方法，并在此函数中调用SDK的webviewStartLoadWithRequest:传入request参数，进行统计
     [[BaiduMobStat defaultStat] webviewStartLoadWithRequest:request];
-    return YES;
+    
+    decisionHandler(WKNavigationActionPolicyAllow);
 }
 
+//- (void)webView:(WKWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(null_unspecified WKNavigation *)navigation {
+//    NSLog(@"跳转到其他的服务器");
+//
+//}
+
+
 #pragma mark TabBar栏事件
+
+- (IBAction)clickedBack:(id)sender {
+    if ([self.wkWebView canGoBack]) {
+        [self.wkWebView goBack];
+    }
+}
+
+- (IBAction)clickedForward:(id)sender {
+    if ([self.wkWebView canGoForward]) {
+          [self.wkWebView goForward];
+      }
+}
+
+
+- (IBAction)clickedReload:(id)sender {
+    [self.wkWebView reload];
+}
+
+
 - (IBAction)clickedHomeRepeat:(id)sender {
 //    FSBSetingViewController * vc = [[FSBSetingViewController alloc]init];
     //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
@@ -193,7 +252,7 @@
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // 3. 发送请求给服务器
-    [self.uiWebView loadRequest:request];
+    [self.wkWebView loadRequest:request];
 }
 
 - (IBAction)toFullScreen:(id)sender {
@@ -201,14 +260,14 @@
     // 隐藏状态栏
 //    [UIApplication sharedApplication].statusBarHidden = YES;
     
-    CGRect webFrame = self.uiWebView.frame;
+    CGRect webFrame = self.wkWebView.frame;
     webFrame.size.height = self.view.frame.size.height;
     
     CGRect toolbarsFrame = self.toolbars.frame;
     toolbarsFrame.origin.y = self.view.frame.size.height + navBarHight;
     
     [UIView animateWithDuration:0.3f animations:^{
-        self.uiWebView.frame = webFrame;
+        self.wkWebView.frame = webFrame;
         self.toolbars.frame = toolbarsFrame;
     }];
     
@@ -252,7 +311,7 @@
             CGRect searchFrame = self.searchBar.frame;
             searchFrame.origin.y = -navBarHight;
             
-            CGRect webFrame = self.uiWebView.frame;
+            CGRect webFrame = self.wkWebView.frame;
             webFrame.size.height = self.view.frame.size.height;
     
             CGRect toolbarsFrame = self.toolbars.frame;
@@ -260,7 +319,7 @@
             
             [UIView animateWithDuration:0.3f animations:^{
                 self.searchBar.frame = searchFrame;
-                self.uiWebView.frame = webFrame;
+                self.wkWebView.frame = webFrame;
                 self.toolbars.frame = toolbarsFrame;
             }];
             
@@ -275,7 +334,7 @@
             CGRect searchFrame = self.searchBar.frame;
             searchFrame.origin.y = topHight;
             
-            CGRect webFrame = self.uiWebView.frame;
+            CGRect webFrame = self.wkWebView.frame;
             //webFrame.origin.y  = 0;
             webFrame.size.height = self.view.frame.size.height -navBarHight;
             
@@ -284,7 +343,7 @@
             
             [UIView animateWithDuration:0.3f animations:^{
                 self.searchBar.frame = searchFrame;
-                self.uiWebView.frame = webFrame;
+                self.wkWebView.frame = webFrame;
                 self.toolbars.frame = toolbarsFrame;
             }];
             
@@ -300,7 +359,7 @@
     CGRect searchFrame = self.searchBar.frame;
     searchFrame.origin.y = topHight;
     
-    CGRect webFrame = self.uiWebView.frame;
+    CGRect webFrame = self.wkWebView.frame;
     //webFrame.origin.y  = 0;
     webFrame.size.height = self.view.frame.size.height -navBarHight;
     
@@ -309,7 +368,7 @@
     
     [UIView animateWithDuration:0.3f animations:^{
         self.searchBar.frame = searchFrame;
-        self.uiWebView.frame = webFrame;
+        self.wkWebView.frame = webFrame;
         self.toolbars.frame = toolbarsFrame;
 
     }];

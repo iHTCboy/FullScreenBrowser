@@ -52,7 +52,7 @@
                     break;
                 }
                 case 2:
-                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",@"948944368"]]];
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",@"948944368"]] options:@{} completionHandler:nil];
                     break;
                     
                 default:
@@ -81,16 +81,13 @@
  */
 - (void)inSafariOpenWithURL:(NSString *)url
 {
-    if (@available(iOS 9.0, *)) {
-        SFSafariViewController * sf = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
-        if (@available(iOS 11.0, *)) {
-            sf.preferredBarTintColor = [UIColor colorWithRed:(66)/255.0 green:(156)/255.0 blue:(249)/255.0 alpha:1];
-            sf.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
-        }
-        [self presentViewController:sf animated:YES completion:nil];
-    }else{
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+    SFSafariViewController * sf = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+    if (@available(iOS 11.0, *)) {
+        sf.preferredBarTintColor = [UIColor colorWithRed:(66)/255.0 green:(156)/255.0 blue:(249)/255.0 alpha:1];
+        sf.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleClose;
+        sf.preferredControlTintColor = [UIColor whiteColor];
     }
+    [self presentViewController:sf animated:YES completion:nil];
 }
 
 
