@@ -31,7 +31,7 @@ class FSBAboutViewController: UIViewController {
         
     }
     
-    func tapLogoImage(){
+    @objc func tapLogoImage(){
         UIApplication.shared.openURL(URL.init(string: "https://itunes.apple.com/cn/app/gui-lin-li-gong-da-xue-yun/id948944368?mt=8")!)
     }
     

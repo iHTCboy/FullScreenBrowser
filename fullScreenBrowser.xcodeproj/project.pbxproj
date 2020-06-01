@@ -453,8 +453,10 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 6DE0002F1A3474F200F9D2A5;
 			productRefGroup = 6DE000391A3474F200F9D2A5 /* Products */;
@@ -708,6 +710,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2020.06.01;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -716,6 +719,7 @@
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
+				MARKETING_VERSION = 6.0.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",
@@ -726,7 +730,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FullScreenBrowser/Class/FullScreenBrowser-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -739,6 +743,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 2020.06.01;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -747,6 +752,7 @@
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
+				MARKETING_VERSION = 6.0.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",
@@ -756,7 +762,7 @@
 				PRODUCT_NAME = "全屏浏览器";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "FullScreenBrowser/Class/FullScreenBrowser-Bridging-Header.h";
-				SWIFT_VERSION = 3.0.1;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
