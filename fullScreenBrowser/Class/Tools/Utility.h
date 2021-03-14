@@ -224,7 +224,6 @@
 
 #pragma mark - 判断手机型号
 + (NSString *)getCurrentDeviceModel;
-+ (NSString *)getCurrentDeviceModelDetail;
 
 #pragma mark - 时间相关
 + (NSDateFormatter *)getDateFormatter;

@@ -8,7 +8,6 @@
 
 #import "FSBSetingViewController.h"
 #import <MessageUI/MessageUI.h>
-#import "FSBGirlCollectionVC.h"
 #import "AFNetworking.h"
 #import "sys/utsname.h"
 #import <SafariServices/SafariServices.h>
@@ -48,7 +47,7 @@
                     uname(&systemInfo);
                     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
                     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-                    [self sendEmailWithSubject:@"@全屏浏览器的反馈" MessageBody:[NSString stringWithFormat:@"我现在使用全屏浏览器v%@,使用设备：%@,iOSv%@\n我的反馈和建议：\n1、\n2、\n3、",[infoDictionary objectForKey:@"CFBundleShortVersionString"],platform,[[UIDevice currentDevice] systemVersion]] isHTML:NO toRecipients:@[@"ihetiancong@qq.com"] ccRecipients:nil bccRecipients:nil  Image:nil imageQuality:0];
+                    [self sendEmailWithSubject:@"@全屏浏览器的反馈" MessageBody:[NSString stringWithFormat:@"我现在使用全屏浏览器v%@,使用设备：%@,iOSv%@\n我的反馈和建议：\n1、\n2、\n3、",[infoDictionary objectForKey:@"CFBundleShortVersionString"],platform,[[UIDevice currentDevice] systemVersion]] isHTML:NO toRecipients:@[@"iHTCdevelop@gmail.com"] ccRecipients:nil bccRecipients:nil  Image:nil imageQuality:0];
                     break;
                 }
                 case 2:
@@ -63,10 +62,7 @@
         break;
         case 1:
         {
-            [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];
-//            FSBGirlCollectionVC * vc = [[FSBGirlCollectionVC alloc]init];
-//            [self.navigationController pushViewController:vc animated:YES];
-            
+            [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];            
         }
             break;
             

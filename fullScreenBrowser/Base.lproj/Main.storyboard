@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,13 +21,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ub0-wL-Fka">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-60" width="375" height="787"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="搜索或输入网站地址" translatesAutoresizingMaskIntoConstraints="NO" id="c4g-kq-Lkg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="moG-7p-9YG"/>
+                                </constraints>
+                                <color key="barTintColor" systemColor="linkColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KBW-TQ-bhJ">
                                 <rect key="frame" x="-4" y="623" width="383" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -56,7 +65,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="TBe-UE-nTr"/>
                                     <barButtonItem image="home.png" style="plain" id="6MC-Dg-F92">
-                                        <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="dlJ-rg-s7R">
+                                        <button key="customView" opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="dlJ-rg-s7R">
                                             <rect key="frame" x="284" y="7" width="20" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
@@ -75,14 +84,6 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="搜索或输入网站地址" translatesAutoresizingMaskIntoConstraints="NO" id="c4g-kq-Lkg">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="moG-7p-9YG"/>
-                                </constraints>
-                                <color key="barTintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Cky-3I-WyP">
                                 <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
                                 <color key="color" red="0.045786956259999997" green="0.67353095569999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,10 +97,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="KBW-TQ-bhJ" secondAttribute="trailing" constant="-20" id="9ji-3T-FcS"/>
                             <constraint firstItem="Cky-3I-WyP" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="FFf-I2-fZY"/>
                             <constraint firstItem="c4g-kq-Lkg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Ike-V4-10t"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Ub0-wL-Fka" secondAttribute="bottom" id="Mfj-D9-Jip"/>
+                            <constraint firstItem="c4g-kq-Lkg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" priority="750" constant="-100" id="Lfq-6e-jco"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Ub0-wL-Fka" secondAttribute="bottom" constant="-60" id="Mfj-D9-Jip"/>
                             <constraint firstItem="Ub0-wL-Fka" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="R13-ic-Clb"/>
-                            <constraint firstItem="Ub0-wL-Fka" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="TEt-S7-4bj"/>
+                            <constraint firstItem="Ub0-wL-Fka" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="-60" id="TEt-S7-4bj"/>
                             <constraint firstItem="c4g-kq-Lkg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="TOu-xJ-YuE"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KBW-TQ-bhJ" secondAttribute="bottom" priority="750" constant="-80" id="ad6-lQ-ehS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c4g-kq-Lkg" secondAttribute="trailing" constant="-16" id="iRQ-Nz-8U7"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="KBW-TQ-bhJ" secondAttribute="bottom" id="qHo-EV-P0r"/>
                         </constraints>
@@ -112,6 +115,10 @@
                         <outlet property="reloadingButton" destination="HNe-MJ-LLq" id="QQy-b2-x52"/>
                         <outlet property="searchBar" destination="c4g-kq-Lkg" id="6e1-zo-HyK"/>
                         <outlet property="searchButton" destination="DVw-ny-tHK" id="5fx-h8-ySw"/>
+                        <outlet property="searchbarHiddenConstraint" destination="TOu-xJ-YuE" id="1eh-QV-hsE"/>
+                        <outlet property="searchbarTopConstraint" destination="Ike-V4-10t" id="TDY-JY-kgu"/>
+                        <outlet property="toolbarBottomConstraint" destination="qHo-EV-P0r" id="orT-bB-UIB"/>
+                        <outlet property="toolbarHiddenConstraint" destination="ad6-lQ-ehS" id="Foq-OZ-F4p"/>
                         <outlet property="toolbars" destination="KBW-TQ-bhJ" id="2Ph-ku-QAv"/>
                         <outlet property="wkWebView" destination="Ub0-wL-Fka" id="P3u-cw-iLS"/>
                     </connections>
@@ -207,7 +214,7 @@
                                                     <rect key="frame" x="305.5" y="16" width="53.5" height="16"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                                    <color key="textColor" systemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -265,17 +272,17 @@
                                     <constraint firstAttribute="height" constant="15" id="FNs-vu-nhr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="secondaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2014-2019 @iHTCboy All rights reserved" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="y3h-yV-QAG">
                                 <rect key="frame" x="16" y="629" width="343" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="tertiaryLabelColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OBT-AU-NWj" firstAttribute="centerX" secondItem="8Vx-G8-5VI" secondAttribute="centerX" id="5UQ-UG-LMw"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Ej-hz-eOJ" secondAttribute="trailing" id="CkM-Zx-1jR"/>
@@ -329,5 +336,20 @@
         <image name="home.png" width="15" height="15"/>
         <image name="reloading.png" width="15" height="15"/>
         <image name="search.png" width="15" height="15"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="scrollViewTexturedBackgroundColor">
+            <color red="0.43529411764705878" green="0.44313725490196082" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

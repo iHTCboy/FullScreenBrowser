@@ -45,8 +45,6 @@
 		6DE000471A3474F200F9D2A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DE000451A3474F200F9D2A5 /* Main.storyboard */; };
 		6DE000491A3474F200F9D2A5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DE000481A3474F200F9D2A5 /* Images.xcassets */; };
 		6DE0004C1A3474F200F9D2A5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE0004A1A3474F200F9D2A5 /* LaunchScreen.xib */; };
-		6DF7F5641DCF0D00000F560A /* FSBCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5621DCF0D00000F560A /* FSBCollectionViewCell.swift */; };
-		6DF7F5651DCF0D00000F560A /* FSBCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF7F5631DCF0D00000F560A /* FSBCollectionViewCell.xib */; };
 		6DF7F5771DCF50A9000F560A /* MWCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F5681DCF50A9000F560A /* MWCaptionView.m */; };
 		6DF7F5781DCF50A9000F560A /* MWPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF7F56B1DCF50A9000F560A /* MWPhoto.m */; };
 		6DF7F5791DCF50A9000F560A /* MWPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6DF7F56C1DCF50A9000F560A /* MWPhotoBrowser.bundle */; };
@@ -78,10 +76,6 @@
 		6D20F947217ADE0C004A4ED1 /* Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		6D2FFBAF1DCE13BF007D1BF5 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6D2FFBB01DCE13BF007D1BF5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6D2FFBB11DCE13BF007D1BF5 /* FSBGirlCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBGirlCollectionVC.h; sourceTree = "<group>"; };
-		6D2FFBB21DCE13BF007D1BF5 /* FSBGirlCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBGirlCollectionVC.m; sourceTree = "<group>"; };
-		6D2FFBB31DCE13BF007D1BF5 /* FSBGirlDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBGirlDetailVC.h; sourceTree = "<group>"; };
-		6D2FFBB41DCE13BF007D1BF5 /* FSBGirlDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBGirlDetailVC.m; sourceTree = "<group>"; };
 		6D2FFBB61DCE13BF007D1BF5 /* FSBSetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSBSetingViewController.h; sourceTree = "<group>"; };
 		6D2FFBB91DCE13BF007D1BF5 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		6D2FFBCF1DCE1534007D1BF5 /* FullScreenBrowser-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FullScreenBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -127,8 +121,6 @@
 		6DE000511A3474F200F9D2A5 /* fullScreenBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fullScreenBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE000611A34756F00F9D2A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6DE000621A34756F00F9D2A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		6DF7F5621DCF0D00000F560A /* FSBCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FSBCollectionViewCell.swift; sourceTree = "<group>"; };
-		6DF7F5631DCF0D00000F560A /* FSBCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FSBCollectionViewCell.xib; sourceTree = "<group>"; };
 		6DF7F5671DCF50A9000F560A /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
 		6DF7F5681DCF50A9000F560A /* MWCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCaptionView.m; sourceTree = "<group>"; };
 		6DF7F5691DCF50A9000F560A /* MWCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCommon.h; sourceTree = "<group>"; };
@@ -203,10 +195,6 @@
 				6D2FFBB61DCE13BF007D1BF5 /* FSBSetingViewController.h */,
 				6DA951D01DEDD0EE00EC27BC /* FSBSetingViewController.m */,
 				6D2FFBEB1DCE1681007D1BF5 /* FSBAboutViewController.swift */,
-				6D2FFBB11DCE13BF007D1BF5 /* FSBGirlCollectionVC.h */,
-				6D2FFBB21DCE13BF007D1BF5 /* FSBGirlCollectionVC.m */,
-				6D2FFBB31DCE13BF007D1BF5 /* FSBGirlDetailVC.h */,
-				6D2FFBB41DCE13BF007D1BF5 /* FSBGirlDetailVC.m */,
 				6D2FFBBD1DCE13BF007D1BF5 /* Vendors */,
 				6D4BA4CD1DCEF62B00172C16 /* Tools */,
 				6D2FFBC31DCE13BF007D1BF5 /* Views */,
@@ -230,8 +218,6 @@
 		6D2FFBC31DCE13BF007D1BF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				6DF7F5621DCF0D00000F560A /* FSBCollectionViewCell.swift */,
-				6DF7F5631DCF0D00000F560A /* FSBCollectionViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -483,7 +469,6 @@
 				6D2FFC2B1DCE18B8007D1BF5 /* reloading@2x.png in Resources */,
 				6D2FFC261DCE18B8007D1BF5 /* goBack@3x.png in Resources */,
 				6D2FFC2C1DCE18B8007D1BF5 /* reloading@3x.png in Resources */,
-				6DF7F5651DCF0D00000F560A /* FSBCollectionViewCell.xib in Resources */,
 				6D2FFC231DCE18B8007D1BF5 /* fullBtn@2x.png in Resources */,
 				6D2FFC241DCE18B8007D1BF5 /* fullBtn@3x.png in Resources */,
 				6D2FFC311DCE18B8007D1BF5 /* stopLoading@2x.png in Resources */,
@@ -559,7 +544,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF7F5641DCF0D00000F560A /* FSBCollectionViewCell.swift in Sources */,
 				6DF7F57B1DCF50A9000F560A /* MWTapDetectingImageView.m in Sources */,
 				6DF7F57D1DCF50A9000F560A /* MWZoomingScrollView.m in Sources */,
 				6DF7F5781DCF50A9000F560A /* MWPhoto.m in Sources */,
@@ -706,7 +690,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2020.06.01;
+				CURRENT_PROJECT_VERSION = 2021.03.15;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -716,7 +700,7 @@
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
-				MARKETING_VERSION = 7.0.0;
+				MARKETING_VERSION = 7.1.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",
@@ -740,7 +724,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2020.06.01;
+				CURRENT_PROJECT_VERSION = 2021.03.15;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -750,7 +734,7 @@
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
-				MARKETING_VERSION = 7.0.0;
+				MARKETING_VERSION = 7.1.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",

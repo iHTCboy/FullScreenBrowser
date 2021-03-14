@@ -14,9 +14,16 @@
 #define topHight (iPhone_X_S ? 44 : 0)
 #define indcatorHight (iPhone_X_S ? 34 : 0)
 #define navBarHight (iPhone_X_S ? 68 : 44)
-#define iPhone_X_S ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone && ([UIScreen mainScreen].bounds.size.height == 812.0 || [UIScreen mainScreen].bounds.size.height == 896.0))
+#define  MACRO_IS_GREATER_OR_EQUAL_TO_IOS(v) ([[[UIDevice currentDevice] systemVersion] floatValue] >= v)
+#define iPhone_X_S (MACRO_IS_GREATER_OR_EQUAL_TO_IOS(11.0) ? (!UIEdgeInsetsEqualToEdgeInsets([[[UIApplication sharedApplication].keyWindow valueForKey:@"safeAreaInsets"] UIEdgeInsetsValue], UIEdgeInsetsZero)) : NO)
 
 @interface RootViewController ()<UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate>
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHiddenConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchbarTopConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchbarHiddenConstraint;
+
 
 @property (nonatomic, assign) float oldY;
 
@@ -66,7 +73,7 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
     //[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
     
-    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
+    NSURL *url = [NSURL URLWithString:@"https://www.bing.com"];
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // 3. 发送请求给服务器
@@ -109,7 +116,7 @@
         urlStr = [NSString stringWithFormat:@"http://%@", str];
         url = [NSURL URLWithString:urlStr];
     }else{
-        urlStr = [NSString stringWithFormat:@"https://www.baidu.com/s?wd=%@", str];
+        urlStr = [NSString stringWithFormat:@"https://www.bing.com/search?q=%@", str];
         urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         url = [NSURL URLWithString:urlStr];
     }
@@ -248,7 +255,7 @@
 
 - (IBAction)clickedHome:(id)sender {
     
-    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];
+    NSURL *url = [NSURL URLWithString:@"https://www.bing.com"];
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // 3. 发送请求给服务器
@@ -257,21 +264,43 @@
 
 - (IBAction)toFullScreen:(id)sender {
     
-    // 隐藏状态栏
-//    [UIApplication sharedApplication].statusBarHidden = YES;
-    
-    CGRect webFrame = self.wkWebView.frame;
-    webFrame.size.height = self.view.frame.size.height;
-    
-    CGRect toolbarsFrame = self.toolbars.frame;
-    toolbarsFrame.origin.y = self.view.frame.size.height + navBarHight;
-    
-    [UIView animateWithDuration:0.3f animations:^{
-        self.wkWebView.frame = webFrame;
-        self.toolbars.frame = toolbarsFrame;
-    }];
-    
+    // 隐藏
+    [self toolbarShow:NO];
+    [self searchbarShow:NO];
 }
+
+
+- (void)toolbarShow:(BOOL)show {
+    if (show) {
+        [UIView animateWithDuration:0.3f animations:^{
+            self.toolbarHiddenConstraint.priority = 750;
+            self.toolbarBottomConstraint.priority = 1000;
+        }];
+    } else {
+        [UIView animateWithDuration:0.3f animations:^{
+            self.toolbarBottomConstraint.priority = 750;
+            self.toolbarHiddenConstraint.priority = 1000;
+            
+        }];
+    }
+}
+
+
+- (void)searchbarShow:(BOOL)show {
+    if (show) {
+        [UIView animateWithDuration:0.3f animations:^{
+            self.searchbarHiddenConstraint.priority = 750;
+            self.searchbarTopConstraint.priority = 1000;
+        }];
+    } else {
+        [UIView animateWithDuration:0.3f animations:^{
+            self.searchbarTopConstraint.priority = 750;
+            self.searchbarHiddenConstraint.priority = 1000;
+            
+        }];
+    }
+}
+
 
 
 //隐藏搜索框
@@ -293,10 +322,12 @@
 
 #pragma mark - scrollView
 
-- (void) scrollViewDidScroll:(UIScrollView *)scrollView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     static float newY = 0;
     newY = scrollView.contentOffset.y;
+    
+    NSLog(@"%f", newY);
     
     self.activityView.hidden = YES;
 
@@ -306,46 +337,18 @@
         if (newY > _oldY && (newY - _oldY) > 0)
         {
 
-            // 隐藏状态栏
-//            [UIApplication sharedApplication].statusBarHidden = YES;
-            CGRect searchFrame = self.searchBar.frame;
-            searchFrame.origin.y = -navBarHight;
-            
-            CGRect webFrame = self.wkWebView.frame;
-            webFrame.size.height = self.view.frame.size.height;
-    
-            CGRect toolbarsFrame = self.toolbars.frame;
-            toolbarsFrame.origin.y = self.view.frame.size.height + navBarHight;
-            
-            [UIView animateWithDuration:0.3f animations:^{
-                self.searchBar.frame = searchFrame;
-                self.wkWebView.frame = webFrame;
-                self.toolbars.frame = toolbarsFrame;
-            }];
+            // 隐藏
+            [self searchbarShow:NO];
+            [self toolbarShow:NO];
             
             _oldY = newY;
             
         }else if (newY < _oldY && (_oldY - newY) > 100){
             [self.view endEditing:YES];
             
-            // 显示状态栏
-//            [UIApplication sharedApplication].statusBarHidden = NO;
-            
-            CGRect searchFrame = self.searchBar.frame;
-            searchFrame.origin.y = topHight;
-            
-            CGRect webFrame = self.wkWebView.frame;
-            //webFrame.origin.y  = 0;
-            webFrame.size.height = self.view.frame.size.height -navBarHight;
-            
-            CGRect toolbarsFrame = self.toolbars.frame;
-            toolbarsFrame.origin.y = self.view.frame.size.height -navBarHight;
-            
-            [UIView animateWithDuration:0.3f animations:^{
-                self.searchBar.frame = searchFrame;
-                self.wkWebView.frame = webFrame;
-                self.toolbars.frame = toolbarsFrame;
-            }];
+            // 显示
+            [self searchbarShow:YES];
+            [self toolbarShow:YES];
             
             _oldY = newY;
         }
@@ -355,23 +358,9 @@
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
 {
-    
-    CGRect searchFrame = self.searchBar.frame;
-    searchFrame.origin.y = topHight;
-    
-    CGRect webFrame = self.wkWebView.frame;
-    //webFrame.origin.y  = 0;
-    webFrame.size.height = self.view.frame.size.height -navBarHight;
-    
-    CGRect toolbarsFrame = self.toolbars.frame;
-    toolbarsFrame.origin.y = self.view.frame.size.height -navBarHight;
-    
-    [UIView animateWithDuration:0.3f animations:^{
-        self.searchBar.frame = searchFrame;
-        self.wkWebView.frame = webFrame;
-        self.toolbars.frame = toolbarsFrame;
-
-    }];
+    // 显示
+    [self searchbarShow:YES];
+    [self toolbarShow:YES];
 
     return YES;
 }
