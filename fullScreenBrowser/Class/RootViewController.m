@@ -11,6 +11,8 @@
 
 #import "BaiduMobStat.h"
 
+#import "FSB-Swift.h"
+
 #define topHight (iPhone_X_S ? 44 : 0)
 #define indcatorHight (iPhone_X_S ? 34 : 0)
 #define navBarHight (iPhone_X_S ? 68 : 44)
@@ -73,7 +75,11 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
     //[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
     
-    NSURL *url = [NSURL URLWithString:@"https://www.bing.com"];
+//    [TCUserDefaults().s
+    
+    
+    
+    NSURL *url = [NSURL URLWithString:TCUserDefaults.shared.getFSBMainPage];
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // 3. 发送请求给服务器
@@ -255,7 +261,7 @@
 
 - (IBAction)clickedHome:(id)sender {
     
-    NSURL *url = [NSURL URLWithString:@"https://www.bing.com"];
+    NSURL *url = [NSURL URLWithString:TCUserDefaults.shared.getFSBMainPage];
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     // 3. 发送请求给服务器

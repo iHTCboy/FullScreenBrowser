@@ -28,11 +28,11 @@
 		<true/>
 	</dict>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>好，以便访问媒体资料</string>
+	<string>请允许使用您的媒体资料，以便当前Web页面能够提供个性化的音乐内容</string>
 	<key>NSCameraUsageDescription</key>
-	<string>好，以便正常使用相机</string>
+	<string>请允许使用您的相机，以便当前Web页面能够使用相机进行拍照</string>
 	<key>NSContactsUsageDescription</key>
-	<string>好，以便访问通讯录</string>
+	<string>请允许使用您的通讯录，以便当前Web页面能够使用提供快捷的号码输入</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>请允许使用您的位置信息，以便能够准确为您提供当地的新闻内容</string>
 	<key>NSLocationUsageDescription</key>
@@ -40,11 +40,11 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>请允许使用您的位置信息，以便能够准确为您提供当地的新闻内容</string>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>好，以便麦克风录音对话</string>
+	<string>请允许使用您的麦克风，以便当前Web页面能够使用语音对话功能</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>好，以便正常访问相册</string>
+	<string>请允许使用您的相册，以便当前Web页面能够使用相册进行图片处理</string>
 	<key>NSSiriUsageDescription</key>
-	<string>好，以便使用Siri进行对话</string>
+	<string>请允许使用您的Siri进行对话，以便当前Web页面能够使用Siri进行处理</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

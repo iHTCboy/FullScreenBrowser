@@ -10,6 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import "AFNetworking.h"
 #import "sys/utsname.h"
+#import "FSB-Swift.h"
 #import <SafariServices/SafariServices.h>
 
 @interface FSBSetingViewController ()<MFMailComposeViewControllerDelegate>
@@ -41,6 +42,29 @@
     switch (indexPath.section) {
         case 0:
         {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"设置主页" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                textField.placeholder = TCUserDefaults.shared.getFSBMainPage;
+                textField.text = TCUserDefaults.shared.getFSBMainPage;
+                textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                textField.keyboardType = UIKeyboardTypeURL;
+                textField.returnKeyType = UIReturnKeyDone;
+            }];
+            UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                //compare the current password and do action here
+                [TCUserDefaults.shared setIFSBMainPageWithValue:[[alertController textFields][0] text]];
+
+            }];
+            [alertController addAction:confirmAction];
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//                NSLog(@"Canelled");
+            }];
+            [alertController addAction:cancelAction];
+            [self presentViewController:alertController animated:YES completion:nil];
+        }
+            break;
+        case 1:
+        {
             switch (indexPath.row) {
                 case 0:{
                     struct utsname systemInfo;
@@ -60,7 +84,7 @@
         
         }
         break;
-        case 1:
+        case 2:
         {
             [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];            
         }
