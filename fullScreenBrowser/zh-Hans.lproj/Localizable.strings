@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  FullScreenBrowser
+
+  Created by HTC on 2021/3/20.
+  Copyright © 2021 iHTCboy. All rights reserved.
+*/
+
+
+"User Terms" = "用户条款";
+"User Terms Desc" = "如果继续使用，则表示你同意本应用的协议。";
+"Agree to Agreement" = "同意协议";
+"View Agreement" = "查看协议";
+"Set Homepage" = "设置主页";
+"Settings" = "设置";
+"Cancel" = "取消";
+"Full screen browser feedback" = "全屏浏览器的反馈";
+"I am using a full-screen browser now" = "我现在使用全屏浏览器";
+"Use Device" = "使用设备";
+"My feedback and suggestions" = "我的反馈和建议";
+"More recommendations" = "更多推荐";

@@ -30,7 +30,7 @@
 	<key>NSAppleMusicUsageDescription</key>
 	<string>请允许使用您的媒体资料，以便当前Web页面能够提供个性化的音乐内容</string>
 	<key>NSCameraUsageDescription</key>
-	<string>请允许使用您的相机，以便当前Web页面能够使用相机进行拍照</string>
+	<string>当前Web页面需要访问您的相机，用于进行拍照照片，用于网页图片上传或者更改个人头像图片等。如果不允许，将无法继续进行操作。</string>
 	<key>NSContactsUsageDescription</key>
 	<string>请允许使用您的通讯录，以便当前Web页面能够使用提供快捷的号码输入</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -42,7 +42,7 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>请允许使用您的麦克风，以便当前Web页面能够使用语音对话功能</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>请允许使用您的相册，以便当前Web页面能够使用相册进行图片处理</string>
+	<string>当前Web页面需要访问您的相册，以便当前Web页面能够使用相册进行图片处理，用于网页图片上传或者更改个人头像图片等。如果不允许，将无法继续进行操作。</string>
 	<key>NSSiriUsageDescription</key>
 	<string>请允许使用您的Siri进行对话，以便当前Web页面能够使用Siri进行处理</string>
 	<key>UILaunchStoryboardName</key>

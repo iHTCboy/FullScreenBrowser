@@ -39,7 +39,15 @@
 		6D2FFC301DCE18B8007D1BF5 /* setting@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC1F1DCE18B8007D1BF5 /* setting@3x.png */; };
 		6D2FFC311DCE18B8007D1BF5 /* stopLoading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC201DCE18B8007D1BF5 /* stopLoading@2x.png */; };
 		6D2FFC321DCE18B8007D1BF5 /* stopLoading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2FFC211DCE18B8007D1BF5 /* stopLoading@3x.png */; };
+		6D33DD4B2604F70100003481 /* ITAdvancelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D33DD4A2604F70100003481 /* ITAdvancelDetailViewController.swift */; };
+		6D33DD4F2604F72A00003481 /* iHTCboyApp.json in Resources */ = {isa = PBXBuildFile; fileRef = 6D33DD4E2604F72A00003481 /* iHTCboyApp.json */; };
+		6D33DD532604F81A00003481 /* TCAppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D33DD522604F81A00003481 /* TCAppConst.swift */; };
+		6D33DD582604F84600003481 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D33DD562604F84500003481 /* TableHeaderView.swift */; };
+		6D33DD592604F84600003481 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D33DD572604F84600003481 /* TableHeaderView.xib */; };
+		6D33DD5D2604F86400003481 /* IAppleServiceUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D33DD5C2604F86400003481 /* IAppleServiceUtil.swift */; };
 		6D36419125FFB14A00230B0B /* TCUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D36419025FFB14A00230B0B /* TCUserDefaults.swift */; };
+		6D68B6292605CE070014A986 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D68B62B2605CE070014A986 /* InfoPlist.strings */; };
+		6DA5885E2605D91400C351C4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DA588602605D91400C351C4 /* Localizable.strings */; };
 		6DA951D21DEDD0EE00EC27BC /* FSBSetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA951D01DEDD0EE00EC27BC /* FSBSetingViewController.m */; };
 		6DA951D31DEDD0EE00EC27BC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DA951D11DEDD0EE00EC27BC /* RootViewController.m */; };
 		6DE0003E1A3474F200F9D2A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE0003D1A3474F200F9D2A5 /* main.m */; };
@@ -108,12 +116,45 @@
 		6D2FFC1F1DCE18B8007D1BF5 /* setting@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "setting@3x.png"; sourceTree = "<group>"; };
 		6D2FFC201DCE18B8007D1BF5 /* stopLoading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopLoading@2x.png"; sourceTree = "<group>"; };
 		6D2FFC211DCE18B8007D1BF5 /* stopLoading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stopLoading@3x.png"; sourceTree = "<group>"; };
+		6D33DD4A2604F70100003481 /* ITAdvancelDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ITAdvancelDetailViewController.swift; sourceTree = "<group>"; };
+		6D33DD4E2604F72A00003481 /* iHTCboyApp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = iHTCboyApp.json; sourceTree = "<group>"; };
+		6D33DD522604F81A00003481 /* TCAppConst.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCAppConst.swift; sourceTree = "<group>"; };
+		6D33DD562604F84500003481 /* TableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		6D33DD572604F84600003481 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		6D33DD5C2604F86400003481 /* IAppleServiceUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAppleServiceUtil.swift; sourceTree = "<group>"; };
 		6D36419025FFB14A00230B0B /* TCUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TCUserDefaults.swift; sourceTree = "<group>"; };
 		6D4BA4CE1DCEF64600172C16 /* HTTPTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTools.swift; sourceTree = "<group>"; };
+		6D59363C2605B51F0066212A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../FullScreenBrowser/zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		6D68B62A2605CE070014A986 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6D68B62F2605CE0D0014A986 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6D68B6302605CE0E0014A986 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D68B6312605CE0F0014A986 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D68B6322605CE0F0014A986 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D68B6332605D0670014A986 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		6D68B6342605D0670014A986 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6D68B6352605D0680014A986 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6D6FFF502605D340004A93AA /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6D83CB0E2605D266003DA3FE /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
+		6D83CB0F2605D267003DA3FE /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6D96D64D2605B5E000184B3D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../FullScreenBrowser/en.lproj/Main.strings; sourceTree = "<group>"; };
 		6D9BFF2B215961E800A0BABF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		6D9BFF2C215961E800A0BABF /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
+		6DA5885F2605D91400C351C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6DA588632605D91700C351C4 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6DA588642605D91800C351C4 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6DA588652605D91900C351C4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		6DA588662605D91A00C351C4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6DA588672605D91B00C351C4 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6DA588682605D91C00C351C4 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6DA951D01DEDD0EE00EC27BC /* FSBSetingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSBSetingViewController.m; sourceTree = "<group>"; };
 		6DA951D11DEDD0EE00EC27BC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		6DC568622605B45E006F1126 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6DC568632605B466006F1126 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		6DC568642605B466006F1126 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6DC568672605B472006F1126 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		6DC568682605B473006F1126 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		6DC568692605B479006F1126 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		6DC5686A2605B479006F1126 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		6DE000381A3474F200F9D2A5 /* 全屏浏览器.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "全屏浏览器.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE0003C1A3474F200F9D2A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DE0003D1A3474F200F9D2A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,7 +162,6 @@
 		6DE000481A3474F200F9D2A5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../FullScreenBrowser/Images.xcassets; sourceTree = "<group>"; };
 		6DE0004B1A3474F200F9D2A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6DE000511A3474F200F9D2A5 /* fullScreenBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = fullScreenBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DE000611A34756F00F9D2A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6DE000621A34756F00F9D2A5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6DF7F5671DCF50A9000F560A /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
 		6DF7F5681DCF50A9000F560A /* MWCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWCaptionView.m; sourceTree = "<group>"; };
@@ -198,9 +238,13 @@
 				6DA951D01DEDD0EE00EC27BC /* FSBSetingViewController.m */,
 				6D2FFBEB1DCE1681007D1BF5 /* FSBAboutViewController.swift */,
 				6D36419025FFB14A00230B0B /* TCUserDefaults.swift */,
+				6D33DD4A2604F70100003481 /* ITAdvancelDetailViewController.swift */,
+				6D33DD522604F81A00003481 /* TCAppConst.swift */,
+				6D33DD562604F84500003481 /* TableHeaderView.swift */,
+				6D33DD572604F84600003481 /* TableHeaderView.xib */,
+				6D33DD5C2604F86400003481 /* IAppleServiceUtil.swift */,
 				6D2FFBBD1DCE13BF007D1BF5 /* Vendors */,
 				6D4BA4CD1DCEF62B00172C16 /* Tools */,
-				6D2FFBC31DCE13BF007D1BF5 /* Views */,
 				6D2FFBCF1DCE1534007D1BF5 /* FSB-Bridging-Header.h */,
 			);
 			name = Class;
@@ -216,13 +260,6 @@
 				6DF7F5661DCF50A9000F560A /* MWPhotoBrowser */,
 			);
 			path = Vendors;
-			sourceTree = "<group>";
-		};
-		6D2FFBC31DCE13BF007D1BF5 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		6D2FFBD61DCE1601007D1BF5 /* Frameworks */ = {
@@ -303,6 +340,7 @@
 				6D2FFBAE1DCE13BF007D1BF5 /* Class */,
 				6DE000451A3474F200F9D2A5 /* Main.storyboard */,
 				6DE000481A3474F200F9D2A5 /* Images.xcassets */,
+				6D33DD4E2604F72A00003481 /* iHTCboyApp.json */,
 				6D2FFC101DCE18B8007D1BF5 /* Images */,
 				6DE0004A1A3474F200F9D2A5 /* LaunchScreen.xib */,
 				6DE0003B1A3474F200F9D2A5 /* Supporting Files */,
@@ -317,7 +355,9 @@
 				6D9BFF2C215961E800A0BABF /* LICENSE */,
 				6D9BFF2B215961E800A0BABF /* README.md */,
 				6DE0003C1A3474F200F9D2A5 /* Info.plist */,
+				6D68B62B2605CE070014A986 /* InfoPlist.strings */,
 				6DE0003D1A3474F200F9D2A5 /* main.m */,
+				6DA588602605D91400C351C4 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -437,13 +477,17 @@
 			};
 			buildConfigurationList = 6DE000331A3474F200F9D2A5 /* Build configuration list for PBXProject "FullScreenBrowser" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = Base;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				en,
 				Base,
 				"zh-Hans",
+				"zh-Hant",
+				en,
+				ja,
+				ko,
+				vi,
+				"zh-HK",
 			);
 			mainGroup = 6DE0002F1A3474F200F9D2A5;
 			productRefGroup = 6DE000391A3474F200F9D2A5 /* Products */;
@@ -462,13 +506,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D2FFC301DCE18B8007D1BF5 /* setting@3x.png in Resources */,
+				6D68B6292605CE070014A986 /* InfoPlist.strings in Resources */,
 				6DE000471A3474F200F9D2A5 /* Main.storyboard in Resources */,
 				6D2FFC2E1DCE18B8007D1BF5 /* search@3x.png in Resources */,
 				6D2FFC281DCE18B8007D1BF5 /* goForward@3x.png in Resources */,
 				6D2FFC2A1DCE18B8007D1BF5 /* home@3x.png in Resources */,
+				6D33DD592604F84600003481 /* TableHeaderView.xib in Resources */,
 				6D2FFC2D1DCE18B8007D1BF5 /* search@2x.png in Resources */,
 				6D2FFC271DCE18B8007D1BF5 /* goForward@2x.png in Resources */,
 				6DE0004C1A3474F200F9D2A5 /* LaunchScreen.xib in Resources */,
+				6DA5885E2605D91400C351C4 /* Localizable.strings in Resources */,
 				6D2FFC2B1DCE18B8007D1BF5 /* reloading@2x.png in Resources */,
 				6D2FFC261DCE18B8007D1BF5 /* goBack@3x.png in Resources */,
 				6D2FFC2C1DCE18B8007D1BF5 /* reloading@3x.png in Resources */,
@@ -481,6 +528,7 @@
 				6D2FFC321DCE18B8007D1BF5 /* stopLoading@3x.png in Resources */,
 				6DE000491A3474F200F9D2A5 /* Images.xcassets in Resources */,
 				6D2FFC221DCE18B8007D1BF5 /* BIcom406.png in Resources */,
+				6D33DD4F2604F72A00003481 /* iHTCboyApp.json in Resources */,
 				6D2FFC291DCE18B8007D1BF5 /* home@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,7 +595,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D33DD582604F84600003481 /* TableHeaderView.swift in Sources */,
 				6DF7F57B1DCF50A9000F560A /* MWTapDetectingImageView.m in Sources */,
+				6D33DD532604F81A00003481 /* TCAppConst.swift in Sources */,
 				6DF7F57D1DCF50A9000F560A /* MWZoomingScrollView.m in Sources */,
 				6DF7F5781DCF50A9000F560A /* MWPhoto.m in Sources */,
 				6DF7F5861DCF52AA000F560A /* MBProgressHUD.m in Sources */,
@@ -555,8 +605,10 @@
 				6D20F948217ADE0C004A4ED1 /* Utility.m in Sources */,
 				6DF7F5871DCF52AA000F560A /* README.mdown in Sources */,
 				6D2FFBEC1DCE1681007D1BF5 /* FSBAboutViewController.swift in Sources */,
+				6D33DD5D2604F86400003481 /* IAppleServiceUtil.swift in Sources */,
 				6D2FFBC41DCE13BF007D1BF5 /* AppDelegate.m in Sources */,
 				6DFFE6242193309E00AC0E6D /* HTTPTools.swift in Sources */,
+				6D33DD4B2604F70100003481 /* ITAdvancelDetailViewController.swift in Sources */,
 				6DF7F57C1DCF50A9000F560A /* MWTapDetectingView.m in Sources */,
 				6D36419125FFB14A00230B0B /* TCUserDefaults.swift in Sources */,
 				6DF7F57A1DCF50A9000F560A /* MWPhotoBrowser.m in Sources */,
@@ -585,11 +637,47 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6D68B62B2605CE070014A986 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D68B62A2605CE070014A986 /* zh-Hans */,
+				6D68B62F2605CE0D0014A986 /* zh-Hant */,
+				6D68B6302605CE0E0014A986 /* en */,
+				6D68B6312605CE0F0014A986 /* ko */,
+				6D68B6322605CE0F0014A986 /* ja */,
+				6D68B6352605D0680014A986 /* vi */,
+				6D6FFF502605D340004A93AA /* zh-HK */,
+			);
+			name = InfoPlist.strings;
+			path = FullScreenBrowser;
+			sourceTree = SOURCE_ROOT;
+		};
+		6DA588602605D91400C351C4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DA5885F2605D91400C351C4 /* en */,
+				6DA588632605D91700C351C4 /* zh-Hant */,
+				6DA588642605D91800C351C4 /* zh-HK */,
+				6DA588652605D91900C351C4 /* zh-Hans */,
+				6DA588662605D91A00C351C4 /* ja */,
+				6DA588672605D91B00C351C4 /* vi */,
+				6DA588682605D91C00C351C4 /* ko */,
+			);
+			name = Localizable.strings;
+			path = FullScreenBrowser;
+			sourceTree = SOURCE_ROOT;
+		};
 		6DE000451A3474F200F9D2A5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6DE000461A3474F200F9D2A5 /* Base */,
-				6DE000611A34756F00F9D2A5 /* zh-Hans */,
+				6DC568632605B466006F1126 /* zh-Hant */,
+				6DC568672605B472006F1126 /* ja */,
+				6DC568692605B479006F1126 /* ko */,
+				6D59363C2605B51F0066212A /* zh-Hans */,
+				6D96D64D2605B5E000184B3D /* en */,
+				6D68B6332605D0670014A986 /* vi */,
+				6D83CB0E2605D266003DA3FE /* zh-HK */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -599,6 +687,12 @@
 			children = (
 				6DE0004B1A3474F200F9D2A5 /* Base */,
 				6DE000621A34756F00F9D2A5 /* zh-Hans */,
+				6DC568622605B45E006F1126 /* en */,
+				6DC568642605B466006F1126 /* zh-Hant */,
+				6DC568682605B473006F1126 /* ja */,
+				6DC5686A2605B479006F1126 /* ko */,
+				6D68B6342605D0670014A986 /* vi */,
+				6D83CB0F2605D267003DA3FE /* zh-HK */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -694,7 +788,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2021.03.15;
+				CURRENT_PROJECT_VERSION = 2021.03.20;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;
@@ -705,7 +799,7 @@
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
-				MARKETING_VERSION = 7.3.0;
+				MARKETING_VERSION = 8.0.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",
@@ -729,7 +823,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2021.03.15;
+				CURRENT_PROJECT_VERSION = 2021.03.20;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;
@@ -740,7 +834,7 @@
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
-				MARKETING_VERSION = 7.3.0;
+				MARKETING_VERSION = 8.0.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",

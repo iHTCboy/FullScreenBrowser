@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "version"; ObjectID = "2Ej-hz-eOJ"; */
+"2Ej-hz-eOJ.text" = "version";
+
+/* Class = "UILabel"; text = "開發者內容"; ObjectID = "4rP-hE-ucn"; */
+"4rP-hE-ucn.text" = "開發者內容";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "Aaz-67-obL"; */
+"Aaz-67-obL.headerTitle" = " ";
+
+/* Class = "UINavigationItem"; title = "設置"; ObjectID = "C3p-TA-LIr"; */
+"C3p-TA-LIr.title" = "設置";
+
+/* Class = "UILabel"; text = "用戶條款"; ObjectID = "DXp-tt-BC6"; */
+"DXp-tt-BC6.text" = "用戶條款";
+
+/* Class = "UILabel"; text = "評價應用"; ObjectID = "E9P-q1-CRQ"; */
+"E9P-q1-CRQ.text" = "評價應用";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "GaA-ux-Cw6"; */
+"GaA-ux-Cw6.headerTitle" = " ";
+
+/* Class = "UINavigationItem"; title = "關於應用"; ObjectID = "GaY-KI-fsw"; */
+"GaY-KI-fsw.title" = "關於應用";
+
+/* Class = "UILabel"; text = "關於應用"; ObjectID = "JZB-aq-aup"; */
+"JZB-aq-aup.text" = "關於應用";
+
+/* Class = "UILabel"; text = "隱私協議"; ObjectID = "UI7-Oz-SNo"; */
+"UI7-Oz-SNo.text" = "隱私協議";
+
+/* Class = "UILabel"; text = "全屏瀏覽器"; ObjectID = "X4O-Vo-ER0"; */
+"X4O-Vo-ER0.text" = "全屏瀏覽器";
+
+/* Class = "UILabel"; text = "起始頁面"; ObjectID = "bvJ-ob-mAi"; */
+"bvJ-ob-mAi.text" = "起始頁面";
+
+/* Class = "UISearchBar"; placeholder = "搜索或輸入網站地址"; ObjectID = "c4g-kq-Lkg"; */
+"c4g-kq-Lkg.placeholder" = "搜索或輸入網站地址";
+
+/* Class = "UILabel"; text = "設置主頁"; ObjectID = "eZr-dS-T5c"; */
+"eZr-dS-T5c.text" = "設置主頁";
+
+/* Class = "UILabel"; text = "應用反饋"; ObjectID = "fSB-1e-Gv6"; */
+"fSB-1e-Gv6.text" = "應用反饋";
+
+/* Class = "UILabel"; text = "更多推薦"; ObjectID = "iQD-hB-sU1"; */
+"iQD-hB-sU1.text" = "更多推薦";
+
+/* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "pcV-9J-6TS"; */
+"pcV-9J-6TS.footerTitle" = " ";
+
+/* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "pcV-9J-6TS"; */
+"pcV-9J-6TS.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "© 2014-2019 @iHTCboy All rights reserved"; ObjectID = "y3h-yV-QAG"; */
+"y3h-yV-QAG.text" = "© 2014-2019 @iHTCboy All rights reserved";

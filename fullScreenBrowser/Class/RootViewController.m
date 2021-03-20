@@ -8,16 +8,20 @@
 
 #import "RootViewController.h"
 #import "FSBSetingViewController.h"
-
+#import "Utility.h"
 #import "BaiduMobStat.h"
 
 #import "FSB-Swift.h"
+#import <SafariServices/SafariServices.h>
 
 #define topHight (iPhone_X_S ? 44 : 0)
 #define indcatorHight (iPhone_X_S ? 34 : 0)
 #define navBarHight (iPhone_X_S ? 68 : 44)
 #define  MACRO_IS_GREATER_OR_EQUAL_TO_IOS(v) ([[[UIDevice currentDevice] systemVersion] floatValue] >= v)
-#define iPhone_X_S (MACRO_IS_GREATER_OR_EQUAL_TO_IOS(11.0) ? (!UIEdgeInsetsEqualToEdgeInsets([[[UIApplication sharedApplication].keyWindow valueForKey:@"safeAreaInsets"] UIEdgeInsetsValue], UIEdgeInsetsZero)) : NO)
+#define iPhone_X_S (MACRO_IS_GREATER_OR_EQUAL_TO_IOS(11.0) ? \
+    ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) ? NO :\
+    (!UIEdgeInsetsEqualToEdgeInsets([[[UIApplication sharedApplication].keyWindow valueForKey:@"safeAreaInsets"] UIEdgeInsetsValue], UIEdgeInsetsZero)) : NO)
+
 
 @interface RootViewController ()<UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate>
 
@@ -25,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHiddenConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchbarTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchbarHiddenConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchBarToiPhoneXConstraint;
 
 
 @property (nonatomic, assign) float oldY;
@@ -35,19 +40,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    
     // Do any additional setup after loading the view, typically from a nib.
     self.searchBar.delegate = self;
     self.wkWebView.UIDelegate = self;
     self.wkWebView.navigationDelegate = self;
     self.wkWebView.scrollView.delegate = self;
     
+    if (!iPhone_X_S) {
+        [UIView animateWithDuration:0.1 animations:^{
+            self.searchBarToiPhoneXConstraint.priority = 250;
+            self.searchbarHiddenConstraint.priority = 750;
+            self.searchbarTopConstraint.priority = 1000;
+        }];
+    }
     
-    //self.searchBar.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.700];
-    self.searchBar.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.850];
+
+// self.searchBar.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.850];
     self.searchBar.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
     self.searchBar.barTintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
     if (@available(iOS 13.0, *)) {
-        self.searchBar.searchTextField.textColor = [UIColor blackColor];
+        self.searchBar.searchTextField.textColor = [UIColor labelColor];
         self.searchBar.searchTextField.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
     }
     //self.searchBar.showsCancelButton = YES;
@@ -56,6 +71,12 @@
         self.wkWebView.backgroundColor = [UIColor systemBackgroundColor];
     } else {
         self.wkWebView.backgroundColor = [UIColor whiteColor];
+    }
+    
+    if (iPhone_X_S) {
+        self.wkWebView.scrollView.contentInset = UIEdgeInsetsMake(60, 0, 120, 0);
+    } else {
+        self.wkWebView.scrollView.contentInset = UIEdgeInsetsMake(60, 0, 100, 0);
     }
 //    self.wkWebView.scalesPageToFit = YES;
 //    self.uiWebView.scrollView.showsHorizontalScrollIndicator = NO;
@@ -75,9 +96,6 @@
     [UIApplication sharedApplication].statusBarHidden = YES;
     //[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
     
-//    [TCUserDefaults().s
-    
-    
     
     NSURL *url = [NSURL URLWithString:TCUserDefaults.shared.getFSBMainPage];
     // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
@@ -89,13 +107,13 @@
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
     
     if (![df boolForKey:@"TheUserTermsAndConditions"]) {
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"用户条款" message:@"如果继续使用，则表示你同意本应用的协议。" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"同意协议" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"User Terms") message:HTCLocalized(@"User Terms Desc") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Agree to Agreement") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [df setBool:YES forKey:@"TheUserTermsAndConditions"];
         }];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"查看协议" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            [self loadString:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"View Agreement") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];
         }];
         
         [alert addAction:okAction];
@@ -104,6 +122,20 @@
             [self presentViewController:alert animated:YES completion:nil];
         });
     }
+}
+
+/**
+ *  从Safari打开
+ */
+- (void)inSafariOpenWithURL:(NSString *)url
+{
+    SFSafariViewController * sf = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+    if (@available(iOS 11.0, *)) {
+        sf.preferredBarTintColor = [UIColor colorWithRed:(66)/255.0 green:(156)/255.0 blue:(249)/255.0 alpha:1];
+        sf.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleDone;
+        sf.preferredControlTintColor = [UIColor whiteColor];
+    }
+    [self presentViewController:sf animated:YES completion:nil];
 }
 
 
@@ -296,13 +328,24 @@
     if (show) {
         [UIView animateWithDuration:0.3f animations:^{
             self.searchbarHiddenConstraint.priority = 750;
-            self.searchbarTopConstraint.priority = 1000;
+            if (iPhone_X_S) {
+//                self.searchbarTopConstraint.priority = 250;
+                self.searchBarToiPhoneXConstraint.priority = 1000;
+            } else{
+//                self.searchBarToiPhoneXConstraint.priority = 250;
+                self.searchbarTopConstraint.priority = 1000;
+            }
         }];
     } else {
         [UIView animateWithDuration:0.3f animations:^{
-            self.searchbarTopConstraint.priority = 750;
+            if (iPhone_X_S) {
+//                self.searchbarTopConstraint.priority = 250;
+                self.searchBarToiPhoneXConstraint.priority = 750;
+            } else{
+//                self.searchBarToiPhoneXConstraint.priority = 250;
+                self.searchbarTopConstraint.priority = 750;
+            }
             self.searchbarHiddenConstraint.priority = 1000;
-            
         }];
     }
 }
@@ -333,7 +376,7 @@
     static float newY = 0;
     newY = scrollView.contentOffset.y;
     
-    NSLog(@"%f", newY);
+//    NSLog(@"%f", newY);
     
     self.activityView.hidden = YES;
 
@@ -371,5 +414,10 @@
     return YES;
 }
 
+#pragma mark - status bar
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 @end

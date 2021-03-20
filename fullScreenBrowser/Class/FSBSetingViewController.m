@@ -9,6 +9,7 @@
 #import "FSBSetingViewController.h"
 #import <MessageUI/MessageUI.h>
 #import "AFNetworking.h"
+#import "Utility.h"
 #import "sys/utsname.h"
 #import "FSB-Swift.h"
 #import <SafariServices/SafariServices.h>
@@ -22,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"设置";
+    self.title = HTCLocalized(@"Settings");
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
@@ -42,7 +43,7 @@
     switch (indexPath.section) {
         case 0:
         {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"设置主页" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Set Homepage") message:@"" preferredStyle:UIAlertControllerStyleAlert];
             [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
                 textField.placeholder = TCUserDefaults.shared.getFSBMainPage;
                 textField.text = TCUserDefaults.shared.getFSBMainPage;
@@ -50,13 +51,13 @@
                 textField.keyboardType = UIKeyboardTypeURL;
                 textField.returnKeyType = UIReturnKeyDone;
             }];
-            UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"设置" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Settings") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 //compare the current password and do action here
                 [TCUserDefaults.shared setIFSBMainPageWithValue:[[alertController textFields][0] text]];
 
             }];
             [alertController addAction:confirmAction];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
 //                NSLog(@"Canelled");
             }];
             [alertController addAction:cancelAction];
@@ -71,7 +72,7 @@
                     uname(&systemInfo);
                     NSString *platform = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
                     NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-                    [self sendEmailWithSubject:@"@全屏浏览器的反馈" MessageBody:[NSString stringWithFormat:@"我现在使用全屏浏览器v%@,使用设备：%@,iOSv%@\n我的反馈和建议：\n1、\n2、\n3、",[infoDictionary objectForKey:@"CFBundleShortVersionString"],platform,[[UIDevice currentDevice] systemVersion]] isHTML:NO toRecipients:@[@"iHTCdevelop@gmail.com"] ccRecipients:nil bccRecipients:nil  Image:nil imageQuality:0];
+                    [self sendEmailWithSubject:HTCLocalized(@"Full screen browser feedback") MessageBody:[NSString stringWithFormat:@"%@v%@，%@：%@,iOSv%@\n%@：\n1、\n2、\n3、", HTCLocalized(@"I am using a full-screen browser now"), HTCLocalized(@"Use Device"), HTCLocalized(@"My feedback and suggestions"), [infoDictionary objectForKey:@"CFBundleShortVersionString"], platform, [[UIDevice currentDevice] systemVersion]] isHTML:NO toRecipients:@[@"iHTCdevelop@gmail.com"] ccRecipients:nil bccRecipients:nil  Image:nil imageQuality:0];
                     break;
                 }
                 case 2:
@@ -86,7 +87,19 @@
         break;
         case 2:
         {
-            [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];            
+            switch (indexPath.row) {
+                case 0:{
+                    [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];
+                    break;
+                }
+                case 1:{
+                    ITAdvancelDetailViewController *vc = [[ITAdvancelDetailViewController alloc] init];
+                    vc.title = HTCLocalized(@"More recommendations");
+                    vc.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:vc animated:YES];
+                    break;
+                }
+            }
         }
             break;
             
@@ -161,14 +174,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark - status bar
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
 }
-*/
-
 @end

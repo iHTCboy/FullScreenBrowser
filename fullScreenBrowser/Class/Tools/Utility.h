@@ -16,6 +16,8 @@
 #import <CoreLocation/CoreLocation.h>
 
 
+// 多语言
+#define HTCLocalized(key) NSLocalizedString(key, "")
 
 
 //主色   RGB(66,156,249)

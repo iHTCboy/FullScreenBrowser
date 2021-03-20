@@ -1,0 +1,18 @@
+/* 
+  InfoPlist.strings
+  FullScreenBrowser
+
+  Created by HTC on 2021/3/20.
+  Copyright © 2021 iHTCboy. All rights reserved.
+*/
+
+"CFBundleName" = "iBrowser";
+"NSAppleMusicUsageDescription" = "現在のWebページでパーソナライズされた音楽コンテンツを提供できるように、メディア情報の使​​用を許可してください。";
+"NSCameraUsageDescription" = "現在のウェブページは、写真の撮影、ウェブ画像のアップロード、個人のプロフィール写真の変更などのためにカメラにアクセスする必要があります。許可されていない場合、操作を続行できません。";
+"NSContactsUsageDescription" = "現在のウェブページがクイックアクセスを提供する番号入力を使用できるように、名簿の使用を許可してください。";
+"NSLocationAlwaysUsageDescription" = "ローカルニュースコンテンツを正確に提供できるように、位置情報の使用を許可してください。";
+"NSLocationUsageDescription" = "ローカルニュースコンテンツを正確に提供できるように、位置情報の使用を許可してください。";
+"NSLocationWhenInUseUsageDescription" = "ローカルニュースコンテンツを正確に提供できるように、位置情報の使用を許可してください。";
+"NSMicrophoneUsageDescription" = "現在のWebページで音声ダイアログ機能を使用できるように、マイクの使用を許可してください。";
+"NSPhotoLibraryUsageDescription" = "現在のウェブページがフォトアルバムを画像処理、ウェブ画像のアップロード、個人のプロフィール写真の変更などに使用できるように、現在のウェブページはフォトアルバムにアクセスする必要があります。許可されていない場合、あなたはできません操作を続行します。 ";
+"NSSiriUsageDescription" = "現在のWebページをSiriで処理できるように、会話にSiriを使用できるようにしてください。";

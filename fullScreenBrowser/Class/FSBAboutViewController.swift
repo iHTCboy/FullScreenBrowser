@@ -13,6 +13,7 @@ class FSBAboutViewController: UIViewController {
 
     @IBOutlet weak var logoImg: UIImageView!
     @IBOutlet weak var versionLbl: UILabel!
+    @IBOutlet weak var infoLbl: UILabel!
     
     
     override func viewDidLoad() {
@@ -29,10 +30,14 @@ class FSBAboutViewController: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:#selector(tapLogoImage))
         logoImg.addGestureRecognizer(tap)
         
+        let formatter = DateFormatter.init()
+        formatter.dateFormat = "yyyy"
+        let yearString = formatter.string(from: Date.init())
+        self.infoLbl.text = "Copyright © 2014-" + yearString + " @iHTCboy"
     }
     
     @objc func tapLogoImage(){
-        UIApplication.shared.openURL(URL.init(string: "https://itunes.apple.com/cn/app/gui-lin-li-gong-da-xue-yun/id948944368?mt=8")!)
+        UIApplication.shared.open(URL.init(string: "https://itunes.apple.com/us/app/FullScreen/id948944368?mt=8")!, options: [:], completionHandler: nil)
     }
     
     override func didReceiveMemoryWarning() {

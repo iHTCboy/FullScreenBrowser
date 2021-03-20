@@ -3,49 +3,49 @@
 "2Ej-hz-eOJ.text" = "version";
 
 /* Class = "UILabel"; text = "开发者内容"; ObjectID = "4rP-hE-ucn"; */
-"4rP-hE-ucn.text" = "开发者内容";
+"4rP-hE-ucn.text" = "Developer Content";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "Aaz-67-obL"; */
 "Aaz-67-obL.headerTitle" = " ";
 
 /* Class = "UINavigationItem"; title = "设置"; ObjectID = "C3p-TA-LIr"; */
-"C3p-TA-LIr.title" = "设置";
+"C3p-TA-LIr.title" = "Settings";
 
 /* Class = "UILabel"; text = "用户条款"; ObjectID = "DXp-tt-BC6"; */
-"DXp-tt-BC6.text" = "用户条款";
+"DXp-tt-BC6.text" = "User Terms";
 
 /* Class = "UILabel"; text = "评价应用"; ObjectID = "E9P-q1-CRQ"; */
-"E9P-q1-CRQ.text" = "评价应用";
+"E9P-q1-CRQ.text" = "Evaluation Application";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "GaA-ux-Cw6"; */
 "GaA-ux-Cw6.headerTitle" = " ";
 
 /* Class = "UINavigationItem"; title = "关于应用"; ObjectID = "GaY-KI-fsw"; */
-"GaY-KI-fsw.title" = "关于应用";
+"GaY-KI-fsw.title" = "About application";
 
 /* Class = "UILabel"; text = "关于应用"; ObjectID = "JZB-aq-aup"; */
-"JZB-aq-aup.text" = "关于应用";
+"JZB-aq-aup.text" = "About application";
 
 /* Class = "UILabel"; text = "隐私协议"; ObjectID = "UI7-Oz-SNo"; */
-"UI7-Oz-SNo.text" = "隐私协议";
+"UI7-Oz-SNo.text" = "Privacy Agreement";
 
 /* Class = "UILabel"; text = "全屏浏览器"; ObjectID = "X4O-Vo-ER0"; */
-"X4O-Vo-ER0.text" = "全屏浏览器";
+"X4O-Vo-ER0.text" = "iBrowser";
 
 /* Class = "UILabel"; text = "起始页面"; ObjectID = "bvJ-ob-mAi"; */
-"bvJ-ob-mAi.text" = "起始页面";
+"bvJ-ob-mAi.text" = "Start page";
 
 /* Class = "UISearchBar"; placeholder = "搜索或输入网站地址"; ObjectID = "c4g-kq-Lkg"; */
-"c4g-kq-Lkg.placeholder" = "搜索或输入网站地址";
+"c4g-kq-Lkg.placeholder" = "Search Or enter the website address";
 
 /* Class = "UILabel"; text = "设置主页"; ObjectID = "eZr-dS-T5c"; */
-"eZr-dS-T5c.text" = "设置主页";
+"eZr-dS-T5c.text" = "Set homepage";
 
 /* Class = "UILabel"; text = "应用反馈"; ObjectID = "fSB-1e-Gv6"; */
-"fSB-1e-Gv6.text" = "应用反馈";
+"fSB-1e-Gv6.text" = "Feedback";
 
 /* Class = "UILabel"; text = "更多推荐"; ObjectID = "iQD-hB-sU1"; */
-"iQD-hB-sU1.text" = "更多推荐";
+"iQD-hB-sU1.text" = "More recommendations";
 
 /* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "pcV-9J-6TS"; */
 "pcV-9J-6TS.footerTitle" = " ";

@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  FullScreenBrowser
+
+  Created by HTC on 2021/3/20.
+  Copyright © 2021 iHTCboy. All rights reserved.
+*/
+
+
+"User Terms" = "Điều khoản Người dùng";
+"User Terms Desc" = "Nếu bạn tiếp tục sử dụng nó, có nghĩa là bạn đồng ý với thỏa thuận của ứng dụng này.";
+"Agree to Agreement" = "Đồng ý với Thỏa thuận";
+"View Agreement" = "Xem Thỏa thuận";
+"Set Homepage" = "Đặt Trang chủ";
+"Settings" = "Cài đặt";
+"Cancel" = "Hủy";
+"Full screen browser feedback" = "Phản hồi trình duyệt toàn màn hình";
+"I am using a full-screen browser now" = "Tôi đang sử dụng trình duyệt toàn màn hình";
+"Use Device" = "Sử dụng Thiết bị";
+"My feedback and suggestions" = "Phản hồi và đề xuất của tôi";
+"More recommendations" = "Các đề xuất khác";
