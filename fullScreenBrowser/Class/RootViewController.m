@@ -154,7 +154,7 @@
         urlStr = [NSString stringWithFormat:@"http://%@", str];
         url = [NSURL URLWithString:urlStr];
     }else{
-        urlStr = [NSString stringWithFormat:@"https://www.bing.com/search?q=%@", str];
+        urlStr = [NSString stringWithFormat:@"%@%@", TCUserDefaults.shared.getFSBSearchPage, str];
         urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         url = [NSURL URLWithString:urlStr];
     }

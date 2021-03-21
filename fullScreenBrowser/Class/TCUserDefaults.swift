@@ -37,4 +37,16 @@ class TCUserDefaults: NSObject {
     @objc open func setIFSBMainPage(value: String) {
         setTCValue(value: value, forKey: "FSBMainPageKey")
     }
+    
+    @objc open func getFSBSearchPage() -> String {
+        if let language = getTCValue(key: "FSBSearchPageKey") as? String {
+            return language
+        }
+        return  "https://www.bing.com/search?q="
+    }
+    
+    @objc open func setIFSBSrarchPage(value: String) {
+        setTCValue(value: value, forKey: "FSBSearchPageKey")
+    }
+    
 }

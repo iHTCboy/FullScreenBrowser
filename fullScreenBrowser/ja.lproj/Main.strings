@@ -2,6 +2,9 @@
 /* Class = "UILabel"; text = "version"; ObjectID = "2Ej-hz-eOJ"; */
 "2Ej-hz-eOJ.text" = "version";
 
+/* Class = "UILabel"; text = "搜索引擎"; ObjectID = "3kF-l4-TBh"; */
+"3kF-l4-TBh.text" = "検索エンジン";
+
 /* Class = "UILabel"; text = "开发者内容"; ObjectID = "4rP-hE-ucn"; */
 "4rP-hE-ucn.text" = "開発者コンテンツ";
 

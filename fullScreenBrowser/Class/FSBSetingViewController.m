@@ -16,6 +16,10 @@
 
 @interface FSBSetingViewController ()<MFMailComposeViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *mainPageLbl;
+@property (weak, nonatomic) IBOutlet UILabel *searchEngineLbl;
+
+
 @end
 
 @implementation FSBSetingViewController
@@ -25,7 +29,13 @@
     
     self.title = HTCLocalized(@"Settings");
     
-    [[UIApplication sharedApplication] setStatusBarHidden:NO];
+    self.mainPageLbl.text = TCUserDefaults.shared.getFSBMainPage;
+    self.searchEngineLbl.text = TCUserDefaults.shared.getFSBSearchPage;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
 
@@ -43,25 +53,91 @@
     switch (indexPath.section) {
         case 0:
         {
-            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Set Homepage") message:@"" preferredStyle:UIAlertControllerStyleAlert];
-            [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
-                textField.placeholder = TCUserDefaults.shared.getFSBMainPage;
-                textField.text = TCUserDefaults.shared.getFSBMainPage;
-                textField.clearButtonMode = UITextFieldViewModeWhileEditing;
-                textField.keyboardType = UIKeyboardTypeURL;
-                textField.returnKeyType = UIReturnKeyDone;
-            }];
-            UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Settings") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                //compare the current password and do action here
-                [TCUserDefaults.shared setIFSBMainPageWithValue:[[alertController textFields][0] text]];
+            switch (indexPath.row) {
+                case 0:{
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Set Homepage") message:@"" preferredStyle:UIAlertControllerStyleAlert];
+                    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                        textField.placeholder = TCUserDefaults.shared.getFSBMainPage;
+                        textField.text = TCUserDefaults.shared.getFSBMainPage;
+                        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                        textField.keyboardType = UIKeyboardTypeURL;
+                        textField.returnKeyType = UIReturnKeyDone;
+                    }];
+                    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Settings") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        //compare the current password and do action here
+                        [TCUserDefaults.shared setIFSBMainPageWithValue:[[alertController textFields][0] text]];
+                        self.mainPageLbl.text = TCUserDefaults.shared.getFSBMainPage;
 
-            }];
-            [alertController addAction:confirmAction];
-            UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//                NSLog(@"Canelled");
-            }];
-            [alertController addAction:cancelAction];
-            [self presentViewController:alertController animated:YES completion:nil];
+                    }];
+                    [alertController addAction:confirmAction];
+                    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    }];
+                    [alertController addAction:cancelAction];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    break;
+                }
+                case 1:{
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Set Search Engine") message:@"" preferredStyle:UIAlertControllerStyleAlert];
+                    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                        textField.placeholder = TCUserDefaults.shared.getFSBSearchPage;
+                        textField.text = TCUserDefaults.shared.getFSBSearchPage;
+                        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                        textField.keyboardType = UIKeyboardTypeURL;
+                        textField.returnKeyType = UIReturnKeyDone;
+                    }];
+                    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Custom Search Engine") style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = [[alertController textFields][0] text];
+                        [TCUserDefaults.shared setIFSBSrarchPageWithValue:url];
+                        self.searchEngineLbl.text = url;
+                    }];
+                    [alertController addAction:confirmAction];
+                    UIAlertAction *confirmAction1 = [UIAlertAction actionWithTitle:HTCLocalized(@"Bing") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = @"https://www.bing.com/search?q=";
+                        [self saveSearchEngineURL:url];
+                    }];
+                    [alertController addAction:confirmAction1];
+                    UIAlertAction *confirmAction2 = [UIAlertAction actionWithTitle:HTCLocalized(@"Google") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = @"https://www.google.com/search?q=";
+                        [self saveSearchEngineURL:url];
+                    }];
+                    [alertController addAction:confirmAction2];
+                    UIAlertAction *confirmAction3 = [UIAlertAction actionWithTitle:HTCLocalized(@"Baidu") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = @"https://www.baidu.com/s?wd=";
+                        [self saveSearchEngineURL:url];
+                    }];
+                    [alertController addAction:confirmAction3];
+                    UIAlertAction *confirmAction7 = [UIAlertAction actionWithTitle:HTCLocalized(@"Sogou") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = @"https://www.sogou.com/web?query=";
+                        [self saveSearchEngineURL:url];
+                    }];
+                    [alertController addAction:confirmAction7];
+                    UIAlertAction *confirmAction8 = [UIAlertAction actionWithTitle:HTCLocalized(@"360") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = @"https://www.so.com/s?q=";
+                        [self saveSearchEngineURL:url];
+                    }];
+                    [alertController addAction:confirmAction8];
+                    UIAlertAction *confirmAction4 = [UIAlertAction actionWithTitle:HTCLocalized(@"DuckDuckGo") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = @"https://duckduckgo.com/?q=";
+                        [self saveSearchEngineURL:url];
+                    }];
+                    [alertController addAction:confirmAction4];
+                    UIAlertAction *confirmAction5 = [UIAlertAction actionWithTitle:HTCLocalized(@"GitHub") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = @"https://github.com/search?q=";
+                        [self saveSearchEngineURL:url];
+                    }];
+                    [alertController addAction:confirmAction5];
+                    UIAlertAction *confirmAction6 = [UIAlertAction actionWithTitle:HTCLocalized(@"StackOverflow") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        NSString *url = @"https://www.stackoverflow.com/search?q=";
+                        [self saveSearchEngineURL:url];
+                    }];
+                    [alertController addAction:confirmAction6];
+                    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    }];
+                    [alertController addAction:cancelAction];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    break;
+                }
+            }
         }
             break;
         case 1:
@@ -108,6 +184,11 @@
     }
 }
 
+
+- (void)saveSearchEngineURL:(NSString *)url {
+    [TCUserDefaults.shared setIFSBSrarchPageWithValue:url];
+    self.searchEngineLbl.text = url;
+}
 
 /**
  *  从Safari打开
