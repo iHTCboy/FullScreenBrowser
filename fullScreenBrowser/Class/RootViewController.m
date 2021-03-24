@@ -41,13 +41,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
     // Do any additional setup after loading the view, typically from a nib.
     self.searchBar.delegate = self;
     self.wkWebView.UIDelegate = self;
     self.wkWebView.navigationDelegate = self;
     self.wkWebView.scrollView.delegate = self;
+    if (@available(iOS 13.0, *)) {
+        self.wkWebView.backgroundColor = [UIColor secondarySystemBackgroundColor];
+        self.wkWebView.scrollView.backgroundColor = [UIColor secondarySystemBackgroundColor];
+    }
     
     if (!iPhone_X_S) {
         [UIView animateWithDuration:0.1 animations:^{
@@ -122,6 +124,9 @@
             [self presentViewController:alert animated:YES completion:nil];
         });
     }
+    
+    // 设置允许摇一摇功能
+    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;  
 }
 
 /**
@@ -419,5 +424,31 @@
 {
     return YES;
 }
+
+
+
+#pragma mark - motion event
+- (BOOL)canBecomeFirstResponder
+{
+    return YES;// default is NO
+}
+
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    //NSLog(@"开始摇动手机");
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    //NSLog(@"stop");
+    [self searchbarShow:YES];
+    [self toolbarShow:YES];
+}
+
+- (void)motionCancelled:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    //NSLog(@"取消");
+}
+
 
 @end
