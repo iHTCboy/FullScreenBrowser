@@ -18,16 +18,16 @@
 "DXp-tt-BC6.text" = "User Terms";
 
 /* Class = "UILabel"; text = "评价应用"; ObjectID = "E9P-q1-CRQ"; */
-"E9P-q1-CRQ.text" = "Evaluation Application";
+"E9P-q1-CRQ.text" = "Evaluation App";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "GaA-ux-Cw6"; */
 "GaA-ux-Cw6.headerTitle" = " ";
 
 /* Class = "UINavigationItem"; title = "关于应用"; ObjectID = "GaY-KI-fsw"; */
-"GaY-KI-fsw.title" = "About application";
+"GaY-KI-fsw.title" = "About App";
 
 /* Class = "UILabel"; text = "关于应用"; ObjectID = "JZB-aq-aup"; */
-"JZB-aq-aup.text" = "About application";
+"JZB-aq-aup.text" = "About App";
 
 /* Class = "UILabel"; text = "隐私协议"; ObjectID = "UI7-Oz-SNo"; */
 "UI7-Oz-SNo.text" = "Privacy Agreement";
@@ -36,19 +36,19 @@
 "X4O-Vo-ER0.text" = "iBrowser";
 
 /* Class = "UILabel"; text = "起始页面"; ObjectID = "bvJ-ob-mAi"; */
-"bvJ-ob-mAi.text" = "Start page";
+"bvJ-ob-mAi.text" = "Start Page";
 
 /* Class = "UISearchBar"; placeholder = "搜索或输入网站地址"; ObjectID = "c4g-kq-Lkg"; */
 "c4g-kq-Lkg.placeholder" = "Search Or enter the website address";
 
 /* Class = "UILabel"; text = "设置主页"; ObjectID = "eZr-dS-T5c"; */
-"eZr-dS-T5c.text" = "Set homepage";
+"eZr-dS-T5c.text" = "Set Homepage";
 
 /* Class = "UILabel"; text = "应用反馈"; ObjectID = "fSB-1e-Gv6"; */
 "fSB-1e-Gv6.text" = "Feedback";
 
 /* Class = "UILabel"; text = "更多推荐"; ObjectID = "iQD-hB-sU1"; */
-"iQD-hB-sU1.text" = "More recommendations";
+"iQD-hB-sU1.text" = "More Recommend";
 
 /* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "pcV-9J-6TS"; */
 "pcV-9J-6TS.footerTitle" = " ";

@@ -152,9 +152,8 @@
                     break;
                 }
                 case 2:
-                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?id=%@&pageNumber=0&sortOrdering=2&type=Purple+Software&mt=8",@"948944368"]] options:@{} completionHandler:nil];
+                    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://apps.apple.com/cn/app/iBrower/id948944368"] options:@{} completionHandler:nil];
                     break;
-                    
                 default:
                     break;
             }
