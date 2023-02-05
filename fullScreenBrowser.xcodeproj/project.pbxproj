@@ -759,7 +759,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2023.02.05;
+				CURRENT_PROJECT_VERSION = 2023.02.06;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 i386";
@@ -796,7 +796,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 2023.02.05;
+				CURRENT_PROJECT_VERSION = 2023.02.06;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 28PV6G96R7;
 				INFOPLIST_FILE = FullScreenBrowser/Info.plist;

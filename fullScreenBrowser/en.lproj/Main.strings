@@ -54,7 +54,7 @@
 "iQD-hB-sU1.text" = "More Recommend";
 
 /* Class = "UILabel"; text = "开启设置界面密码锁定"; ObjectID = "ihf-X0-5rV"; */
-"ihf-X0-5rV.text" = "Enable the password lock of the settings page";
+"ihf-X0-5rV.text" = "Enable password lock of settings page";
 
 /* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "pcV-9J-6TS"; */
 "pcV-9J-6TS.footerTitle" = " ";

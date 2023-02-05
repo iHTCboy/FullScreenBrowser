@@ -201,7 +201,7 @@
                                                         <action selector="clickedHiddedAddressSwitch:" destination="YId-uL-a2m" eventType="valueChanged" id="BMi-cP-eXl"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="强制隐藏地址栏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wun-RO-CAu">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="强制隐藏地址栏" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wun-RO-CAu">
                                                     <rect key="frame" x="20" y="11" width="196" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -231,8 +231,8 @@
                                                         <action selector="clickedSettingsPasswordSwitch:" destination="YId-uL-a2m" eventType="valueChanged" id="xFw-FH-w4J"/>
                                                     </connections>
                                                 </switch>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启设置界面密码锁定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-X0-5rV">
-                                                    <rect key="frame" x="20" y="11" width="196" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启设置界面密码锁定" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ihf-X0-5rV">
+                                                    <rect key="frame" x="20" y="11" width="270" height="22"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -240,11 +240,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gSb-ON-D1m" firstAttribute="centerY" secondItem="bBm-oy-uHj" secondAttribute="centerY" id="B5u-Uc-GUY"/>
-                                                <constraint firstItem="gSb-ON-D1m" firstAttribute="leading" secondItem="ihf-X0-5rV" secondAttribute="trailing" constant="100" id="Bdf-ud-86B"/>
                                                 <constraint firstItem="ihf-X0-5rV" firstAttribute="top" secondItem="bBm-oy-uHj" secondAttribute="topMargin" id="Dva-dv-GGW"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ihf-X0-5rV" secondAttribute="bottom" id="JWJ-R5-FU3"/>
                                                 <constraint firstItem="ihf-X0-5rV" firstAttribute="leading" secondItem="bBm-oy-uHj" secondAttribute="leadingMargin" id="X1d-JB-sPT"/>
                                                 <constraint firstAttribute="trailing" secondItem="gSb-ON-D1m" secondAttribute="trailing" constant="25" id="vap-g7-Xwl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ihf-X0-5rV" secondAttribute="trailing" constant="80" id="zCb-9d-CU2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
