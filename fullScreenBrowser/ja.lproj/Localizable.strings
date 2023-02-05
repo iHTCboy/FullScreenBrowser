@@ -26,3 +26,14 @@
 "Baidu" = "Baidu";
 "Sogou" = "Sogou";
 "360" = "360 検索";
+"Tips" = "ヒント";
+"OK" = "確認";
+"Set Password" = "パスワードの設定";
+"Set Settings Password" = "設定パスワードを入力";
+"Password can not be blank" = "パスワードを空白にすることはできません!";
+"Delete current password" = "設定したパスワードを削除してもよろしいですか?";
+"Does not support sending mail" = "メールの送信をサポートしていません~";
+"Forcibly hidden" = "アドレスバーが強制的に非表示になっています。設定インターフェイスを開いて変更してください~";
+"Verify setup password" = "セットアップパスワードの確認";
+"Verify" = "検証";
+"Password is incorrect" = "入力されたパスワードが正しくありません!";

@@ -26,3 +26,14 @@
 "Baidu" = "Baidu";
 "Sogou" = "Sogou";
 "360" = "360";
+"Tips" = "Tips";
+"OK" = "Confirm";
+"Set Password" = "Set Password";
+"Set Settings Password" = "Enter Settings Password";
+"Password can not be blank" = "The password cannot be blank!";
+"Delete current password" = "Are you sure to remove the set password?";
+"Does not support sending mail" = "Does not support sending mail~";
+"Forcibly hidden" = "The address bar has been forcibly hidden, please open the settings page to change~";
+"Verify setup password" = "Verify setup password";
+"Verify" = "Verify";
+"Password is incorrect" = "The password entered is incorrect!";

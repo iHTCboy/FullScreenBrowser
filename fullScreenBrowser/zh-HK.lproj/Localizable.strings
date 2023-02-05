@@ -26,3 +26,14 @@
 "Baidu" = "Baidu";
 "Sogou" = "Sogou";
 "360" = "360";
+"Tips" = "提示";
+"OK" = "確認";
+"Set Password" = "設置密碼";
+"Set Settings Password" = "輸入設置的密碼";
+"Password can not be blank" = "設置密碼不能為空！";
+"Delete current password" = "確認是否移除設置的密碼？";
+"Does not support sending mail" = "確當前設備不支持發送郵件~";
+"Forcibly hidden" = "已強制隱藏地址欄，請打開設置界面更改~";
+"Verify setup password" = "驗證設置密碼";
+"Verify" = "驗證";
+"Password is incorrect" = "輸入的密碼不正確！";

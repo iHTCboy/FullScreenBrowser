@@ -2,6 +2,9 @@
 /* Class = "UILabel"; text = "version"; ObjectID = "2Ej-hz-eOJ"; */
 "2Ej-hz-eOJ.text" = "version";
 
+/* Class = "UILabel"; text = "Detail"; ObjectID = "3Jg-HA-JyZ"; */
+"3Jg-HA-JyZ.text" = "Detail";
+
 /* Class = "UILabel"; text = "搜索引擎"; ObjectID = "3kF-l4-TBh"; */
 "3kF-l4-TBh.text" = "máy tìm kiếm";
 
@@ -50,11 +53,17 @@
 /* Class = "UILabel"; text = "更多推荐"; ObjectID = "iQD-hB-sU1"; */
 "iQD-hB-sU1.text" = "Đề xuất khác";
 
+/* Class = "UILabel"; text = "开启设置界面密码锁定"; ObjectID = "ihf-X0-5rV"; */
+"ihf-X0-5rV.text" = "Bật khóa mật khẩu của giao diện cài đặt";
+
 /* Class = "UITableViewSection"; footerTitle = " "; ObjectID = "pcV-9J-6TS"; */
 "pcV-9J-6TS.footerTitle" = " ";
 
 /* Class = "UITableViewSection"; headerTitle = " "; ObjectID = "pcV-9J-6TS"; */
 "pcV-9J-6TS.headerTitle" = " ";
+
+/* Class = "UILabel"; text = "强制隐藏地址栏"; ObjectID = "wun-RO-CAu"; */
+"wun-RO-CAu.text" = "Buộc ẩn thanh địa chỉ";
 
 /* Class = "UILabel"; text = "© 2014-2019 @iHTCboy All rights reserved"; ObjectID = "y3h-yV-QAG"; */
 "y3h-yV-QAG.text" = "© 2014-2019 @iHTCboy All rights reserved";

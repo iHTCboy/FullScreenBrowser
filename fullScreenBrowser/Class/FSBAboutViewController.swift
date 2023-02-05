@@ -27,6 +27,8 @@ class FSBAboutViewController: UIViewController {
         versionLbl.text = "v" +  (Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)
         
         logoImg.isUserInteractionEnabled = true
+        logoImg.layer.masksToBounds = true
+        logoImg.layer.cornerRadius = 15;
         let tap: UITapGestureRecognizer = UITapGestureRecognizer.init(target: self, action:#selector(tapLogoImage))
         logoImg.addGestureRecognizer(tap)
         

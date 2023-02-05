@@ -23,7 +23,7 @@
     (!UIEdgeInsetsEqualToEdgeInsets([[[UIApplication sharedApplication].keyWindow valueForKey:@"safeAreaInsets"] UIEdgeInsetsValue], UIEdgeInsetsZero)) : NO)
 
 
-@interface RootViewController ()<UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate>
+@interface RootViewController ()<UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate, SFSafariViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHiddenConstraint;
@@ -58,7 +58,6 @@
             self.searchbarTopConstraint.priority = 1000;
         }];
     }
-    
 
 // self.searchBar.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.850];
     self.searchBar.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
@@ -68,6 +67,10 @@
         self.searchBar.searchTextField.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
     }
     //self.searchBar.showsCancelButton = YES;
+    
+    BOOL isHiddenSearchBar = TCUserDefaults.shared.getFSBHiddenAddressBar;
+    [self.searchBar setHidden:isHiddenSearchBar];
+    [self searchbarShow:!isHiddenSearchBar];
     
     if (@available(iOS 13.0, *)) {
         self.wkWebView.backgroundColor = [UIColor systemBackgroundColor];
@@ -92,19 +95,13 @@
     
     self.backButton.enabled = NO;
     self.forwarButton.enabled = NO;
-
     
     // 显示状态栏
     [UIApplication sharedApplication].statusBarHidden = YES;
     //[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
     
-    
-    NSURL *url = [NSURL URLWithString:TCUserDefaults.shared.getFSBMainPage];
-    // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    // 3. 发送请求给服务器
-    [self.wkWebView loadRequest:request];
-    
+    // webview
+    [self initWebViewPage];
     
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
     
@@ -113,6 +110,7 @@
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"User Terms") message:HTCLocalized(@"User Terms Desc") preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Agree to Agreement") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [df setBool:YES forKey:@"TheUserTermsAndConditions"];
+            [self initWebViewPage];
         }];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"View Agreement") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             [self inSafariOpenWithURL:@"https://raw.githubusercontent.com/iHTCboy/FullScreenBrowser/master/LICENSE"];
@@ -129,12 +127,22 @@
     [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;  
 }
 
+- (void)initWebViewPage
+{
+    NSURL *url = [self getURLWithString:TCUserDefaults.shared.getFSBMainPage];
+    // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    // 3. 发送请求给服务器
+    [self.wkWebView loadRequest:request];
+}
+
 /**
  *  从Safari打开
  */
 - (void)inSafariOpenWithURL:(NSString *)url
 {
     SFSafariViewController * sf = [[SFSafariViewController alloc] initWithURL:[NSURL URLWithString:url]];
+    sf.delegate = self;
     if (@available(iOS 11.0, *)) {
         sf.preferredBarTintColor = [UIColor colorWithRed:(66)/255.0 green:(156)/255.0 blue:(249)/255.0 alpha:1];
         sf.dismissButtonStyle = SFSafariViewControllerDismissButtonStyleDone;
@@ -143,11 +151,13 @@
     [self presentViewController:sf animated:YES completion:nil];
 }
 
-
-// 让浏览器加载指定的字符串,使用m.baidu.com进行搜索
-- (void)loadString:(NSString *)str
+- (void)safariViewControllerDidFinish:(SFSafariViewController *)controller
 {
-    // 1. URL 定位资源,需要资源的地址
+    [self initWebViewPage];
+}
+
+- (NSURL *)getURLWithString:(NSString *)str
+{
     NSString *urlStr = str;
     NSURL *url = nil;
     
@@ -158,6 +168,20 @@
      
         urlStr = [NSString stringWithFormat:@"http://%@", str];
         url = [NSURL URLWithString:urlStr];
+    }
+    
+    return url;
+}
+
+// 让浏览器加载指定的字符串,使用m.baidu.com进行搜索
+- (void)loadString:(NSString *)str
+{
+    // 1. URL 定位资源,需要资源的地址
+    NSString *urlStr = str;
+    NSURL *url = [self getURLWithString:str];
+    
+    if (url) {
+        
     }else{
         urlStr = [NSString stringWithFormat:@"%@%@", TCUserDefaults.shared.getFSBSearchPage, str];
         urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
@@ -285,15 +309,60 @@
     [self.wkWebView reload];
 }
 
+//隐藏搜索框
+- (IBAction)srarchButtonHiden:(id)sender {
+    if (TCUserDefaults.shared.getFSBHiddenAddressBar) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Tips") message:HTCLocalized(@"Forcibly hidden") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:HTCLocalized(@"OK") style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
+    
+    self.searchBar.hidden = !self.searchBar.hidden;
+}
 
 - (IBAction)clickedHomeRepeat:(id)sender {
-//    FSBSetingViewController * vc = [[FSBSetingViewController alloc]init];
+    
+    if (TCUserDefaults.shared.getFSBSettingsPasswordStatus) {
+        // 需要校验密码成功才能进入设置
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Verify setup password") message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            textField.placeholder = HTCLocalized(@"Set Settings Password");
+            textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+            textField.keyboardType = UIKeyboardTypeDefault;
+            textField.returnKeyType = UIReturnKeyDone;
+        }];
+        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Verify") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSString *ps = [[alertController textFields][0] text];
+            NSString *password = TCUserDefaults.shared.getFSBSettingsPasswordValue;
+            // 校验密码
+            if (ps.length > 0 && ps == password) {
+                [self openSettingsPage];
+            } else {
+                // error
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Tips") message:HTCLocalized(@"Password is incorrect") preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action = [UIAlertAction actionWithTitle:HTCLocalized(@"OK") style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }];
+        [alertController addAction:confirmAction];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+        return;
+    }
+    
+    [self openSettingsPage];
+}
+
+- (void)openSettingsPage {
     //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     //由storyboard根据myView的storyBoardID来获取我们要切换的视图
     UIViewController *vc = [story instantiateViewControllerWithIdentifier:@"FSBNavigationController"];
     [self presentViewController:vc animated:YES completion:nil];
-    
 }
 
 - (IBAction)clickedHome:(id)sender {
@@ -331,6 +400,9 @@
 
 - (void)searchbarShow:(BOOL)show {
     if (show) {
+        if (TCUserDefaults.shared.getFSBHiddenAddressBar) {
+            return;
+        }
         [UIView animateWithDuration:0.3f animations:^{
             self.searchbarHiddenConstraint.priority = 750;
             if (iPhone_X_S) {
@@ -354,15 +426,6 @@
         }];
     }
 }
-
-
-
-//隐藏搜索框
-- (IBAction)srarchButtonHiden:(id)sender {
-    
-    self.searchBar.hidden = !self.searchBar.hidden;
-}
-
 
 //设置
 - (IBAction)setingButton:(id)sender {

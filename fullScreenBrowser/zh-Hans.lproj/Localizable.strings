@@ -26,3 +26,14 @@
 "Baidu" = "百度";
 "Sogou" = "搜狗";
 "360" = "360搜索";
+"Tips" = "提示";
+"OK" = "确认";
+"Set Password" = "设置密码";
+"Set Settings Password" = "输入设置的密码";
+"Password can not be blank" = "设置密码不能为空！";
+"Delete current password" = "确认是否移除设置的密码？";
+"Does not support sending mail" = "确当前设备不支持发送邮件~";
+"Forcibly hidden" = "已强制隐藏地址栏，请打开设置界面更改~";
+"Verify setup password" = "验证设置密码";
+"Verify" = "验证";
+"Password is incorrect" = "输入的密码不正确！";

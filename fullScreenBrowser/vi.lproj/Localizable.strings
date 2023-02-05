@@ -26,3 +26,14 @@
 "Baidu" = "Baidu";
 "Sogou" = "Sogou";
 "360" = "Tìm kiếm 360";
+"Tips" = "Mẹo";
+"OK" = "Xác nhận";
+"Set Password" = "Đặt Mật khẩu";
+"Set Settings Password" = "Nhập Mật khẩu Cài đặt";
+"Password can not be blank" = "Mật khẩu không được để trống!";
+"Delete current password" = "Bạn có chắc chắn xóa mật khẩu đã đặt không?";
+"Does not support sending mail" = "Không hỗ trợ gửi thư~";
+"Forcibly hidden" = "Thanh địa chỉ đã bị ẩn đi, vui lòng mở giao diện cài đặt để thay đổi~";
+"Verify setup password" = "Xác minh mật khẩu thiết lập";
+"Verify" = "Xác minh";
+"Password is incorrect" = "Mật khẩu đã nhập không đúng!";

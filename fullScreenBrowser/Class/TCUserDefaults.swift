@@ -49,4 +49,38 @@ class TCUserDefaults: NSObject {
         setTCValue(value: value, forKey: "FSBSearchPageKey")
     }
     
+    // 隐藏地址栏功能
+    @objc open func getFSBHiddenAddressBar() -> Bool {
+        if let hidden = getTCValue(key: "FSBHiddenAddressBarKey") as? Bool {
+            return hidden
+        }
+        return  false
+    }
+    
+    @objc open func setIFSBHiddenAddressBar(value: Bool) {
+        setTCValue(value: value, forKey: "FSBHiddenAddressBarKey")
+    }
+    
+    @objc open func getFSBSettingsPasswordStatus() -> Bool {
+        if let hidden = getTCValue(key: "FSBSettingsPasswordStatusKey") as? Bool {
+            return hidden
+        }
+        return  false
+    }
+    
+    @objc open func setIFSBSettingsPasswordStatus(value: Bool) {
+        setTCValue(value: value, forKey: "FSBSettingsPasswordStatusKey")
+    }
+    
+    @objc open func getFSBSettingsPasswordValue() -> String {
+        if let language = getTCValue(key: "FSBSettingsPasswordValueKey") as? String {
+            return language
+        }
+        return  ""
+    }
+    
+    @objc open func setIFSBSettingsPassword(value: String) {
+        setTCValue(value: value, forKey: "FSBSettingsPasswordValueKey")
+    }
+    
 }

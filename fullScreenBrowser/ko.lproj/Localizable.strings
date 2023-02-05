@@ -26,3 +26,14 @@
 "Baidu" = "Baidu";
 "Sogou" = "Sogou";
 "360" = "360 검색";
+"Tips" = "팁";
+"OK" = "확인";
+"Set Password" = "비밀번호 설정";
+"Set Settings Password" = "설정 암호 입력";
+"Password can not be blank" = "비밀번호는 비워둘 수 없습니다!";
+"Delete current password" = "설정된 비밀번호를 삭제하시겠습니까?";
+"Does not support sending mail" = "메일 보내기를 지원하지 않습니다~";
+"Forcibly hidden" = "주소 표시줄이 강제로 숨겨졌습니다. 변경하려면 설정 인터페이스를 여세요~";
+"Verify setup password" = "설정 암호 확인";
+"Verify" = "확인";
+"Password is incorrect" = "입력한 암호가 올바르지 않습니다!";

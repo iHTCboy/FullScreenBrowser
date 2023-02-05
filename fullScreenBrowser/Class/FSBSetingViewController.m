@@ -18,6 +18,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *mainPageLbl;
 @property (weak, nonatomic) IBOutlet UILabel *searchEngineLbl;
+@property (weak, nonatomic) IBOutlet UISwitch *addressSwitchBtn;
+@property (weak, nonatomic) IBOutlet UISwitch *passwordSwitchBtn;
 
 
 @end
@@ -31,6 +33,8 @@
     
     self.mainPageLbl.text = TCUserDefaults.shared.getFSBMainPage;
     self.searchEngineLbl.text = TCUserDefaults.shared.getFSBSearchPage;
+    [self.addressSwitchBtn setOn:TCUserDefaults.shared.getFSBHiddenAddressBar];
+    [self.passwordSwitchBtn setOn:TCUserDefaults.shared.getFSBSettingsPasswordStatus];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -38,11 +42,63 @@
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
 }
 
-
 - (IBAction)clickedCloseBtn:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
     }];
+}
+
+- (IBAction)clickedHiddedAddressSwitch:(UISwitch *)sender {
+    [TCUserDefaults.shared setIFSBHiddenAddressBarWithValue:sender.isOn];
+}
+
+- (IBAction)clickedSettingsPasswordSwitch:(UISwitch *)sender {
+    if (sender.isOn) {
+        // 设置密码
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Set Password") message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+            //textField.secureTextEntry = YES;
+            textField.placeholder = HTCLocalized(@"Set Settings Password");
+            textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+            textField.keyboardType = UIKeyboardTypeDefault;
+            textField.returnKeyType = UIReturnKeyDone;
+        }];
+        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Settings") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            NSString *ps = [[alertController textFields][0] text];
+            if (ps.length > 0) {
+                [TCUserDefaults.shared setIFSBSettingsPasswordStatusWithValue:YES];
+                [TCUserDefaults.shared setIFSBSettingsPasswordWithValue:ps];
+                [self.passwordSwitchBtn setOn:TCUserDefaults.shared.getFSBSettingsPasswordStatus];
+            } else {
+                [self.passwordSwitchBtn setOn:TCUserDefaults.shared.getFSBSettingsPasswordStatus];
+                // error
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Tips") message:HTCLocalized(@"Password can not be blank") preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction *action = [UIAlertAction actionWithTitle:HTCLocalized(@"OK") style:UIAlertActionStyleDefault handler:nil];
+                [alert addAction:action];
+                [self presentViewController:alert animated:YES completion:nil];
+            }
+        }];
+        [alertController addAction:confirmAction];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self.passwordSwitchBtn setOn:TCUserDefaults.shared.getFSBSettingsPasswordStatus];
+        }];
+        [alertController addAction:cancelAction];
+        [self presentViewController:alertController animated:YES completion:nil];
+    } else {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Tips") message:HTCLocalized(@"Delete current password") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:HTCLocalized(@"OK") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            // 开关和密码都清空
+            [TCUserDefaults.shared setIFSBSettingsPasswordWithValue:@""];
+            [TCUserDefaults.shared setIFSBSettingsPasswordStatusWithValue:NO];
+            [self.passwordSwitchBtn setOn:NO];
+        }];
+        [alert addAction:action];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            [self.passwordSwitchBtn setOn:TCUserDefaults.shared.getFSBSettingsPasswordStatus];
+        }];
+        [alert addAction:cancelAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }
 }
 
 
@@ -211,7 +267,13 @@
 {
     
     // 不能发邮件
-    if (![MFMailComposeViewController canSendMail]) return;
+    if (![MFMailComposeViewController canSendMail]) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Tips") message:HTCLocalized(@"Does not support sending mail") preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *action = [UIAlertAction actionWithTitle:HTCLocalized(@"OK") style:UIAlertActionStyleDefault handler:nil];
+        [alert addAction:action];
+        [self presentViewController:alert animated:YES completion:nil];
+        return;
+    }
     
     MFMailComposeViewController *email = [[MFMailComposeViewController alloc] init];
     
