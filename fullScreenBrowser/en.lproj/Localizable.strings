@@ -37,3 +37,10 @@
 "Verify setup password" = "Verify setup password";
 "Verify" = "Verify";
 "Password is incorrect" = "The password entered is incorrect!";
+"Set Browser Margins" = "Set Browser Margins";
+"Set Browser Margins Tips" = "Set the top, left, right, and bottom margins of the browser interface in turn";
+"Set Browser Margins Top" = "Browser top margin";
+"Set Browser Margins Left" = "Browser left margin";
+"Set Browser Margins Right" = "Browser right margin";
+"Set Browser Margins Bottom" = "Browser bottom margin";
+"Reset Default" = "Use default configuration";

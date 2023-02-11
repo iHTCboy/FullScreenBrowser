@@ -25,11 +25,12 @@
 
 @interface RootViewController ()<UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate, SFSafariViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *webviewTopSpaceConstraint;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *webviewBottomSpaceConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *toolbarHiddenConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchbarTopConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchbarHiddenConstraint;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchBarToiPhoneXConstraint;
 
 
 @property (nonatomic, assign) float oldY;
@@ -41,72 +42,65 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Do any additional setup after loading the view, typically from a nib.
-    self.searchBar.delegate = self;
-    self.wkWebView.UIDelegate = self;
-    self.wkWebView.navigationDelegate = self;
-    self.wkWebView.scrollView.delegate = self;
-    if (@available(iOS 13.0, *)) {
-        self.wkWebView.backgroundColor = [UIColor secondarySystemBackgroundColor];
-        self.wkWebView.scrollView.backgroundColor = [UIColor secondarySystemBackgroundColor];
-    }
+    // 显示状态栏
+    [UIApplication sharedApplication].statusBarHidden = YES;
     
-    if (!iPhone_X_S) {
-        [UIView animateWithDuration:0.1 animations:^{
-            self.searchBarToiPhoneXConstraint.priority = 250;
-            self.searchbarHiddenConstraint.priority = 750;
-            self.searchbarTopConstraint.priority = 1000;
-        }];
-    }
-
-// self.searchBar.backgroundColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.850];
+    // 设置允许摇一摇功能
+    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;  
+    
+    /// SearchBar
+    self.searchBar.delegate = self;
     self.searchBar.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
     self.searchBar.barTintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
     if (@available(iOS 13.0, *)) {
         self.searchBar.searchTextField.textColor = [UIColor labelColor];
         self.searchBar.searchTextField.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
     }
-    //self.searchBar.showsCancelButton = YES;
     
-    BOOL isHiddenSearchBar = TCUserDefaults.shared.getFSBHiddenAddressBar;
-    [self.searchBar setHidden:isHiddenSearchBar];
-    [self searchbarShow:!isHiddenSearchBar];
+    // ToolBar
+    self.toolbars.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
+    self.backButton.enabled = NO;
+    self.forwarButton.enabled = NO;
     
+    /// WKWebview
+    self.wkWebView.UIDelegate = self;
+    self.wkWebView.navigationDelegate = self;
+    self.wkWebView.scrollView.delegate = self;
     if (@available(iOS 13.0, *)) {
-        self.wkWebView.backgroundColor = [UIColor systemBackgroundColor];
+        self.wkWebView.backgroundColor = [UIColor secondarySystemBackgroundColor];
+        self.wkWebView.scrollView.backgroundColor = [UIColor secondarySystemBackgroundColor];
     } else {
         self.wkWebView.backgroundColor = [UIColor whiteColor];
     }
-    
-    if (iPhone_X_S) {
-        self.wkWebView.scrollView.contentInset = UIEdgeInsetsMake(60, 0, 120, 0);
-    } else {
-        self.wkWebView.scrollView.contentInset = UIEdgeInsetsMake(60, 0, 100, 0);
-    }
+    self.wkWebView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
 //    self.wkWebView.scalesPageToFit = YES;
 //    self.uiWebView.scrollView.showsHorizontalScrollIndicator = NO;
 //    self.uiWebView.scrollView.showsVerticalScrollIndicator = NO;
     
-    
-//    self.toolbars.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.90];
-    self.toolbars.tintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
-   // self.toolbars.barTintColor = [UIColor colorWithRed:0.0/255 green:185.0/255 blue:253.0/255 alpha:1];
-    
-    
-    self.backButton.enabled = NO;
-    self.forwarButton.enabled = NO;
-    
-    // 显示状态栏
-    [UIApplication sharedApplication].statusBarHidden = YES;
-    //[[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleDefault];
+    [self setupUI];
     
     // webview
     [self initWebViewPage];
     
+    [self showPrivacy];
+}
+
+- (void)initWebViewPage
+{
+    NSURL *url = [self getURLWithString:TCUserDefaults.shared.getFSBMainPage];
+    //url = [NSURL URLWithString:@"https://ihtcboy.com"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.wkWebView loadRequest:request];
+}
+
+- (void)showPrivacy
+{
     NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
     
     if (![df boolForKey:@"TheUserTermsAndConditions"]) {
-    
+        
+        self.searchBar.hidden = YES;
+        
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"User Terms") message:HTCLocalized(@"User Terms Desc") preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Agree to Agreement") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             [df setBool:YES forKey:@"TheUserTermsAndConditions"];
@@ -122,18 +116,38 @@
             [self presentViewController:alert animated:YES completion:nil];
         });
     }
-    
-    // 设置允许摇一摇功能
-    [UIApplication sharedApplication].applicationSupportsShakeToEdit = YES;  
 }
 
-- (void)initWebViewPage
+- (void)setupUI
 {
-    NSURL *url = [self getURLWithString:TCUserDefaults.shared.getFSBMainPage];
-    // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    // 3. 发送请求给服务器
-    [self.wkWebView loadRequest:request];
+    BOOL isHiddenSearchBar = TCUserDefaults.shared.getFSBHiddenAddressBar;
+    [self.searchBar setHidden:isHiddenSearchBar];
+    [self searchbarShow:!isHiddenSearchBar];
+    
+    float top = TCUserDefaults.shared.getFSBEdgeInsetTopValue;
+    float left = TCUserDefaults.shared.getFSBEdgeInsetLeftValue;
+    float right = TCUserDefaults.shared.getFSBEdgeInsetRightValue;
+    float bottom = TCUserDefaults.shared.getFSBEdgeInsetBottomValue;
+    //top, left, bottom, right;
+    self.wkWebView.scrollView.contentInset = UIEdgeInsetsMake(top, left, bottom, right);
+//    self.wkWebView.scrollView.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    UIEdgeInsets inset = [[UIApplication sharedApplication].keyWindow safeAreaInsets];
+    float top = inset.top;
+    float bottom = inset.bottom;
+    self.webviewTopSpaceConstraint.constant = -top;
+    self.webviewBottomSpaceConstraint.constant = -bottom;
+    
+//    NSUserDefaults *df = [NSUserDefaults standardUserDefaults];
+//    if (![df boolForKey:@"FirstLaunchingApp"]) {
+//        [df setBool:YES forKey:@"FirstLaunchingApp"];
+//        self.wkWebView.scrollView.contentInset = UIEdgeInsetsMake(0, 0, bottom, 0);
+//        [TCUserDefaults.shared setIFSBEdgeInsetBottomWithValue:bottom];
+//    }
 }
 
 /**
@@ -291,26 +305,32 @@
 
 
 #pragma mark TabBar栏事件
-
+// 后退
 - (IBAction)clickedBack:(id)sender {
     if ([self.wkWebView canGoBack]) {
         [self.wkWebView goBack];
     }
 }
 
+// 前进
 - (IBAction)clickedForward:(id)sender {
     if ([self.wkWebView canGoForward]) {
           [self.wkWebView goForward];
       }
 }
 
-
+// 刷新
 - (IBAction)clickedReload:(id)sender {
     [self.wkWebView reload];
 }
 
+// 强制刷新
+- (IBAction)clickedReloadButtonRepeat:(id)sender {
+    [self.wkWebView reloadFromOrigin];
+}
+
 //隐藏搜索框
-- (IBAction)srarchButtonHiden:(id)sender {
+- (IBAction)clickedSrarchButton:(id)sender {
     if (TCUserDefaults.shared.getFSBHiddenAddressBar) {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Tips") message:HTCLocalized(@"Forcibly hidden") preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *action = [UIAlertAction actionWithTitle:HTCLocalized(@"OK") style:UIAlertActionStyleDefault handler:nil];
@@ -322,7 +342,8 @@
     self.searchBar.hidden = !self.searchBar.hidden;
 }
 
-- (IBAction)clickedHomeRepeat:(id)sender {
+// 双击搜索键
+- (IBAction)clickedSrarchButtonRepeat:(id)sender {
     
     if (TCUserDefaults.shared.getFSBSettingsPasswordStatus) {
         // 需要校验密码成功才能进入设置
@@ -357,25 +378,26 @@
     [self openSettingsPage];
 }
 
+// 打开设置页面
 - (void)openSettingsPage {
     //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     //由storyboard根据myView的storyBoardID来获取我们要切换的视图
-    UIViewController *vc = [story instantiateViewControllerWithIdentifier:@"FSBNavigationController"];
+    UINavigationController *vc = (UINavigationController *)[story instantiateViewControllerWithIdentifier:@"FSBNavigationController"];
+    FSBSetingViewController * svc = (FSBSetingViewController *)vc.viewControllers.firstObject;
+    svc.callback = ^(){
+        [self setupUI];
+    };
     [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (IBAction)clickedHome:(id)sender {
-    
     NSURL *url = [NSURL URLWithString:TCUserDefaults.shared.getFSBMainPage];
-    // 2. 把URL告诉给服务器,请求,从m.baidu.com请求数据
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    // 3. 发送请求给服务器
     [self.wkWebView loadRequest:request];
 }
 
 - (IBAction)toFullScreen:(id)sender {
-    
     // 隐藏
     [self toolbarShow:NO];
     [self searchbarShow:NO];
@@ -405,72 +427,65 @@
         }
         [UIView animateWithDuration:0.3f animations:^{
             self.searchbarHiddenConstraint.priority = 750;
-            if (iPhone_X_S) {
-//                self.searchbarTopConstraint.priority = 250;
-                self.searchBarToiPhoneXConstraint.priority = 1000;
-            } else{
-//                self.searchBarToiPhoneXConstraint.priority = 250;
-                self.searchbarTopConstraint.priority = 1000;
-            }
+            self.searchbarTopConstraint.priority = 1000;
         }];
     } else {
         [UIView animateWithDuration:0.3f animations:^{
-            if (iPhone_X_S) {
-//                self.searchbarTopConstraint.priority = 250;
-                self.searchBarToiPhoneXConstraint.priority = 750;
-            } else{
-//                self.searchBarToiPhoneXConstraint.priority = 250;
-                self.searchbarTopConstraint.priority = 750;
-            }
+            self.searchbarTopConstraint.priority = 750;
             self.searchbarHiddenConstraint.priority = 1000;
         }];
     }
 }
 
-//设置
-- (IBAction)setingButton:(id)sender {
-    
-    FSBSetingViewController * nav = [[FSBSetingViewController alloc]init];
-    UINavigationController * navi = [[UINavigationController alloc] initWithRootViewController:nav];
-    [self.navigationController pushViewController:navi animated:YES];
-
-}
-
-
 #pragma mark - scrollView
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    self.activityView.hidden = YES;
+    
     static float newY = 0;
     newY = scrollView.contentOffset.y;
     
 //    NSLog(@"%f", newY);
-    
-    self.activityView.hidden = YES;
+//    if (newY != _oldY)
+//    {
+//        //向下滚动
+//        if (newY > _oldY && (newY - _oldY) > 0)
+//        {
+//
+//            // 隐藏
+//            [self searchbarShow:NO];
+//            [self toolbarShow:NO];
+//
+//            _oldY = newY;
+//
+//        }else if (newY < _oldY && (_oldY - newY) > 100){
+//            [self.view endEditing:YES];
+//
+//            // 显示
+//            [self searchbarShow:YES];
+//            [self toolbarShow:YES];
+//
+//            _oldY = newY;
+//        }
+//
+//    }
+//
+    CGPoint translatedPoint = [scrollView.panGestureRecognizer translationInView:scrollView];
 
-    if (newY != _oldY)
-    {
-        //向下滚动
-        if (newY > _oldY && (newY - _oldY) > 0)
-        {
-
-            // 隐藏
-            [self searchbarShow:NO];
-            [self toolbarShow:NO];
-            
-            _oldY = newY;
-            
-        }else if (newY < _oldY && (_oldY - newY) > 100){
-            [self.view endEditing:YES];
-            
-            // 显示
-            [self searchbarShow:YES];
-            [self toolbarShow:YES];
-            
-            _oldY = newY;
-        }
-        
+    if (translatedPoint.y < 0) {
+        //NSLog(@"上滑");
+        // 隐藏
+        [self searchbarShow:NO];
+        [self toolbarShow:NO];
     }
+    if (translatedPoint.y > 0) {
+        //NSLog(@"下滑");
+        // 显示
+        [self searchbarShow:YES];
+        [self toolbarShow:YES];
+    }
+    //通过translatedPoint.x 判断左右滑动方向
 }
 
 - (BOOL)scrollViewShouldScrollToTop:(UIScrollView *)scrollView
@@ -481,6 +496,14 @@
 
     return YES;
 }
+
+- (void)scrollViewDidScrollToTop:(UIScrollView *)scrollView
+{
+    // 显示
+    [self searchbarShow:YES];
+    [self toolbarShow:YES];
+}
+
 
 #pragma mark - status bar
 - (BOOL)prefersStatusBarHidden

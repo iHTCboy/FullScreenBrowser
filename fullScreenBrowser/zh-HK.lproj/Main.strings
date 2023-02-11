@@ -32,6 +32,9 @@
 /* Class = "UILabel"; text = "關於應用"; ObjectID = "JZB-aq-aup"; */
 "JZB-aq-aup.text" = "關於應用";
 
+/* Class = "UILabel"; text = "瀏覽器邊距"; ObjectID = "LHr-We-vvB"; */
+"LHr-We-vvB.text" = "瀏覽器邊距";
+
 /* Class = "UILabel"; text = "隱私協議"; ObjectID = "UI7-Oz-SNo"; */
 "UI7-Oz-SNo.text" = "隱私協議";
 
@@ -50,6 +53,9 @@
 /* Class = "UILabel"; text = "應用反饋"; ObjectID = "fSB-1e-Gv6"; */
 "fSB-1e-Gv6.text" = "應用反饋";
 
+/* Class = "UILabel"; text = "(0, 0, 0, 120)"; ObjectID = "fgg-2o-H9e"; */
+"fgg-2o-H9e.text" = "(0, 0, 0, 120)";
+
 /* Class = "UILabel"; text = "更多推薦"; ObjectID = "iQD-hB-sU1"; */
 "iQD-hB-sU1.text" = "更多推薦";
 
@@ -63,7 +69,7 @@
 "pcV-9J-6TS.headerTitle" = " ";
 
 /* Class = "UILabel"; text = "強制隱藏地址欄"; ObjectID = "wun-RO-CAu"; */
-"wun-RO-CAu.text" = "強制隱藏鏈接地址欄";
+"wun-RO-CAu.text" = "強制隱藏瀏覽器地址欄";
 
 /* Class = "UILabel"; text = "© 2014-2019 @iHTCboy All rights reserved"; ObjectID = "y3h-yV-QAG"; */
 "y3h-yV-QAG.text" = "© 2014-2019 @iHTCboy All rights reserved";

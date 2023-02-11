@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *mainPageLbl;
 @property (weak, nonatomic) IBOutlet UILabel *searchEngineLbl;
+@property (weak, nonatomic) IBOutlet UILabel *edgeInsetLbl;
 @property (weak, nonatomic) IBOutlet UISwitch *addressSwitchBtn;
 @property (weak, nonatomic) IBOutlet UISwitch *passwordSwitchBtn;
 
@@ -31,8 +32,14 @@
     
     self.title = HTCLocalized(@"Settings");
     
+    float top = TCUserDefaults.shared.getFSBEdgeInsetTopValue;
+    float left = TCUserDefaults.shared.getFSBEdgeInsetLeftValue;
+    float right = TCUserDefaults.shared.getFSBEdgeInsetRightValue;
+    float bottom = TCUserDefaults.shared.getFSBEdgeInsetBottomValue;
+    
     self.mainPageLbl.text = TCUserDefaults.shared.getFSBMainPage;
     self.searchEngineLbl.text = TCUserDefaults.shared.getFSBSearchPage;
+    self.edgeInsetLbl.text = [NSString stringWithFormat:@"(%0.1f, %0.1f, %0.1f, %0.1f)", top, left, right, bottom];
     [self.addressSwitchBtn setOn:TCUserDefaults.shared.getFSBHiddenAddressBar];
     [self.passwordSwitchBtn setOn:TCUserDefaults.shared.getFSBSettingsPasswordStatus];
 }
@@ -44,6 +51,7 @@
 
 - (IBAction)clickedCloseBtn:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:^{
+        !self.callback ? : self.callback();
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
     }];
 }
@@ -187,6 +195,68 @@
                         [self saveSearchEngineURL:url];
                     }];
                     [alertController addAction:confirmAction6];
+                    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    }];
+                    [alertController addAction:cancelAction];
+                    [self presentViewController:alertController animated:YES completion:nil];
+                    break;
+                }
+                case 2: {
+                    // 设置边距
+                    float top = TCUserDefaults.shared.getFSBEdgeInsetTopValue;
+                    float left = TCUserDefaults.shared.getFSBEdgeInsetLeftValue;
+                    float right = TCUserDefaults.shared.getFSBEdgeInsetRightValue;
+                    float bottom = TCUserDefaults.shared.getFSBEdgeInsetBottomValue;
+                    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:HTCLocalized(@"Set Browser Margins") message:HTCLocalized(@"Set Browser Margins Tips") preferredStyle:UIAlertControllerStyleAlert];
+                    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                        textField.placeholder = HTCLocalized(@"Set Browser Margins Top");
+                        textField.text = [NSString stringWithFormat:@"%0.1f", top];
+                        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                        textField.keyboardType = UIKeyboardTypeURL;
+                        textField.returnKeyType = UIReturnKeyDone;
+                    }];
+                    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                        textField.placeholder = HTCLocalized(@"Set Browser Margins Left");
+                        textField.text = [NSString stringWithFormat:@"%0.1f", left];
+                        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                        textField.keyboardType = UIKeyboardTypeURL;
+                        textField.returnKeyType = UIReturnKeyDone;
+                    }];
+                    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                        textField.placeholder = HTCLocalized(@"Set Browser Margins Right");
+                        textField.text = [NSString stringWithFormat:@"%0.1f", right];
+                        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                        textField.keyboardType = UIKeyboardTypeURL;
+                        textField.returnKeyType = UIReturnKeyDone;
+                    }];
+                    [alertController addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                        textField.placeholder = HTCLocalized(@"Set Browser Margins Bottom");
+                        textField.text = [NSString stringWithFormat:@"%0.1f", bottom];
+                        textField.clearButtonMode = UITextFieldViewModeWhileEditing;
+                        textField.keyboardType = UIKeyboardTypeURL;
+                        textField.returnKeyType = UIReturnKeyDone;
+                    }];
+                    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Settings") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        //compare the current password and do action here
+                        float top = [[[alertController textFields][0] text] floatValue];
+                        float left = [[[alertController textFields][1] text] floatValue];
+                        float right = [[[alertController textFields][2] text] floatValue];
+                        float bottom = [[[alertController textFields][3] text] floatValue];
+                        [TCUserDefaults.shared setIFSBEdgeInsetTopWithValue:top];
+                        [TCUserDefaults.shared setIFSBEdgeInsetLeftWithValue:left];
+                        [TCUserDefaults.shared setIFSBEdgeInsetRightWithValue:right];
+                        [TCUserDefaults.shared setIFSBEdgeInsetBottomWithValue:bottom];
+                        self.edgeInsetLbl.text = [NSString stringWithFormat:@"(%0.1f, %0.1f, %0.1f, %0.1f)", top, left, right, bottom];
+                    }];
+                    [alertController addAction:confirmAction];
+                    UIAlertAction *resetAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Reset Default") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [TCUserDefaults.shared setIFSBEdgeInsetTopWithValue:0.0];
+                        [TCUserDefaults.shared setIFSBEdgeInsetLeftWithValue:0.0];
+                        [TCUserDefaults.shared setIFSBEdgeInsetRightWithValue:0.0];
+                        [TCUserDefaults.shared setIFSBEdgeInsetBottomWithValue:0.0];
+                        self.edgeInsetLbl.text = @"(0.0, 0.0, 0.0, 0.0)";
+                    }];
+                    [alertController addAction:resetAction];
                     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Cancel") style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
                     }];
                     [alertController addAction:cancelAction];

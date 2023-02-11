@@ -32,6 +32,9 @@
 /* Class = "UILabel"; text = "关于应用"; ObjectID = "JZB-aq-aup"; */
 "JZB-aq-aup.text" = "Về ứng dụng";
 
+/* Class = "UILabel"; text = "瀏覽器邊距"; ObjectID = "LHr-We-vvB"; */
+"LHr-We-vvB.text" = "lề trình duyệt";
+
 /* Class = "UILabel"; text = "隐私协议"; ObjectID = "UI7-Oz-SNo"; */
 "UI7-Oz-SNo.text" = "Thỏa thuận về Quyền riêng tư";
 
@@ -49,6 +52,9 @@
 
 /* Class = "UILabel"; text = "应用反馈"; ObjectID = "fSB-1e-Gv6"; */
 "fSB-1e-Gv6.text" = "Phản hồi về Ứng dụng";
+
+/* Class = "UILabel"; text = "(0, 0, 0, 120)"; ObjectID = "fgg-2o-H9e"; */
+"fgg-2o-H9e.text" = "(0, 0, 0, 120)";
 
 /* Class = "UILabel"; text = "更多推荐"; ObjectID = "iQD-hB-sU1"; */
 "iQD-hB-sU1.text" = "Đề xuất khác";

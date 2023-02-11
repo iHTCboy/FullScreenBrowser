@@ -37,3 +37,10 @@
 "Verify setup password" = "Xác minh mật khẩu thiết lập";
 "Verify" = "Xác minh";
 "Password is incorrect" = "Mật khẩu đã nhập không đúng!";
+"Set Browser Margins" = "Đặt lề trình duyệt";
+"Set Browser Margins Tips" = "Lần lượt đặt lề trên, trái, phải, dưới của giao diện trình duyệt";
+"Set Browser Margins Top" = "Lề trên của trình duyệt";
+"Set Browser Margins Left" = "Lề trái của trình duyệt";
+"Set Browser Margins Right" = "Lề phải của trình duyệt";
+"Set Browser Margins Bottom" = "Lề dưới của trình duyệt";
+"Reset Default" = "Sử dụng cấu hình mặc định";

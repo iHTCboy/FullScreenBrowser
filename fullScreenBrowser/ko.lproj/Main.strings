@@ -32,6 +32,9 @@
 /* Class = "UILabel"; text = "关于应用"; ObjectID = "JZB-aq-aup"; */
 "JZB-aq-aup.text" = "신청에 관하여";
 
+/* Class = "UILabel"; text = "瀏覽器邊距"; ObjectID = "LHr-We-vvB"; */
+"LHr-We-vvB.text" = "브라우저 여백";
+
 /* Class = "UILabel"; text = "隐私协议"; ObjectID = "UI7-Oz-SNo"; */
 "UI7-Oz-SNo.text" = "프라이버시 계약";
 
@@ -49,6 +52,9 @@
 
 /* Class = "UILabel"; text = "应用反馈"; ObjectID = "fSB-1e-Gv6"; */
 "fSB-1e-Gv6.text" = "응용 프로그램 피드백";
+
+/* Class = "UILabel"; text = "(0, 0, 0, 120)"; ObjectID = "fgg-2o-H9e"; */
+"fgg-2o-H9e.text" = "(0, 0, 0, 120)";
 
 /* Class = "UILabel"; text = "更多推荐"; ObjectID = "iQD-hB-sU1"; */
 "iQD-hB-sU1.text" = "추가 권장 사항";

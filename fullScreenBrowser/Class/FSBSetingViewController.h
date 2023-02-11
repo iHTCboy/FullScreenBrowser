@@ -10,4 +10,6 @@
 
 @interface FSBSetingViewController : UITableViewController
 
+@property (nonnull, copy) dispatch_block_t callback;
+
 @end

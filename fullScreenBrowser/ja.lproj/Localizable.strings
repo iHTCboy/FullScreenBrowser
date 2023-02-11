@@ -37,3 +37,10 @@
 "Verify setup password" = "セットアップパスワードの確認";
 "Verify" = "検証";
 "Password is incorrect" = "入力されたパスワードが正しくありません!";
+"Set Browser Margins" = "ブラウザの余白を設定";
+"Set Browser Margins Tips" = "ブラウザー インターフェイスの上、左、右、および下の余白を順番に設定します";
+"Set Browser Margins Top" = "ブラウザの上マージン";
+"Set Browser Margins Left" = "ブラウザの左マージン";
+"Set Browser Margins Right" = "ブラウザの右余白";
+"Set Browser Margins Bottom" = "ブラウザの下マージン";
+"Reset Default" = "デフォルト構成を使用";

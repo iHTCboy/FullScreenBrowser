@@ -54,7 +54,7 @@ class TCUserDefaults: NSObject {
         if let hidden = getTCValue(key: "FSBHiddenAddressBarKey") as? Bool {
             return hidden
         }
-        return  false
+        return false
     }
     
     @objc open func setIFSBHiddenAddressBar(value: Bool) {
@@ -65,7 +65,7 @@ class TCUserDefaults: NSObject {
         if let hidden = getTCValue(key: "FSBSettingsPasswordStatusKey") as? Bool {
             return hidden
         }
-        return  false
+        return false
     }
     
     @objc open func setIFSBSettingsPasswordStatus(value: Bool) {
@@ -83,4 +83,48 @@ class TCUserDefaults: NSObject {
         setTCValue(value: value, forKey: "FSBSettingsPasswordValueKey")
     }
     
+    // 浏览器边距 CGFloat top, left, bottom, right;
+    @objc open func getFSBEdgeInsetTopValue() -> Float {
+        if let language = getTCValue(key: "FSBEdgeInsetTopValueKey") as? Float {
+            return language
+        }
+        return  0.0
+    }
+    
+    @objc open func setIFSBEdgeInsetTop(value: Float) {
+        setTCValue(value: value, forKey: "FSBEdgeInsetTopValueKey")
+    }
+    
+    @objc open func getFSBEdgeInsetBottomValue() -> Float {
+        if let language = getTCValue(key: "FSBEdgeInsetBottomValueKey") as? Float {
+            return language
+        }
+        return  0.0
+    }
+    
+    @objc open func setIFSBEdgeInsetBottom(value: Float) {
+        setTCValue(value: value, forKey: "FSBEdgeInsetBottomValueKey")
+    }
+    
+    @objc open func getFSBEdgeInsetLeftValue() -> Float {
+        if let language = getTCValue(key: "FSBEdgeInsetLeftValueKey") as? Float {
+            return language
+        }
+        return  0.0
+    }
+    
+    @objc open func setIFSBEdgeInsetLeft(value: Float) {
+        setTCValue(value: value, forKey: "FSBEdgeInsetLeftValueKey")
+    }
+    
+    @objc open func getFSBEdgeInsetRightValue() -> Float {
+        if let language = getTCValue(key: "FSBEdgeInsetRightValueKey") as? Float {
+            return language
+        }
+        return  0.0
+    }
+    
+    @objc open func setIFSBEdgeInsetRight(value: Float) {
+        setTCValue(value: value, forKey: "FSBEdgeInsetRightValueKey")
+    }
 }

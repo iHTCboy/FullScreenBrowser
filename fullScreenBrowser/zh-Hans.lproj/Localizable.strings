@@ -37,3 +37,10 @@
 "Verify setup password" = "验证设置密码";
 "Verify" = "验证";
 "Password is incorrect" = "输入的密码不正确！";
+"Set Browser Margins" = "设置浏览器边距";
+"Set Browser Margins Tips" = "依次设置浏览器界面的上、左、右、下的边距";
+"Set Browser Margins Top" = "浏览器的上边距";
+"Set Browser Margins Left" = "浏览器的左边距";
+"Set Browser Margins Right" = "浏览器的右边距";
+"Set Browser Margins Bottom" = "浏览器的下边距";
+"Reset Default" = "使用默认配置";

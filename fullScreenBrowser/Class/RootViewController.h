@@ -13,7 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet WKWebView *wkWebView;
-//@property (weak, nonatomic) IBOutlet UIWebView *uiWebView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 @property (weak, nonatomic) IBOutlet UIToolbar *toolbars;
@@ -23,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *reloadingButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButton;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *homeButton;
-@property (weak, nonatomic) IBOutlet UIToolbar *fullscreenButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *fullscreenButton;
 
 
 @end
