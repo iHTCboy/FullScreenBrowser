@@ -772,7 +772,7 @@
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
-				MARKETING_VERSION = 9.2.1;
+				MARKETING_VERSION = 9.2.2;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",
@@ -809,7 +809,7 @@
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.3.0",
 					"$(PROJECT_DIR)/FullScreenBrowser/Class/Vendors/BaiduMTJ_iOS_App_V4.5.0",
 				);
-				MARKETING_VERSION = 9.2.1;
+				MARKETING_VERSION = 9.2.2;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"$(inherited)",
