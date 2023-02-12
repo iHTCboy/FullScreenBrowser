@@ -10,18 +10,8 @@
 #import "FSBSetingViewController.h"
 #import "Utility.h"
 #import "BaiduMobStat.h"
-
 #import "FSB-Swift.h"
 #import <SafariServices/SafariServices.h>
-
-#define topHight (iPhone_X_S ? 44 : 0)
-#define indcatorHight (iPhone_X_S ? 34 : 0)
-#define navBarHight (iPhone_X_S ? 68 : 44)
-#define  MACRO_IS_GREATER_OR_EQUAL_TO_IOS(v) ([[[UIDevice currentDevice] systemVersion] floatValue] >= v)
-#define iPhone_X_S (MACRO_IS_GREATER_OR_EQUAL_TO_IOS(11.0) ? \
-    ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) ? NO :\
-    (!UIEdgeInsetsEqualToEdgeInsets([[[UIApplication sharedApplication].keyWindow valueForKey:@"safeAreaInsets"] UIEdgeInsetsValue], UIEdgeInsetsZero)) : NO)
-
 
 @interface RootViewController ()<UISearchBarDelegate, UIScrollViewDelegate, WKUIDelegate, WKNavigationDelegate, SFSafariViewControllerDelegate>
 
@@ -100,6 +90,7 @@
     if (![df boolForKey:@"TheUserTermsAndConditions"]) {
         
         self.searchBar.hidden = YES;
+        self.searchBar.tag = YES;
         
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:HTCLocalized(@"User Terms") message:HTCLocalized(@"User Terms Desc") preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *okAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Agree to Agreement") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -123,6 +114,9 @@
     BOOL isHiddenSearchBar = TCUserDefaults.shared.getFSBHiddenAddressBar;
     [self.searchBar setHidden:isHiddenSearchBar];
     [self searchbarShow:!isHiddenSearchBar];
+    if (!isHiddenSearchBar) {
+        self.searchBar.hidden = self.searchBar.tag;
+    }
     
     float top = TCUserDefaults.shared.getFSBEdgeInsetTopValue;
     float left = TCUserDefaults.shared.getFSBEdgeInsetLeftValue;
@@ -340,6 +334,7 @@
     }
     
     self.searchBar.hidden = !self.searchBar.hidden;
+    self.searchBar.tag = !self.searchBar.hidden;
 }
 
 // 双击搜索键

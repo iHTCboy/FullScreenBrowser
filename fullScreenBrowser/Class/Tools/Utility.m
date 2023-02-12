@@ -71,7 +71,6 @@
     if ([deviceModel isEqualToString:@"iPhone11,4"] || [deviceModel isEqualToString:@"iPhone11,6"]) return @"iPhone XS Max";
     if ([deviceModel isEqualToString:@"iPhone11,8"] || [deviceModel isEqualToString:@"iPhone11,9"]) return @"iPhone XR";
     
-    
     // 2018 models
     if ([deviceModel isEqualToString:@"iPhone11,1"])    return @"iPhone XS (GSM+CDMA)";
     if ([deviceModel isEqualToString:@"iPhone11,2"])    return @"iPhone XS (GSM)";
@@ -91,6 +90,17 @@
     if ([deviceModel isEqualToString:@"iPhone13,3"])    return @"iPhone 12 Pro";
     if ([deviceModel isEqualToString:@"iPhone13,4"])    return @"iPhone 12 Pro Max";
     
+    // 2021-2022 iPhone
+    if ([deviceModel isEqualToString:@"iPhone14,4"])    return @"iPhone 13 Mini";
+    if ([deviceModel isEqualToString:@"iPhone14,5"])    return @"iPhone 13";
+    if ([deviceModel isEqualToString:@"iPhone14,2"])    return @"iPhone 13 Pro";
+    if ([deviceModel isEqualToString:@"iPhone14,3"])    return @"iPhone 13 Pro Max";
+    if ([deviceModel isEqualToString:@"iPhone14,6"])    return @"iPhone SE 3nd Gen";
+    if ([deviceModel isEqualToString:@"iPhone14,7"])    return @"iPhone 14";
+    if ([deviceModel isEqualToString:@"iPhone14,8"])    return @"iPhone 14 Plus";
+    if ([deviceModel isEqualToString:@"iPhone15,2"])    return @"iPhone 14 Pro";
+    if ([deviceModel isEqualToString:@"iPhone15,3"])    return @"iPhone 14 Pro Max";
+    
     
     //iPod 系列
     if ([deviceModel isEqualToString:@"iPod1,1"]) return @"iPod Touch 1G";
@@ -99,6 +109,7 @@
     if ([deviceModel isEqualToString:@"iPod4,1"]) return @"iPod Touch 4G";
     if ([deviceModel isEqualToString:@"iPod5,1"]) return @"iPod Touch 5G";
     if ([deviceModel isEqualToString:@"iPod7,1"]) return @"iPod Touch 6";
+    if ([deviceModel isEqualToString:@"iPod9,1"]) return @"iPod Touch 7";
     
     //iPad 系列
     if ([deviceModel isEqualToString:@"iPad1,1"])      return @"iPad";
@@ -139,7 +150,7 @@
     if ([deviceModel isEqualToString:@"iPad7,3"])      return @"iPad Pro 10.5";
     if ([deviceModel isEqualToString:@"iPad7,4"])      return @"iPad Pro 10.5";
     
-    // 2029-2020 iPad
+    // 2019-2020 iPad
     if ([deviceModel isEqualToString:@"iPad7,5"])             return @"iPad 6th Gen (WiFi)";
     if ([deviceModel isEqualToString:@"iPad7,6"])             return @"iPad 6th Gen (WiFi+Cellular)";
     if ([deviceModel isEqualToString:@"iPad7,11"])             return @"iPad 7th Gen 10.2-inch (WiFi)";
@@ -165,12 +176,34 @@
     if ([deviceModel isEqualToString:@"iPad13,1"])             return @"iPad Air 4th Gen (WiFi)";
     if ([deviceModel isEqualToString:@"iPad13,2"])             return @"iPad Air 4th Gen (WiFi+Celular)";
 
+    // 2021-2022 iPad
+    if ([deviceModel isEqualToString:@"iPad13,4"])            return @"iPad Pro (11-inch, 3rd generation)";
+    if ([deviceModel isEqualToString:@"iPad13,5"])            return @"iPad Pro (11-inch, 3rd generation)";
+    if ([deviceModel isEqualToString:@"iPad13,6"])            return @"iPad Pro (11-inch, 3rd generation)";
+    if ([deviceModel isEqualToString:@"iPad13,7"])            return @"iPad Pro (11-inch, 3rd generation)";
+    if ([deviceModel isEqualToString:@"iPad13,8"])            return @"iPad Pro (12.9-inch, 5th generation)";
+    if ([deviceModel isEqualToString:@"iPad13,9"])            return @"iPad Pro (12.9-inch, 5th generation)";
+    if ([deviceModel isEqualToString:@"iPad13,10"])           return @"iPad Pro (12.9-inch, 5th generation)";
+    if ([deviceModel isEqualToString:@"iPad13,11"])           return @"iPad Pro (12.9-inch, 5th generation)";
+    if ([deviceModel isEqualToString:@"iPad13,16"])           return @"iPad Air (5th generation)";
+    if ([deviceModel isEqualToString:@"iPad13,17"])           return @"iPad Air (5th generation)";
+    if ([deviceModel isEqualToString:@"iPad13,18"])           return @"iPad (10th generation)";
+    if ([deviceModel isEqualToString:@"iPad13,19"])           return @"iPad (10th generation)";
+    if ([deviceModel isEqualToString:@"iPad14,1"])            return @"iPad mini (6th generation)";
+    if ([deviceModel isEqualToString:@"iPad14,2"])            return @"iPad mini (6th generation)";
+    if ([deviceModel isEqualToString:@"iPad14,3"])            return @"iPad Pro (11-inch, 4th generation)";
+    if ([deviceModel isEqualToString:@"iPad14,4"])            return @"iPad Pro (11-inch, 4th generation)";
+    if ([deviceModel isEqualToString:@"iPad14,5"])            return @"iPad Pro (12.9-inch, 6th generation)";
+    if ([deviceModel isEqualToString:@"iPad14,6"])            return @"iPad Pro (12.9-inch, 6th generation)";
+    
     //Apple TV
     if ([deviceModel isEqualToString:@"AppleTV2,1"])   return @"Apple TV 2G";
     if ([deviceModel isEqualToString:@"AppleTV3,1"])   return @"Apple TV 3";
     if ([deviceModel isEqualToString:@"AppleTV3,2"])   return @"Apple TV 3 (2013)";
     if ([deviceModel isEqualToString:@"AppleTV5,3"])   return @"Apple TV 4";
     if ([deviceModel isEqualToString:@"AppleTV6,2"])   return @"Apple TV 4K";
+    if ([deviceModel isEqualToString:@"AppleTV11,1"])   return @"Apple TV 4K (2nd generation)";
+    if ([deviceModel isEqualToString:@"AppleTV14,1"])   return @"Apple TV 4K (3nd generation)";
     
     //Apple Watch
     if ([deviceModel isEqualToString:@"Watch1,1"])     return @"Apple Watch (1st generation) (38mm)";

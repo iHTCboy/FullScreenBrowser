@@ -249,6 +249,18 @@
                         self.edgeInsetLbl.text = [NSString stringWithFormat:@"(%0.1f, %0.1f, %0.1f, %0.1f)", top, left, right, bottom];
                     }];
                     [alertController addAction:confirmAction];
+                    // 刘海屏
+                    if (iPhone_X_S) {
+                        UIAlertAction *bangsAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Straight Bangs") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                            UIEdgeInsets inset = [[UIApplication sharedApplication].keyWindow safeAreaInsets];
+                            float top = inset.top;
+                            float bottom = inset.bottom;
+                            [TCUserDefaults.shared setIFSBEdgeInsetTopWithValue:top];
+                            [TCUserDefaults.shared setIFSBEdgeInsetBottomWithValue:bottom];
+                            self.edgeInsetLbl.text = [NSString stringWithFormat:@"(%0.1f, 0.0, 0.0,  %0.1f)", top, bottom];
+                        }];
+                        [alertController addAction:bangsAction];
+                    }
                     UIAlertAction *resetAction = [UIAlertAction actionWithTitle:HTCLocalized(@"Reset Default") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         [TCUserDefaults.shared setIFSBEdgeInsetTopWithValue:0.0];
                         [TCUserDefaults.shared setIFSBEdgeInsetLeftWithValue:0.0];
